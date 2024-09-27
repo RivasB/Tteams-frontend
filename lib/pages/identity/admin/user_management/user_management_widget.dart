@@ -87,6 +87,7 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                     ),
                     decoration: const BoxDecoration(),
                     child: SingleChildScrollView(
+                      primary: false,
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -111,6 +112,7 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                   flex: 12,
                                   child: ListView(
                                     padding: EdgeInsets.zero,
+                                    primary: false,
                                     shrinkWrap: true,
                                     scrollDirection: Axis.vertical,
                                     children: [

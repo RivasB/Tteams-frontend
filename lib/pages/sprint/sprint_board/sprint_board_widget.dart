@@ -85,6 +85,7 @@ class _SprintBoardWidgetState extends State<SprintBoardWidget> {
                     ),
                     decoration: const BoxDecoration(),
                     child: SingleChildScrollView(
+                      primary: false,
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -122,6 +123,7 @@ class _SprintBoardWidgetState extends State<SprintBoardWidget> {
                                           children: [
                                             ListView(
                                               padding: EdgeInsets.zero,
+                                              primary: false,
                                               shrinkWrap: true,
                                               scrollDirection: Axis.vertical,
                                               children: [
@@ -339,6 +341,7 @@ class _SprintBoardWidgetState extends State<SprintBoardWidget> {
                                         children: [
                                           ListView(
                                             padding: EdgeInsets.zero,
+                                            primary: false,
                                             shrinkWrap: true,
                                             scrollDirection: Axis.vertical,
                                             children: [
@@ -712,6 +715,7 @@ class _SprintBoardWidgetState extends State<SprintBoardWidget> {
                                         children: [
                                           ListView(
                                             padding: EdgeInsets.zero,
+                                            primary: false,
                                             shrinkWrap: true,
                                             scrollDirection: Axis.vertical,
                                             children: [
@@ -1113,6 +1117,7 @@ class _SprintBoardWidgetState extends State<SprintBoardWidget> {
                                               ),
                                               ListView(
                                                 padding: EdgeInsets.zero,
+                                                primary: false,
                                                 shrinkWrap: true,
                                                 scrollDirection: Axis.vertical,
                                                 children: [
@@ -1303,6 +1308,7 @@ class _SprintBoardWidgetState extends State<SprintBoardWidget> {
                                           children: [
                                             ListView(
                                               padding: EdgeInsets.zero,
+                                              primary: false,
                                               shrinkWrap: true,
                                               scrollDirection: Axis.vertical,
                                               children: [

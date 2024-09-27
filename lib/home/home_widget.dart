@@ -128,6 +128,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                     ),
                     decoration: const BoxDecoration(),
                     child: SingleChildScrollView(
+                      primary: false,
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -148,6 +149,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                   flex: 12,
                                   child: ListView(
                                     padding: EdgeInsets.zero,
+                                    primary: false,
                                     shrinkWrap: true,
                                     scrollDirection: Axis.vertical,
                                     children: [
