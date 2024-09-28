@@ -363,7 +363,7 @@ class _LoginWidgetState extends State<LoginWidget>
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   _model.logInResponse =
-                                      await TTeamsAPIIdentityServiceDocumentationGroup
+                                      await TTeamsAPILoginAndRegisterGroup
                                           .loginCall
                                           .call(
                                     email:
@@ -377,7 +377,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                     GoRouter.of(context).prepareAuthEvent();
                                     await authManager.signIn(
                                       authenticationToken:
-                                          TTeamsAPIIdentityServiceDocumentationGroup
+                                          TTeamsAPILoginAndRegisterGroup
                                               .loginCall
                                               .token(
                                                 (_model.logInResponse
@@ -386,7 +386,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                               )
                                               .toString(),
                                       refreshToken:
-                                          TTeamsAPIIdentityServiceDocumentationGroup
+                                          TTeamsAPILoginAndRegisterGroup
                                               .loginCall
                                               .token(
                                                 (_model.logInResponse

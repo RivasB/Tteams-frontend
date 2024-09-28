@@ -698,7 +698,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                     child: FFButtonWidget(
                                       onPressed: () async {
                                         _model.registerResponse =
-                                            await TTeamsAPIIdentityServiceDocumentationGroup
+                                            await TTeamsAPILoginAndRegisterGroup
                                                 .registerUserSendDataCall
                                                 .call(
                                           firstName:

@@ -359,7 +359,7 @@ class _VerifyAccountWidgetState extends State<VerifyAccountWidget>
                                   child: FFButtonWidget(
                                     onPressed: () async {
                                       _model.verificationResponse =
-                                          await TTeamsAPIIdentityServiceDocumentationGroup
+                                          await TTeamsAPILoginAndRegisterGroup
                                               .registerUserCheckCodeCall
                                               .call(
                                         code: int.tryParse(
@@ -371,7 +371,7 @@ class _VerifyAccountWidgetState extends State<VerifyAccountWidget>
                                               ?.succeeded ??
                                           true)) {
                                         _model.loginResponse =
-                                            await TTeamsAPIIdentityServiceDocumentationGroup
+                                            await TTeamsAPILoginAndRegisterGroup
                                                 .loginCall
                                                 .call(
                                           email: widget.email,
@@ -384,7 +384,7 @@ class _VerifyAccountWidgetState extends State<VerifyAccountWidget>
                                               .prepareAuthEvent();
                                           await authManager.signIn(
                                             authenticationToken:
-                                                TTeamsAPIIdentityServiceDocumentationGroup
+                                                TTeamsAPILoginAndRegisterGroup
                                                     .loginCall
                                                     .token(
                                                       (_model.loginResponse
@@ -393,7 +393,7 @@ class _VerifyAccountWidgetState extends State<VerifyAccountWidget>
                                                     )
                                                     .toString(),
                                             refreshToken:
-                                                TTeamsAPIIdentityServiceDocumentationGroup
+                                                TTeamsAPILoginAndRegisterGroup
                                                     .loginCall
                                                     .token(
                                                       (_model.loginResponse
