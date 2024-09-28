@@ -9,360 +9,41 @@ export 'api_manager.dart' show ApiCallResponse;
 
 const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
-/// Start TTeams API, identity service documentation Group Code
+/// Start TTeams API Login And Register Group Code
 
-class TTeamsAPIIdentityServiceDocumentationGroup {
+class TTeamsAPILoginAndRegisterGroup {
   static String getBaseUrl() => 'http://localhost:8091';
   static Map<String, String> headers = {};
-  static UpdateCall updateCall = UpdateCall();
-  static CreateCall createCall = CreateCall();
-  static GetAllUsersCall getAllUsersCall = GetAllUsersCall();
-  static UpdateUser1Call updateUser1Call = UpdateUser1Call();
-  static CreateUserCall createUserCall = CreateUserCall();
-  static GetAll1Call getAll1Call = GetAll1Call();
-  static Update1Call update1Call = Update1Call();
-  static Create1Call create1Call = Create1Call();
   static RegisterUserSendDataCall registerUserSendDataCall =
       RegisterUserSendDataCall();
   static RegisterUserCheckCodeCall registerUserCheckCodeCall =
       RegisterUserCheckCodeCall();
-  static ChangePasswordCall changePasswordCall = ChangePasswordCall();
-  static SpreadUsersCall spreadUsersCall = SpreadUsersCall();
-  static ValidateCall validateCall = ValidateCall();
-  static RefreshCall refreshCall = RefreshCall();
   static LoginCall loginCall = LoginCall();
-  static RetrieveLoggedUserCall retrieveLoggedUserCall =
-      RetrieveLoggedUserCall();
-  static GetProfileCall getProfileCall = GetProfileCall();
-  static DeleteAgencyCall deleteAgencyCall = DeleteAgencyCall();
-  static GetByIdCall getByIdCall = GetByIdCall();
-  static DeleteCall deleteCall = DeleteCall();
-  static RetrieveUserCall retrieveUserCall = RetrieveUserCall();
-  static DeleteRoleCall deleteRoleCall = DeleteRoleCall();
-  static RetrieveLoggedUser1Call retrieveLoggedUser1Call =
-      RetrieveLoggedUser1Call();
-}
-
-class UpdateCall {
-  Future<ApiCallResponse> call({
-    String? bearerAuthentication = '',
-  }) async {
-    final baseUrl = TTeamsAPIIdentityServiceDocumentationGroup.getBaseUrl();
-
-    const ffApiRequestBody = '''
-{
-  "id": "",
-  "name": "",
-  "description": "",
-  "contact": "",
-  "state": "ACTIVE"
-}''';
-    return ApiManager.instance.makeApiCall(
-      callName: 'update',
-      apiUrl: '$baseUrl/api/organization',
-      callType: ApiCallType.PUT,
-      headers: {
-        'Authorization': 'Bearer $bearerAuthentication',
-      },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
-class CreateCall {
-  Future<ApiCallResponse> call({
-    String? bearerAuthentication = '',
-  }) async {
-    final baseUrl = TTeamsAPIIdentityServiceDocumentationGroup.getBaseUrl();
-
-    const ffApiRequestBody = '''
-{
-  "name": "",
-  "description": "",
-  "contact": ""
-}''';
-    return ApiManager.instance.makeApiCall(
-      callName: 'create',
-      apiUrl: '$baseUrl/api/organization',
-      callType: ApiCallType.POST,
-      headers: {
-        'Authorization': 'Bearer $bearerAuthentication',
-      },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
-class GetAllUsersCall {
-  Future<ApiCallResponse> call({
-    int? pageNo,
-    int? pageSize,
-    String? filter = '',
-    String? firstName = '',
-    String? lastName = '',
-    String? identification = '',
-    String? email = '',
-    String? type = '',
-    String? state = '',
-    String? sortBy = '',
-    String? sortType = '',
-    String? bearerAuthentication = '',
-  }) async {
-    final baseUrl = TTeamsAPIIdentityServiceDocumentationGroup.getBaseUrl();
-
-    return ApiManager.instance.makeApiCall(
-      callName: 'getAllUsers',
-      apiUrl: '$baseUrl/api/backoffice/user',
-      callType: ApiCallType.GET,
-      headers: {
-        'Authorization': 'Bearer $bearerAuthentication',
-      },
-      params: {
-        'pageNo': pageNo,
-        'pageSize': pageSize,
-        'filter': filter,
-        'firstName': firstName,
-        'lastName': lastName,
-        'identification': identification,
-        'email': email,
-        'type': type,
-        'state': state,
-        'sortBy': sortBy,
-        'sortType': sortType,
-      },
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
-class UpdateUser1Call {
-  Future<ApiCallResponse> call({
-    String? bearerAuthentication = '',
-  }) async {
-    final baseUrl = TTeamsAPIIdentityServiceDocumentationGroup.getBaseUrl();
-
-    const ffApiRequestBody = '''
-{
-  "id": "",
-  "firstName": "",
-  "lastName": "",
-  "identification": "",
-  "email": "",
-  "password": "",
-  "type": "ADMIN",
-  "state": "ACTIVE",
-  "profile": "",
-  "registrationState": "VERIFICATION_ACCEPTED",
-  "phone": ""
-}''';
-    return ApiManager.instance.makeApiCall(
-      callName: 'updateUser_1',
-      apiUrl: '$baseUrl/api/backoffice/user',
-      callType: ApiCallType.PUT,
-      headers: {
-        'Authorization': 'Bearer $bearerAuthentication',
-      },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
-class CreateUserCall {
-  Future<ApiCallResponse> call({
-    String? bearerAuthentication = '',
-  }) async {
-    final baseUrl = TTeamsAPIIdentityServiceDocumentationGroup.getBaseUrl();
-
-    const ffApiRequestBody = '''
-{
-  "firstName": "",
-  "lastName": "",
-  "identification": "",
-  "email": "",
-  "password": "",
-  "type": "ADMIN",
-  "state": "ACTIVE",
-  "profile": "",
-  "registrationState": "VERIFICATION_ACCEPTED",
-  "phone": ""
-}''';
-    return ApiManager.instance.makeApiCall(
-      callName: 'createUser',
-      apiUrl: '$baseUrl/api/backoffice/user',
-      callType: ApiCallType.POST,
-      headers: {
-        'Authorization': 'Bearer $bearerAuthentication',
-      },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
-class GetAll1Call {
-  Future<ApiCallResponse> call({
-    int? pageNo,
-    int? pageSize,
-    String? name = '',
-    String? resource = '',
-    String? action = '',
-    String? state = '',
-    String? sortBy = '',
-    String? sortType = '',
-    String? bearerAuthentication = '',
-  }) async {
-    final baseUrl = TTeamsAPIIdentityServiceDocumentationGroup.getBaseUrl();
-
-    return ApiManager.instance.makeApiCall(
-      callName: 'getAll_1',
-      apiUrl: '$baseUrl/api/authorization',
-      callType: ApiCallType.GET,
-      headers: {
-        'Authorization': 'Bearer $bearerAuthentication',
-      },
-      params: {
-        'pageNo': pageNo,
-        'pageSize': pageSize,
-        'name': name,
-        'resource': resource,
-        'action': action,
-        'state': state,
-        'sortBy': sortBy,
-        'sortType': sortType,
-      },
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
-class Update1Call {
-  Future<ApiCallResponse> call({
-    String? bearerAuthentication = '',
-  }) async {
-    final baseUrl = TTeamsAPIIdentityServiceDocumentationGroup.getBaseUrl();
-
-    const ffApiRequestBody = '''
-{
-  "id": "",
-  "name": "",
-  "resource": "",
-  "action": "VIEW",
-  "state": "ACTIVE"
-}''';
-    return ApiManager.instance.makeApiCall(
-      callName: 'update_1',
-      apiUrl: '$baseUrl/api/authorization',
-      callType: ApiCallType.PUT,
-      headers: {
-        'Authorization': 'Bearer $bearerAuthentication',
-      },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
-class Create1Call {
-  Future<ApiCallResponse> call({
-    String? bearerAuthentication = '',
-  }) async {
-    final baseUrl = TTeamsAPIIdentityServiceDocumentationGroup.getBaseUrl();
-
-    const ffApiRequestBody = '''
-{
-  "name": "",
-  "resource": "",
-  "action": "VIEW"
-}''';
-    return ApiManager.instance.makeApiCall(
-      callName: 'create_1',
-      apiUrl: '$baseUrl/api/authorization',
-      callType: ApiCallType.POST,
-      headers: {
-        'Authorization': 'Bearer $bearerAuthentication',
-      },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
 }
 
 class RegisterUserSendDataCall {
   Future<ApiCallResponse> call({
-    String? bearerAuthentication = '',
+    String? firstName = '',
+    String? lastName = '',
+    String? email = '',
+    String? password = '',
+    int? phone,
   }) async {
-    final baseUrl = TTeamsAPIIdentityServiceDocumentationGroup.getBaseUrl();
+    final baseUrl = TTeamsAPILoginAndRegisterGroup.getBaseUrl();
 
-    const ffApiRequestBody = '''
+    final ffApiRequestBody = '''
 {
-  "firstName": "",
-  "lastName": "",
-  "email": "",
-  "phone": "",
-  "password": ""
+  "firstName": "$firstName",
+  "lastName": "$lastName",
+  "email": "$email",
+  "phone": "$phone",
+  "password": "$password"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'registerUserSendData',
       apiUrl: '$baseUrl/api/user/register',
       callType: ApiCallType.POST,
-      headers: {
-        'Authorization': 'Bearer $bearerAuthentication',
-      },
+      headers: {},
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -378,127 +59,23 @@ class RegisterUserSendDataCall {
 
 class RegisterUserCheckCodeCall {
   Future<ApiCallResponse> call({
-    String? bearerAuthentication = '',
+    int? code,
+    String? password = '',
   }) async {
-    final baseUrl = TTeamsAPIIdentityServiceDocumentationGroup.getBaseUrl();
+    final baseUrl = TTeamsAPILoginAndRegisterGroup.getBaseUrl();
 
-    const ffApiRequestBody = '''
+    final ffApiRequestBody = '''
 {
-  "code": "",
-  "password": ""
+  "code": "$code",
+  "password": "$password"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'registerUserCheckCode',
       apiUrl: '$baseUrl/api/user/register/code',
       callType: ApiCallType.POST,
-      headers: {
-        'Authorization': 'Bearer $bearerAuthentication',
-      },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
-class ChangePasswordCall {
-  Future<ApiCallResponse> call({
-    String? bearerAuthentication = '',
-  }) async {
-    final baseUrl = TTeamsAPIIdentityServiceDocumentationGroup.getBaseUrl();
-
-    const ffApiRequestBody = '''
-{
-  "email": "",
-  "oldPassword": "",
-  "newPassword": ""
-}''';
-    return ApiManager.instance.makeApiCall(
-      callName: 'changePassword',
-      apiUrl: '$baseUrl/api/user/change/password',
-      callType: ApiCallType.POST,
-      headers: {
-        'Authorization': 'Bearer $bearerAuthentication',
-      },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
-class SpreadUsersCall {
-  Future<ApiCallResponse> call({
-    String? bearerAuthentication = '',
-  }) async {
-    final baseUrl = TTeamsAPIIdentityServiceDocumentationGroup.getBaseUrl();
-
-    return ApiManager.instance.makeApiCall(
-      callName: 'spreadUsers',
-      apiUrl: '$baseUrl/api/shared/spread',
-      callType: ApiCallType.POST,
-      headers: {
-        'Authorization': 'Bearer $bearerAuthentication',
-      },
-      params: {},
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
-class ValidateCall {
-  Future<ApiCallResponse> call({
-    String? token = '',
-  }) async {
-    final baseUrl = TTeamsAPIIdentityServiceDocumentationGroup.getBaseUrl();
-
-    return ApiManager.instance.makeApiCall(
-      callName: 'validate',
-      apiUrl: '$baseUrl/api/auth/validate',
-      callType: ApiCallType.POST,
       headers: {},
       params: {},
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
-class RefreshCall {
-  Future<ApiCallResponse> call({
-    String? token = '',
-  }) async {
-    final baseUrl = TTeamsAPIIdentityServiceDocumentationGroup.getBaseUrl();
-
-    return ApiManager.instance.makeApiCall(
-      callName: 'refresh',
-      apiUrl: '$baseUrl/api/auth/refresh',
-      callType: ApiCallType.POST,
-      headers: {},
-      params: {},
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -515,7 +92,7 @@ class LoginCall {
     String? email = '',
     String? password = '',
   }) async {
-    final baseUrl = TTeamsAPIIdentityServiceDocumentationGroup.getBaseUrl();
+    final baseUrl = TTeamsAPILoginAndRegisterGroup.getBaseUrl();
 
     final ffApiRequestBody = '''
 {
@@ -549,18 +126,731 @@ class LoginCall {
       );
 }
 
+/// End TTeams API Login And Register Group Code
+
+/// Start TTeams API Identity Group Code
+
+class TTeamsAPIIdentityGroup {
+  static String getBaseUrl({
+    String? jwt = '',
+  }) =>
+      'http://localhost:8091/identity';
+  static Map<String, String> headers = {
+    'Authorization': 'Bearer [JWT]',
+  };
+  static UpdateUserCall updateUserCall = UpdateUserCall();
+  static GetAllProfilesCall getAllProfilesCall = GetAllProfilesCall();
+  static UpdateProfileCall updateProfileCall = UpdateProfileCall();
+  static CreateProfileCall createProfileCall = CreateProfileCall();
+  static GetAllCall getAllCall = GetAllCall();
+  static UpdateCall updateCall = UpdateCall();
+  static CreateCall createCall = CreateCall();
+  static GetAllUsersCall getAllUsersCall = GetAllUsersCall();
+  static UpdateUseBackofficeCall updateUseBackofficeCall =
+      UpdateUseBackofficeCall();
+  static CreateUserCall createUserCall = CreateUserCall();
+  static GetAll1Call getAll1Call = GetAll1Call();
+  static Update1Call update1Call = Update1Call();
+  static Create1Call create1Call = Create1Call();
+  static ChangePasswordCall changePasswordCall = ChangePasswordCall();
+  static SpreadUsersCall spreadUsersCall = SpreadUsersCall();
+  static ValidateCall validateCall = ValidateCall();
+  static RefreshCall refreshCall = RefreshCall();
+  static RetrieveLoggedUserCall retrieveLoggedUserCall =
+      RetrieveLoggedUserCall();
+  static GetProfileCall getProfileCall = GetProfileCall();
+  static DeleteAgencyCall deleteAgencyCall = DeleteAgencyCall();
+  static GetByIdCall getByIdCall = GetByIdCall();
+  static DeleteCall deleteCall = DeleteCall();
+  static RetrieveUserCall retrieveUserCall = RetrieveUserCall();
+  static DeleteRoleCall deleteRoleCall = DeleteRoleCall();
+  static GetById1Call getById1Call = GetById1Call();
+  static Delete1Call delete1Call = Delete1Call();
+}
+
+class UpdateUserCall {
+  Future<ApiCallResponse> call({
+    String? bearerAuthentication = '',
+    String? jwt = '',
+  }) async {
+    final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
+      jwt: jwt,
+    );
+
+    const ffApiRequestBody = '''
+{
+  "id": "",
+  "firstName": "",
+  "lastName": "",
+  "identification": "",
+  "email": "",
+  "password": "",
+  "type": "ADMIN",
+  "state": "ACTIVE",
+  "profile": "",
+  "registrationState": "VERIFICATION_ACCEPTED",
+  "phone": ""
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'updateUser',
+      apiUrl: '$baseUrl/api/user',
+      callType: ApiCallType.PUT,
+      headers: {
+        'Authorization': 'Bearer $jwt',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class GetAllProfilesCall {
+  Future<ApiCallResponse> call({
+    int? pageNo,
+    int? pageSize,
+    String? filter = '',
+    String? sortBy = '',
+    String? sortType = '',
+    String? name = '',
+    String? description = '',
+    String? state = '',
+    String? organization = '',
+    String? bearerAuthentication = '',
+    String? jwt = '',
+  }) async {
+    final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
+      jwt: jwt,
+    );
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'getAllProfiles',
+      apiUrl: '$baseUrl/api/profile',
+      callType: ApiCallType.GET,
+      headers: {
+        'Authorization': 'Bearer $jwt',
+        'Authorization': 'Bearer $bearerAuthentication',
+      },
+      params: {
+        'pageNo': pageNo,
+        'pageSize': pageSize,
+        'filter': filter,
+        'sortBy': sortBy,
+        'sortType': sortType,
+        'name': name,
+        'description': description,
+        'state': state,
+        'organization': organization,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class UpdateProfileCall {
+  Future<ApiCallResponse> call({
+    String? bearerAuthentication = '',
+    String? jwt = '',
+  }) async {
+    final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
+      jwt: jwt,
+    );
+
+    const ffApiRequestBody = '''
+{
+  "id": "",
+  "name": "",
+  "description": "",
+  "state": "ACTIVE",
+  "organization": "",
+  "authorizations": [
+    ""
+  ]
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'updateProfile',
+      apiUrl: '$baseUrl/api/profile',
+      callType: ApiCallType.PUT,
+      headers: {
+        'Authorization': 'Bearer $jwt',
+        'Authorization': 'Bearer $bearerAuthentication',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class CreateProfileCall {
+  Future<ApiCallResponse> call({
+    String? bearerAuthentication = '',
+    String? jwt = '',
+  }) async {
+    final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
+      jwt: jwt,
+    );
+
+    const ffApiRequestBody = '''
+{
+  "name": "",
+  "description": "",
+  "organization": "",
+  "state": "ACTIVE",
+  "authorizations": [
+    ""
+  ]
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'createProfile',
+      apiUrl: '$baseUrl/api/profile',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer $jwt',
+        'Authorization': 'Bearer $bearerAuthentication',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class GetAllCall {
+  Future<ApiCallResponse> call({
+    int? pageNo,
+    int? pageSize,
+    String? name = '',
+    String? description = '',
+    String? contact = '',
+    String? state = '',
+    String? sortBy = '',
+    String? sortType = '',
+    String? bearerAuthentication = '',
+    String? jwt = '',
+  }) async {
+    final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
+      jwt: jwt,
+    );
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'getAll',
+      apiUrl: '$baseUrl/api/organization',
+      callType: ApiCallType.GET,
+      headers: {
+        'Authorization': 'Bearer $jwt',
+        'Authorization': 'Bearer $bearerAuthentication',
+      },
+      params: {
+        'pageNo': pageNo,
+        'pageSize': pageSize,
+        'name': name,
+        'description': description,
+        'contact': contact,
+        'state': state,
+        'sortBy': sortBy,
+        'sortType': sortType,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class UpdateCall {
+  Future<ApiCallResponse> call({
+    String? bearerAuthentication = '',
+    String? jwt = '',
+  }) async {
+    final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
+      jwt: jwt,
+    );
+
+    const ffApiRequestBody = '''
+{
+  "id": "",
+  "name": "",
+  "description": "",
+  "contact": "",
+  "state": "ACTIVE"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'update',
+      apiUrl: '$baseUrl/api/organization',
+      callType: ApiCallType.PUT,
+      headers: {
+        'Authorization': 'Bearer $jwt',
+        'Authorization': 'Bearer $bearerAuthentication',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class CreateCall {
+  Future<ApiCallResponse> call({
+    String? bearerAuthentication = '',
+    String? jwt = '',
+  }) async {
+    final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
+      jwt: jwt,
+    );
+
+    const ffApiRequestBody = '''
+{
+  "name": "",
+  "description": "",
+  "contact": ""
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'create',
+      apiUrl: '$baseUrl/api/organization',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer $jwt',
+        'Authorization': 'Bearer $bearerAuthentication',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class GetAllUsersCall {
+  Future<ApiCallResponse> call({
+    int? pageNo,
+    int? pageSize,
+    String? filter = '',
+    String? firstName = '',
+    String? lastName = '',
+    String? identification = '',
+    String? email = '',
+    String? type = '',
+    String? state = '',
+    String? sortBy = '',
+    String? sortType = '',
+    String? bearerAuthentication = '',
+    String? jwt = '',
+  }) async {
+    final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
+      jwt: jwt,
+    );
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'getAllUsers',
+      apiUrl: '$baseUrl/api/backoffice/user',
+      callType: ApiCallType.GET,
+      headers: {
+        'Authorization': 'Bearer $jwt',
+      },
+      params: {
+        'pageNo': pageNo,
+        'pageSize': pageSize,
+        'filter': filter,
+        'firstName': firstName,
+        'lastName': lastName,
+        'identification': identification,
+        'email': email,
+        'type': type,
+        'state': state,
+        'sortBy': sortBy,
+        'sortType': sortType,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class UpdateUseBackofficeCall {
+  Future<ApiCallResponse> call({
+    String? bearerAuthentication = '',
+    String? jwt = '',
+  }) async {
+    final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
+      jwt: jwt,
+    );
+
+    const ffApiRequestBody = '''
+{
+  "id": "",
+  "firstName": "",
+  "lastName": "",
+  "identification": "",
+  "email": "",
+  "password": "",
+  "type": "ADMIN",
+  "state": "ACTIVE",
+  "profile": "",
+  "registrationState": "VERIFICATION_ACCEPTED",
+  "phone": ""
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'updateUseBackoffice',
+      apiUrl: '$baseUrl/api/backoffice/user',
+      callType: ApiCallType.PUT,
+      headers: {
+        'Authorization': 'Bearer $jwt',
+        'Authorization': 'Bearer $bearerAuthentication',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class CreateUserCall {
+  Future<ApiCallResponse> call({
+    String? bearerAuthentication = '',
+    String? jwt = '',
+  }) async {
+    final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
+      jwt: jwt,
+    );
+
+    const ffApiRequestBody = '''
+{
+  "firstName": "",
+  "lastName": "",
+  "identification": "",
+  "email": "",
+  "password": "",
+  "type": "ADMIN",
+  "state": "ACTIVE",
+  "profile": "",
+  "registrationState": "VERIFICATION_ACCEPTED",
+  "phone": ""
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'createUser',
+      apiUrl: '$baseUrl/api/backoffice/user',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer $jwt',
+        'Authorization': 'Bearer $bearerAuthentication',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class GetAll1Call {
+  Future<ApiCallResponse> call({
+    int? pageNo,
+    int? pageSize,
+    String? name = '',
+    String? resource = '',
+    String? action = '',
+    String? state = '',
+    String? sortBy = '',
+    String? sortType = '',
+    String? bearerAuthentication = '',
+    String? jwt = '',
+  }) async {
+    final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
+      jwt: jwt,
+    );
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'getAll_1',
+      apiUrl: '$baseUrl/api/authorization',
+      callType: ApiCallType.GET,
+      headers: {
+        'Authorization': 'Bearer $jwt',
+        'Authorization': 'Bearer $bearerAuthentication',
+      },
+      params: {
+        'pageNo': pageNo,
+        'pageSize': pageSize,
+        'name': name,
+        'resource': resource,
+        'action': action,
+        'state': state,
+        'sortBy': sortBy,
+        'sortType': sortType,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class Update1Call {
+  Future<ApiCallResponse> call({
+    String? bearerAuthentication = '',
+    String? jwt = '',
+  }) async {
+    final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
+      jwt: jwt,
+    );
+
+    const ffApiRequestBody = '''
+{
+  "id": "",
+  "name": "",
+  "resource": "",
+  "action": "VIEW",
+  "state": "ACTIVE"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'update_1',
+      apiUrl: '$baseUrl/api/authorization',
+      callType: ApiCallType.PUT,
+      headers: {
+        'Authorization': 'Bearer $jwt',
+        'Authorization': 'Bearer $bearerAuthentication',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class Create1Call {
+  Future<ApiCallResponse> call({
+    String? bearerAuthentication = '',
+    String? jwt = '',
+  }) async {
+    final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
+      jwt: jwt,
+    );
+
+    const ffApiRequestBody = '''
+{
+  "name": "",
+  "resource": "",
+  "action": "VIEW"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'create_1',
+      apiUrl: '$baseUrl/api/authorization',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer $jwt',
+        'Authorization': 'Bearer $bearerAuthentication',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class ChangePasswordCall {
+  Future<ApiCallResponse> call({
+    String? bearerAuthentication = '',
+    String? jwt = '',
+  }) async {
+    final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
+      jwt: jwt,
+    );
+
+    const ffApiRequestBody = '''
+{
+  "email": "",
+  "oldPassword": "",
+  "newPassword": ""
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'changePassword',
+      apiUrl: '$baseUrl/api/user/change/password',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer $jwt',
+        'Authorization': 'Bearer $bearerAuthentication',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class SpreadUsersCall {
+  Future<ApiCallResponse> call({
+    String? bearerAuthentication = '',
+    String? jwt = '',
+  }) async {
+    final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
+      jwt: jwt,
+    );
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'spreadUsers',
+      apiUrl: '$baseUrl/api/shared/spread',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer $jwt',
+        'Authorization': 'Bearer $bearerAuthentication',
+      },
+      params: {},
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class ValidateCall {
+  Future<ApiCallResponse> call({
+    String? token = '',
+    String? jwt = '',
+  }) async {
+    final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
+      jwt: jwt,
+    );
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'validate',
+      apiUrl: '$baseUrl/api/auth/validate',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer $jwt',
+      },
+      params: {},
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class RefreshCall {
+  Future<ApiCallResponse> call({
+    String? token = '',
+    String? jwt = '',
+  }) async {
+    final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
+      jwt: jwt,
+    );
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'refresh',
+      apiUrl: '$baseUrl/api/auth/refresh',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer $jwt',
+      },
+      params: {},
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
 class RetrieveLoggedUserCall {
   Future<ApiCallResponse> call({
     String? authorization = '',
     String? bearerAuthentication = '',
+    String? jwt = '',
   }) async {
-    final baseUrl = TTeamsAPIIdentityServiceDocumentationGroup.getBaseUrl();
+    final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
+      jwt: jwt,
+    );
 
     return ApiManager.instance.makeApiCall(
       callName: 'retrieveLoggedUser',
       apiUrl: '$baseUrl/api/user/me',
       callType: ApiCallType.GET,
       headers: {
+        'Authorization': 'Bearer $jwt',
         'Authorization': '$authorization',
         'Authorization': 'Bearer $bearerAuthentication',
       },
@@ -579,14 +869,18 @@ class GetProfileCall {
   Future<ApiCallResponse> call({
     String? id = '',
     String? bearerAuthentication = '',
+    String? jwt = '',
   }) async {
-    final baseUrl = TTeamsAPIIdentityServiceDocumentationGroup.getBaseUrl();
+    final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
+      jwt: jwt,
+    );
 
     return ApiManager.instance.makeApiCall(
       callName: 'getProfile',
       apiUrl: '$baseUrl/api/profile/$id',
       callType: ApiCallType.GET,
       headers: {
+        'Authorization': 'Bearer $jwt',
         'Authorization': 'Bearer $bearerAuthentication',
       },
       params: {},
@@ -604,14 +898,18 @@ class DeleteAgencyCall {
   Future<ApiCallResponse> call({
     String? id = '',
     String? bearerAuthentication = '',
+    String? jwt = '',
   }) async {
-    final baseUrl = TTeamsAPIIdentityServiceDocumentationGroup.getBaseUrl();
+    final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
+      jwt: jwt,
+    );
 
     return ApiManager.instance.makeApiCall(
       callName: 'deleteAgency',
       apiUrl: '$baseUrl/api/profile/$id',
       callType: ApiCallType.DELETE,
       headers: {
+        'Authorization': 'Bearer $jwt',
         'Authorization': 'Bearer $bearerAuthentication',
       },
       params: {},
@@ -629,14 +927,18 @@ class GetByIdCall {
   Future<ApiCallResponse> call({
     String? id = '',
     String? bearerAuthentication = '',
+    String? jwt = '',
   }) async {
-    final baseUrl = TTeamsAPIIdentityServiceDocumentationGroup.getBaseUrl();
+    final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
+      jwt: jwt,
+    );
 
     return ApiManager.instance.makeApiCall(
       callName: 'getById',
       apiUrl: '$baseUrl/api/organization/$id',
       callType: ApiCallType.GET,
       headers: {
+        'Authorization': 'Bearer $jwt',
         'Authorization': 'Bearer $bearerAuthentication',
       },
       params: {},
@@ -654,14 +956,18 @@ class DeleteCall {
   Future<ApiCallResponse> call({
     String? id = '',
     String? bearerAuthentication = '',
+    String? jwt = '',
   }) async {
-    final baseUrl = TTeamsAPIIdentityServiceDocumentationGroup.getBaseUrl();
+    final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
+      jwt: jwt,
+    );
 
     return ApiManager.instance.makeApiCall(
       callName: 'delete',
       apiUrl: '$baseUrl/api/organization/$id',
       callType: ApiCallType.DELETE,
       headers: {
+        'Authorization': 'Bearer $jwt',
         'Authorization': 'Bearer $bearerAuthentication',
       },
       params: {},
@@ -679,14 +985,18 @@ class RetrieveUserCall {
   Future<ApiCallResponse> call({
     String? id = '',
     String? bearerAuthentication = '',
+    String? jwt = '',
   }) async {
-    final baseUrl = TTeamsAPIIdentityServiceDocumentationGroup.getBaseUrl();
+    final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
+      jwt: jwt,
+    );
 
     return ApiManager.instance.makeApiCall(
       callName: 'retrieveUser',
       apiUrl: '$baseUrl/api/backoffice/user/$id',
       callType: ApiCallType.GET,
       headers: {
+        'Authorization': 'Bearer $jwt',
         'Authorization': 'Bearer $bearerAuthentication',
       },
       params: {},
@@ -704,14 +1014,18 @@ class DeleteRoleCall {
   Future<ApiCallResponse> call({
     String? id = '',
     String? bearerAuthentication = '',
+    String? jwt = '',
   }) async {
-    final baseUrl = TTeamsAPIIdentityServiceDocumentationGroup.getBaseUrl();
+    final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
+      jwt: jwt,
+    );
 
     return ApiManager.instance.makeApiCall(
       callName: 'deleteRole',
       apiUrl: '$baseUrl/api/backoffice/user/$id',
       callType: ApiCallType.DELETE,
       headers: {
+        'Authorization': 'Bearer $jwt',
         'Authorization': 'Bearer $bearerAuthentication',
       },
       params: {},
@@ -725,19 +1039,22 @@ class DeleteRoleCall {
   }
 }
 
-class RetrieveLoggedUser1Call {
+class GetById1Call {
   Future<ApiCallResponse> call({
-    String? authorization = '',
+    String? id = '',
     String? bearerAuthentication = '',
+    String? jwt = '',
   }) async {
-    final baseUrl = TTeamsAPIIdentityServiceDocumentationGroup.getBaseUrl();
+    final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
+      jwt: jwt,
+    );
 
     return ApiManager.instance.makeApiCall(
-      callName: 'retrieveLoggedUser_1',
-      apiUrl: '$baseUrl/api/backoffice/user/me',
+      callName: 'getById_1',
+      apiUrl: '$baseUrl/api/authorization/$id',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': '$authorization',
+        'Authorization': 'Bearer $jwt',
         'Authorization': 'Bearer $bearerAuthentication',
       },
       params: {},
@@ -751,7 +1068,36 @@ class RetrieveLoggedUser1Call {
   }
 }
 
-/// End TTeams API, identity service documentation Group Code
+class Delete1Call {
+  Future<ApiCallResponse> call({
+    String? id = '',
+    String? bearerAuthentication = '',
+    String? jwt = '',
+  }) async {
+    final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
+      jwt: jwt,
+    );
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'delete_1',
+      apiUrl: '$baseUrl/api/authorization/$id',
+      callType: ApiCallType.DELETE,
+      headers: {
+        'Authorization': 'Bearer $jwt',
+        'Authorization': 'Bearer $bearerAuthentication',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+/// End TTeams API Identity Group Code
 
 class ApiPagingParams {
   int nextPageNumber = 0;

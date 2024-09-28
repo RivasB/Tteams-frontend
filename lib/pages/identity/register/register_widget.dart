@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -696,18 +697,55 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         0.0, 0.0, 0.0, 16.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
-                                        context.pushNamed(
-                                          'verifyAccount',
-                                          extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
-                                              hasTransition: true,
-                                              transitionType: PageTransitionType
-                                                  .rightToLeft,
-                                              duration:
-                                                  Duration(milliseconds: 200),
-                                            ),
-                                          },
+                                        _model.registerResponse =
+                                            await TTeamsAPILoginAndRegisterGroup
+                                                .registerUserSendDataCall
+                                                .call(
+                                          firstName:
+                                              _model.nameTextController.text,
+                                          lastName: _model
+                                              .lastNameTextController.text,
+                                          email: _model
+                                              .emailAddressTextController.text,
+                                          phone: int.tryParse(_model
+                                              .telefonoTextController.text),
+                                          password: _model
+                                              .passwordTextController.text,
                                         );
+
+                                        if ((_model
+                                                .registerResponse?.succeeded ??
+                                            true)) {
+                                          context.pushNamed(
+                                            'verifyAccount',
+                                            queryParameters: {
+                                              'password': serializeParam(
+                                                _model.passwordTextController
+                                                    .text,
+                                                ParamType.String,
+                                              ),
+                                              'email': serializeParam(
+                                                _model
+                                                    .emailAddressTextController
+                                                    .text,
+                                                ParamType.String,
+                                              ),
+                                            }.withoutNulls,
+                                            extra: <String, dynamic>{
+                                              kTransitionInfoKey:
+                                                  const TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType
+                                                        .rightToLeft,
+                                                duration:
+                                                    Duration(milliseconds: 200),
+                                              ),
+                                            },
+                                          );
+                                        }
+
+                                        safeSetState(() {});
                                       },
                                       text: 'Crear cuenta',
                                       options: FFButtonOptions(

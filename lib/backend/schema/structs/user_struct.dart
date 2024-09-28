@@ -9,10 +9,10 @@ class UserStruct extends BaseStruct {
   UserStruct({
     String? uid,
     String? displayName,
-    String? createTime,
+    String? email,
   })  : _uid = uid,
         _displayName = displayName,
-        _createTime = createTime;
+        _email = email;
 
   // "uid" field.
   String? _uid;
@@ -28,17 +28,17 @@ class UserStruct extends BaseStruct {
 
   bool hasDisplayName() => _displayName != null;
 
-  // "create_time" field.
-  String? _createTime;
-  String get createTime => _createTime ?? '';
-  set createTime(String? val) => _createTime = val;
+  // "email" field.
+  String? _email;
+  String get email => _email ?? '';
+  set email(String? val) => _email = val;
 
-  bool hasCreateTime() => _createTime != null;
+  bool hasEmail() => _email != null;
 
   static UserStruct fromMap(Map<String, dynamic> data) => UserStruct(
         uid: data['uid'] as String?,
         displayName: data['display_name'] as String?,
-        createTime: data['create_time'] as String?,
+        email: data['email'] as String?,
       );
 
   static UserStruct? maybeFromMap(dynamic data) =>
@@ -47,7 +47,7 @@ class UserStruct extends BaseStruct {
   Map<String, dynamic> toMap() => {
         'uid': _uid,
         'display_name': _displayName,
-        'create_time': _createTime,
+        'email': _email,
       }.withoutNulls;
 
   @override
@@ -60,8 +60,8 @@ class UserStruct extends BaseStruct {
           _displayName,
           ParamType.String,
         ),
-        'create_time': serializeParam(
-          _createTime,
+        'email': serializeParam(
+          _email,
           ParamType.String,
         ),
       }.withoutNulls;
@@ -78,8 +78,8 @@ class UserStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
-        createTime: deserializeParam(
-          data['create_time'],
+        email: deserializeParam(
+          data['email'],
           ParamType.String,
           false,
         ),
@@ -93,20 +93,20 @@ class UserStruct extends BaseStruct {
     return other is UserStruct &&
         uid == other.uid &&
         displayName == other.displayName &&
-        createTime == other.createTime;
+        email == other.email;
   }
 
   @override
-  int get hashCode => const ListEquality().hash([uid, displayName, createTime]);
+  int get hashCode => const ListEquality().hash([uid, displayName, email]);
 }
 
 UserStruct createUserStruct({
   String? uid,
   String? displayName,
-  String? createTime,
+  String? email,
 }) =>
     UserStruct(
       uid: uid,
       displayName: displayName,
-      createTime: createTime,
+      email: email,
     );

@@ -121,7 +121,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'verifyAccount',
           path: '/verifyAccount',
           requireAuth: true,
-          builder: (context, params) => const VerifyAccountWidget(),
+          builder: (context, params) => VerifyAccountWidget(
+            password: params.getParam(
+              'password',
+              ParamType.String,
+            ),
+            email: params.getParam(
+              'email',
+              ParamType.String,
+            ),
+          ),
         ),
         FFRoute(
           name: 'userManagement',
