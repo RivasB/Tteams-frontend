@@ -345,24 +345,27 @@ class Create1Call {
 class RegisterUserSendDataCall {
   Future<ApiCallResponse> call({
     String? bearerAuthentication = '',
+    String? firstName = '',
+    String? lastName = '',
+    String? email = '',
+    String? password = '',
+    int? phone,
   }) async {
     final baseUrl = TTeamsAPIIdentityServiceDocumentationGroup.getBaseUrl();
 
-    const ffApiRequestBody = '''
+    final ffApiRequestBody = '''
 {
-  "firstName": "",
-  "lastName": "",
-  "email": "",
-  "phone": "",
-  "password": ""
+  "firstName": "$firstName",
+  "lastName": "$lastName",
+  "email": "$email",
+  "phone": "$phone",
+  "password": "$password"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'registerUserSendData',
       apiUrl: '$baseUrl/api/user/register',
       callType: ApiCallType.POST,
-      headers: {
-        'Authorization': 'Bearer $bearerAuthentication',
-      },
+      headers: {},
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -379,21 +382,21 @@ class RegisterUserSendDataCall {
 class RegisterUserCheckCodeCall {
   Future<ApiCallResponse> call({
     String? bearerAuthentication = '',
+    int? code,
+    String? password = '',
   }) async {
     final baseUrl = TTeamsAPIIdentityServiceDocumentationGroup.getBaseUrl();
 
-    const ffApiRequestBody = '''
+    final ffApiRequestBody = '''
 {
-  "code": "",
-  "password": ""
+  "code": "$code",
+  "password": "$password"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'registerUserCheckCode',
       apiUrl: '$baseUrl/api/user/register/code',
       callType: ApiCallType.POST,
-      headers: {
-        'Authorization': 'Bearer $bearerAuthentication',
-      },
+      headers: {},
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,

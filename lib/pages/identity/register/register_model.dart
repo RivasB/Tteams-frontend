@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'register_widget.dart' show RegisterWidget;
 import 'package:flutter/material.dart';
@@ -34,6 +35,8 @@ class RegisterModel extends FlutterFlowModel<RegisterWidget> {
   late bool passwordConfirmVisibility;
   String? Function(BuildContext, String?)?
       passwordConfirmTextControllerValidator;
+  // Stores action output result for [Backend Call - API (registerUserSendData)] action in Button widget.
+  ApiCallResponse? registerResponse;
 
   @override
   void initState(BuildContext context) {
