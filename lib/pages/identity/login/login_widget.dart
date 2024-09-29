@@ -415,18 +415,21 @@ class _LoginWidgetState extends State<LoginWidget>
                                     context.goNamedAuth(
                                         'home', context.mounted);
                                   } else {
+                                    ScaffoldMessenger.of(context)
+                                        .clearSnackBars();
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       SnackBar(
                                         content: Text(
                                           TTeamsAPILoginAndRegisterGroup
-                                              .loginCall
-                                              .errors(
-                                                (_model.logInResponse
-                                                        ?.jsonBody ??
-                                                    ''),
-                                              )!
-                                              .first
-                                              .toString(),
+                                                  .loginCall
+                                                  .errors(
+                                                    (_model.logInResponse
+                                                            ?.jsonBody ??
+                                                        ''),
+                                                  )!
+                                                  .first
+                                              ? 'Credenciales inválidas. Verifique su correo electrónico y su contraseña.'
+                                              : 'Ha ocurrido un error inesperado. Estamos trabajando para determinar que ha pasado.',
                                           style: FlutterFlowTheme.of(context)
                                               .titleSmall
                                               .override(
@@ -435,8 +438,17 @@ class _LoginWidgetState extends State<LoginWidget>
                                                         .titleSmallFamily,
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .primaryText,
+                                                        .primaryBackground,
                                                 letterSpacing: 0.0,
+                                                shadows: [
+                                                  Shadow(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryText,
+                                                    offset: const Offset(2.0, 2.0),
+                                                    blurRadius: 2.0,
+                                                  )
+                                                ],
                                                 useGoogleFonts: GoogleFonts
                                                         .asMap()
                                                     .containsKey(
@@ -445,7 +457,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                             .titleSmallFamily),
                                               ),
                                         ),
-                                        duration: const Duration(milliseconds: 4000),
+                                        duration: const Duration(milliseconds: 3000),
                                         backgroundColor:
                                             FlutterFlowTheme.of(context).error,
                                       ),
