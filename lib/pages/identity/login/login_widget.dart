@@ -414,13 +414,33 @@ class _LoginWidgetState extends State<LoginWidget>
                                     context.goNamedAuth(
                                         'home', context.mounted);
                                   } else {
-                                    safeSetState(() {
-                                      _model.passwordTextController?.text =
-                                          getJsonField(
-                                        (_model.logInResponse?.jsonBody ?? ''),
-                                        r'''$.errors''',
-                                      ).toString();
-                                    });
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text(
+                                          'El usuario o contraseña incorrecto.',
+                                          style: FlutterFlowTheme.of(context)
+                                              .titleSmall
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmallFamily,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                letterSpacing: 0.0,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmallFamily),
+                                              ),
+                                        ),
+                                        duration: const Duration(milliseconds: 4000),
+                                        backgroundColor:
+                                            FlutterFlowTheme.of(context).error,
+                                      ),
+                                    );
                                   }
 
                                   safeSetState(() {});

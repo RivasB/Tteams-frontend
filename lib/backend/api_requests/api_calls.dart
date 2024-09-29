@@ -124,6 +124,11 @@ class LoginCall {
         response,
         r'''$.data.usefulLifeInMillis''',
       );
+  List? errors(dynamic response) => getJsonField(
+        response,
+        r'''$.errors''',
+        true,
+      ) as List?;
 }
 
 /// End TTeams API Login And Register Group Code
