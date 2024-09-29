@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'login_model.dart';
@@ -224,6 +223,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                   focusNode: _model.emailAddressFocusNode,
                                   autofocus: true,
                                   autofillHints: const [AutofillHints.email],
+                                  textCapitalization: TextCapitalization.none,
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     labelText: 'Email',
@@ -284,10 +284,6 @@ class _LoginWidgetState extends State<LoginWidget>
                                   validator: _model
                                       .emailAddressTextControllerValidator
                                       .asValidator(context),
-                                  inputFormatters: [
-                                    FilteringTextInputFormatter.allow(RegExp(
-                                        '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}\$'))
-                                  ],
                                 ),
                               ),
                             ),
@@ -422,7 +418,15 @@ class _LoginWidgetState extends State<LoginWidget>
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       SnackBar(
                                         content: Text(
-                                          'El usuario o contraseña incorrecto.',
+                                          TTeamsAPILoginAndRegisterGroup
+                                              .loginCall
+                                              .errors(
+                                                (_model.logInResponse
+                                                        ?.jsonBody ??
+                                                    ''),
+                                              )!
+                                              .first
+                                              .toString(),
                                           style: FlutterFlowTheme.of(context)
                                               .titleSmall
                                               .override(
