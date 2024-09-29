@@ -1,8 +1,9 @@
-import '/components/admin_user_switch_off_widget.dart';
+import '/component/admin/admin_user_switch_off/admin_user_switch_off_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'tteaams_menu_admin_model.dart';
 export 'tteaams_menu_admin_model.dart';
 
@@ -88,6 +89,8 @@ class _TteaamsMenuAdminWidgetState extends State<TteaamsMenuAdminWidget> {
                                   fontSize: 24.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
+                                  useGoogleFonts:
+                                      GoogleFonts.asMap().containsKey('Outfit'),
                                 ),
                           ),
                         ),
@@ -145,6 +148,8 @@ class _TteaamsMenuAdminWidgetState extends State<TteaamsMenuAdminWidget> {
                                         fontSize: 16.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey('Plus Jakarta Sans'),
                                       ),
                                 ),
                                 Padding(
@@ -160,6 +165,8 @@ class _TteaamsMenuAdminWidgetState extends State<TteaamsMenuAdminWidget> {
                                           fontSize: 12.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey('Plus Jakarta Sans'),
                                         ),
                                   ),
                                 ),
@@ -236,6 +243,8 @@ class _TteaamsMenuAdminWidgetState extends State<TteaamsMenuAdminWidget> {
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey('Plus Jakarta Sans'),
                                   ),
                         ),
                       ),
@@ -297,6 +306,8 @@ class _TteaamsMenuAdminWidgetState extends State<TteaamsMenuAdminWidget> {
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey('Plus Jakarta Sans'),
                                   ),
                         ),
                       ),
@@ -350,6 +361,8 @@ class _TteaamsMenuAdminWidgetState extends State<TteaamsMenuAdminWidget> {
                                   fontSize: 16.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey('Plus Jakarta Sans'),
                                 ),
                       ),
                     ),
@@ -402,6 +415,8 @@ class _TteaamsMenuAdminWidgetState extends State<TteaamsMenuAdminWidget> {
                                   fontSize: 16.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey('Plus Jakarta Sans'),
                                 ),
                       ),
                     ),

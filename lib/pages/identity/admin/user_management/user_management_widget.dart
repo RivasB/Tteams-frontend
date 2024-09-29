@@ -1,11 +1,12 @@
 import '/component/admin/tteaams_menu_admin/tteaams_menu_admin_widget.dart';
 import '/component/tteams_top_bar/tteams_top_bar_widget.dart';
-import '/components/user_list_component_widget.dart';
+import '/component/user/user_list_component/user_list_component_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'user_management_model.dart';
 export 'user_management_model.dart';
 
@@ -200,6 +201,10 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w500,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              'Plus Jakarta Sans'),
                                                                     ),
                                                               ),
                                                               if (responsiveVisibility(
@@ -252,6 +257,8 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                                               0.0,
                                                                           fontWeight:
                                                                               FontWeight.w600,
+                                                                          useGoogleFonts:
+                                                                              GoogleFonts.asMap().containsKey('Outfit'),
                                                                         ),
                                                                   ),
                                                                 ),
@@ -303,6 +310,8 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                                               0.0,
                                                                           fontWeight:
                                                                               FontWeight.w500,
+                                                                          useGoogleFonts:
+                                                                              GoogleFonts.asMap().containsKey('Plus Jakarta Sans'),
                                                                         ),
                                                                   ),
                                                                 ),
@@ -398,6 +407,10 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w500,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              'Plus Jakarta Sans'),
                                                                     ),
                                                               ),
                                                               if (responsiveVisibility(
@@ -450,6 +463,8 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                                               0.0,
                                                                           fontWeight:
                                                                               FontWeight.w600,
+                                                                          useGoogleFonts:
+                                                                              GoogleFonts.asMap().containsKey('Outfit'),
                                                                         ),
                                                                   ),
                                                                 ),
@@ -501,6 +516,8 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                                               0.0,
                                                                           fontWeight:
                                                                               FontWeight.w500,
+                                                                          useGoogleFonts:
+                                                                              GoogleFonts.asMap().containsKey('Plus Jakarta Sans'),
                                                                         ),
                                                                   ),
                                                                 ),
@@ -580,6 +597,10 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w500,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            'Plus Jakarta Sans'),
                                                                   ),
                                                             ),
                                                           ),
@@ -631,6 +652,10 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w500,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          'Plus Jakarta Sans'),
                                                                 ),
                                                         elevation: 2.0,
                                                         borderSide: const BorderSide(
@@ -701,6 +726,10 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w500,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            'Plus Jakarta Sans'),
                                                                   ),
                                                             ),
                                                           ),
@@ -727,6 +756,10 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w500,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              'Plus Jakarta Sans'),
                                                                     ),
                                                               ),
                                                             ),
@@ -753,6 +786,10 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w500,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              'Plus Jakarta Sans'),
                                                                     ),
                                                               ),
                                                             ),
@@ -775,6 +812,10 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w500,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            'Plus Jakarta Sans'),
                                                                   ),
                                                             ),
                                                           ),
@@ -800,6 +841,10 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w500,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            'Plus Jakarta Sans'),
                                                                   ),
                                                             ),
                                                           ),
