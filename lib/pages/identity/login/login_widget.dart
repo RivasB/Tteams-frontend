@@ -413,6 +413,14 @@ class _LoginWidgetState extends State<LoginWidget>
 
                                     context.goNamedAuth(
                                         'home', context.mounted);
+                                  } else {
+                                    safeSetState(() {
+                                      _model.passwordTextController?.text =
+                                          getJsonField(
+                                        (_model.logInResponse?.jsonBody ?? ''),
+                                        r'''$.errors''',
+                                      ).toString();
+                                    });
                                   }
 
                                   safeSetState(() {});
