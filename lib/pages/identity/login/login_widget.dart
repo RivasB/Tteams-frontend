@@ -420,16 +420,18 @@ class _LoginWidgetState extends State<LoginWidget>
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       SnackBar(
                                         content: Text(
-                                          TTeamsAPILoginAndRegisterGroup
-                                                  .loginCall
-                                                  .errors(
-                                                    (_model.logInResponse
-                                                            ?.jsonBody ??
-                                                        ''),
-                                                  )!
-                                                  .first
-                                              ? 'Credenciales inválidas. Verifique su correo electrónico y su contraseña.'
-                                              : 'Ha ocurrido un error inesperado. Estamos trabajando para determinar que ha pasado.',
+                                          valueOrDefault<String>(
+                                            TTeamsAPILoginAndRegisterGroup
+                                                .loginCall
+                                                .errors(
+                                                  (_model.logInResponse
+                                                          ?.jsonBody ??
+                                                      ''),
+                                                )
+                                                ?.first
+                                                ?.toString(),
+                                            '¡Ha ocurrido un error inesperado! Estamos tratando de encontrar la causa.',
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .titleSmall
                                               .override(
