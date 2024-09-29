@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'sprint_options_model.dart';
 export 'sprint_options_model.dart';
 
@@ -78,8 +79,11 @@ class _SprintOptionsWidgetState extends State<SprintOptionsWidget> {
                       Text(
                         'Sprint 01',
                         style: FlutterFlowTheme.of(context).bodyLarge.override(
-                              fontFamily: 'Readex Pro',
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyLargeFamily,
                               letterSpacing: 0.0,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context).bodyLargeFamily),
                             ),
                       ),
                       if (responsiveVisibility(
@@ -94,8 +98,12 @@ class _SprintOptionsWidgetState extends State<SprintOptionsWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelSmallFamily,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .labelSmallFamily),
                                 ),
                           ),
                         ),
@@ -136,9 +144,12 @@ class _SprintOptionsWidgetState extends State<SprintOptionsWidget> {
                       const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).secondary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Readex Pro',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).titleSmallFamily,
                         color: Colors.white,
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).titleSmallFamily),
                       ),
                   elevation: 0.0,
                   borderRadius: BorderRadius.circular(8.0),

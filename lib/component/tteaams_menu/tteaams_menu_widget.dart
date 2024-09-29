@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'tteaams_menu_model.dart';
 export 'tteaams_menu_model.dart';
 
@@ -88,6 +89,8 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                                   fontSize: 24.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
+                                  useGoogleFonts:
+                                      GoogleFonts.asMap().containsKey('Outfit'),
                                 ),
                           ),
                         ),
@@ -145,6 +148,8 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                                         fontSize: 16.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey('Plus Jakarta Sans'),
                                       ),
                                 ),
                                 Padding(
@@ -160,6 +165,8 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                                           fontSize: 12.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey('Plus Jakarta Sans'),
                                         ),
                                   ),
                                 ),
@@ -234,6 +241,8 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey('Plus Jakarta Sans'),
                                   ),
                         ),
                       ),
@@ -287,6 +296,8 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                                   fontSize: 14.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey('Plus Jakarta Sans'),
                                 ),
                       ),
                     ),
@@ -339,6 +350,8 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                                   fontSize: 14.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey('Plus Jakarta Sans'),
                                 ),
                       ),
                     ),
@@ -390,6 +403,8 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                               fontSize: 16.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w500,
+                              useGoogleFonts: GoogleFonts.asMap()
+                                  .containsKey('Plus Jakarta Sans'),
                             ),
                       ),
                     ),
@@ -454,6 +469,8 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey('Plus Jakarta Sans'),
                                   ),
                         ),
                       ),
@@ -506,6 +523,8 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                               fontSize: 16.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w500,
+                              useGoogleFonts: GoogleFonts.asMap()
+                                  .containsKey('Plus Jakarta Sans'),
                             ),
                       ),
                     ),
@@ -562,6 +581,8 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                               fontSize: 16.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w500,
+                              useGoogleFonts: GoogleFonts.asMap()
+                                  .containsKey('Plus Jakarta Sans'),
                             ),
                       ),
                     ),
@@ -613,6 +634,8 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                               fontSize: 16.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w500,
+                              useGoogleFonts: GoogleFonts.asMap()
+                                  .containsKey('Plus Jakarta Sans'),
                             ),
                       ),
                     ),

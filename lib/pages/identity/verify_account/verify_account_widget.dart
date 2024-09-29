@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'verify_account_model.dart';
 export 'verify_account_model.dart';
 
@@ -164,6 +165,8 @@ class _VerifyAccountWidgetState extends State<VerifyAccountWidget>
                                   fontSize: 36.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey('Plus Jakarta Sans'),
                                 ),
                           ),
                         ],
@@ -210,6 +213,8 @@ class _VerifyAccountWidgetState extends State<VerifyAccountWidget>
                                       fontSize: 36.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey('Plus Jakarta Sans'),
                                     ),
                               ),
                               Padding(
@@ -221,8 +226,13 @@ class _VerifyAccountWidgetState extends State<VerifyAccountWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Readex Pro',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelMediumFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMediumFamily),
                                       ),
                                 ),
                               ),
@@ -269,8 +279,13 @@ class _VerifyAccountWidgetState extends State<VerifyAccountWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: 'Outfit',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .headlineSmallFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmallFamily),
                                       ),
                                 ),
                               ),
@@ -295,6 +310,9 @@ class _VerifyAccountWidgetState extends State<VerifyAccountWidget>
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w500,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    'Plus Jakarta Sans'),
                                           ),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: const BorderSide(
@@ -339,6 +357,8 @@ class _VerifyAccountWidgetState extends State<VerifyAccountWidget>
                                           fontSize: 16.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey('Plus Jakarta Sans'),
                                         ),
                                     maxLength: 6,
                                     maxLengthEnforcement:
@@ -427,9 +447,15 @@ class _VerifyAccountWidgetState extends State<VerifyAccountWidget>
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Readex Pro',
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily,
                                             color: Colors.white,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmallFamily),
                                           ),
                                       elevation: 3.0,
                                       borderRadius: BorderRadius.circular(12.0),
@@ -446,9 +472,14 @@ class _VerifyAccountWidgetState extends State<VerifyAccountWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Readex Pro',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelMediumFamily,
                                         letterSpacing: 0.0,
                                         fontStyle: FontStyle.italic,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMediumFamily),
                                       ),
                                 ),
                               ),
@@ -474,9 +505,15 @@ class _VerifyAccountWidgetState extends State<VerifyAccountWidget>
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Readex Pro',
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily,
                                             color: Colors.white,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmallFamily),
                                           ),
                                       elevation: 3.0,
                                       borderRadius: BorderRadius.circular(12.0),

@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'user_list_component_model.dart';
 export 'user_list_component_model.dart';
 
@@ -100,6 +101,8 @@ class _UserListComponentWidgetState extends State<UserListComponentWidget> {
                                       fontSize: 14.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey('Plus Jakarta Sans'),
                                     ),
                               ),
                               Padding(
@@ -115,6 +118,8 @@ class _UserListComponentWidgetState extends State<UserListComponentWidget> {
                                         fontSize: 12.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey('Plus Jakarta Sans'),
                                       ),
                                 ),
                               ),
@@ -140,6 +145,8 @@ class _UserListComponentWidgetState extends State<UserListComponentWidget> {
                           fontSize: 14.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w500,
+                          useGoogleFonts: GoogleFonts.asMap()
+                              .containsKey('Plus Jakarta Sans'),
                         ),
                   ),
                 ),
@@ -157,6 +164,8 @@ class _UserListComponentWidgetState extends State<UserListComponentWidget> {
                           fontSize: 14.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w500,
+                          useGoogleFonts: GoogleFonts.asMap()
+                              .containsKey('Plus Jakarta Sans'),
                         ),
                   ),
                 ),
@@ -188,6 +197,8 @@ class _UserListComponentWidgetState extends State<UserListComponentWidget> {
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey('Plus Jakarta Sans'),
                                   ),
                         ),
                       ),

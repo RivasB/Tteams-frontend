@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'tteams_team_card_alpha_model.dart';
 export 'tteams_team_card_alpha_model.dart';
 
@@ -93,6 +94,8 @@ class _TteamsTeamCardAlphaWidgetState extends State<TteamsTeamCardAlphaWidget> {
                                     fontSize: 24.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey('Outfit'),
                                   ),
                             ),
                           ),
@@ -109,6 +112,8 @@ class _TteamsTeamCardAlphaWidgetState extends State<TteamsTeamCardAlphaWidget> {
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey('Readex Pro'),
                                   ),
                             ),
                           ),
@@ -143,6 +148,8 @@ class _TteamsTeamCardAlphaWidgetState extends State<TteamsTeamCardAlphaWidget> {
                                   fontSize: 16.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey('Readex Pro'),
                                 ),
                             elevation: 3.0,
                             borderSide: const BorderSide(
@@ -188,6 +195,8 @@ class _TteamsTeamCardAlphaWidgetState extends State<TteamsTeamCardAlphaWidget> {
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey('Readex Pro'),
                                   ),
                             ),
                           ),
@@ -208,6 +217,8 @@ class _TteamsTeamCardAlphaWidgetState extends State<TteamsTeamCardAlphaWidget> {
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.normal,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey('Readex Pro'),
                                     ),
                               ),
                             ),
@@ -229,6 +240,8 @@ class _TteamsTeamCardAlphaWidgetState extends State<TteamsTeamCardAlphaWidget> {
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.normal,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey('Readex Pro'),
                                     ),
                               ),
                             ),
@@ -248,6 +261,8 @@ class _TteamsTeamCardAlphaWidgetState extends State<TteamsTeamCardAlphaWidget> {
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.normal,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey('Readex Pro'),
                                     ),
                               ),
                             ),
@@ -262,6 +277,8 @@ class _TteamsTeamCardAlphaWidgetState extends State<TteamsTeamCardAlphaWidget> {
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey('Readex Pro'),
                                   ),
                             ),
                           ),
@@ -278,6 +295,8 @@ class _TteamsTeamCardAlphaWidgetState extends State<TteamsTeamCardAlphaWidget> {
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey('Readex Pro'),
                                   ),
                             ),
                           ),
@@ -361,6 +380,10 @@ class _TteamsTeamCardAlphaWidgetState extends State<TteamsTeamCardAlphaWidget> {
                                                       letterSpacing: 0.0,
                                                       fontWeight:
                                                           FontWeight.bold,
+                                                      useGoogleFonts:
+                                                          GoogleFonts.asMap()
+                                                              .containsKey(
+                                                                  'Readex Pro'),
                                                     ),
                                               ),
                                               Padding(
@@ -381,6 +404,10 @@ class _TteamsTeamCardAlphaWidgetState extends State<TteamsTeamCardAlphaWidget> {
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
+                                                        useGoogleFonts:
+                                                            GoogleFonts.asMap()
+                                                                .containsKey(
+                                                                    'Readex Pro'),
                                                       ),
                                                 ),
                                               ),
@@ -409,6 +436,8 @@ class _TteamsTeamCardAlphaWidgetState extends State<TteamsTeamCardAlphaWidget> {
                                           fontSize: 14.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey('Readex Pro'),
                                         ),
                                   ),
                                 ),
@@ -430,6 +459,8 @@ class _TteamsTeamCardAlphaWidgetState extends State<TteamsTeamCardAlphaWidget> {
                                           fontSize: 14.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey('Readex Pro'),
                                         ),
                                   ),
                                 ),
@@ -449,6 +480,8 @@ class _TteamsTeamCardAlphaWidgetState extends State<TteamsTeamCardAlphaWidget> {
                                           fontSize: 18.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey('Outfit'),
                                         ),
                                   ),
                                 ),
@@ -477,6 +510,10 @@ class _TteamsTeamCardAlphaWidgetState extends State<TteamsTeamCardAlphaWidget> {
                                                 fontSize: 14.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.normal,
+                                                useGoogleFonts:
+                                                    GoogleFonts.asMap()
+                                                        .containsKey(
+                                                            'Readex Pro'),
                                               ),
                                         ),
                                       ),
@@ -582,6 +619,10 @@ class _TteamsTeamCardAlphaWidgetState extends State<TteamsTeamCardAlphaWidget> {
                                                       letterSpacing: 0.0,
                                                       fontWeight:
                                                           FontWeight.bold,
+                                                      useGoogleFonts:
+                                                          GoogleFonts.asMap()
+                                                              .containsKey(
+                                                                  'Readex Pro'),
                                                     ),
                                               ),
                                               Padding(
@@ -602,6 +643,10 @@ class _TteamsTeamCardAlphaWidgetState extends State<TteamsTeamCardAlphaWidget> {
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
+                                                        useGoogleFonts:
+                                                            GoogleFonts.asMap()
+                                                                .containsKey(
+                                                                    'Readex Pro'),
                                                       ),
                                                 ),
                                               ),
@@ -630,6 +675,8 @@ class _TteamsTeamCardAlphaWidgetState extends State<TteamsTeamCardAlphaWidget> {
                                           fontSize: 14.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey('Readex Pro'),
                                         ),
                                   ),
                                 ),
@@ -651,6 +698,8 @@ class _TteamsTeamCardAlphaWidgetState extends State<TteamsTeamCardAlphaWidget> {
                                           fontSize: 14.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey('Readex Pro'),
                                         ),
                                   ),
                                 ),
@@ -670,6 +719,8 @@ class _TteamsTeamCardAlphaWidgetState extends State<TteamsTeamCardAlphaWidget> {
                                           fontSize: 18.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey('Outfit'),
                                         ),
                                   ),
                                 ),
@@ -698,6 +749,10 @@ class _TteamsTeamCardAlphaWidgetState extends State<TteamsTeamCardAlphaWidget> {
                                                 fontSize: 14.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.normal,
+                                                useGoogleFonts:
+                                                    GoogleFonts.asMap()
+                                                        .containsKey(
+                                                            'Readex Pro'),
                                               ),
                                         ),
                                       ),
@@ -803,6 +858,10 @@ class _TteamsTeamCardAlphaWidgetState extends State<TteamsTeamCardAlphaWidget> {
                                                       letterSpacing: 0.0,
                                                       fontWeight:
                                                           FontWeight.bold,
+                                                      useGoogleFonts:
+                                                          GoogleFonts.asMap()
+                                                              .containsKey(
+                                                                  'Readex Pro'),
                                                     ),
                                               ),
                                               Padding(
@@ -823,6 +882,10 @@ class _TteamsTeamCardAlphaWidgetState extends State<TteamsTeamCardAlphaWidget> {
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
+                                                        useGoogleFonts:
+                                                            GoogleFonts.asMap()
+                                                                .containsKey(
+                                                                    'Readex Pro'),
                                                       ),
                                                 ),
                                               ),
@@ -851,6 +914,8 @@ class _TteamsTeamCardAlphaWidgetState extends State<TteamsTeamCardAlphaWidget> {
                                           fontSize: 14.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey('Readex Pro'),
                                         ),
                                   ),
                                 ),
@@ -872,6 +937,8 @@ class _TteamsTeamCardAlphaWidgetState extends State<TteamsTeamCardAlphaWidget> {
                                           fontSize: 14.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey('Readex Pro'),
                                         ),
                                   ),
                                 ),
@@ -891,6 +958,8 @@ class _TteamsTeamCardAlphaWidgetState extends State<TteamsTeamCardAlphaWidget> {
                                           fontSize: 18.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey('Outfit'),
                                         ),
                                   ),
                                 ),
@@ -924,6 +993,10 @@ class _TteamsTeamCardAlphaWidgetState extends State<TteamsTeamCardAlphaWidget> {
                                                   fontSize: 14.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
+                                                  useGoogleFonts:
+                                                      GoogleFonts.asMap()
+                                                          .containsKey(
+                                                              'Readex Pro'),
                                                 ),
                                           ),
                                         ),

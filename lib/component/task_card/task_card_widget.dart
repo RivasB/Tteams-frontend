@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'task_card_model.dart';
 export 'task_card_model.dart';
 
@@ -58,10 +59,12 @@ class _TaskCardWidgetState extends State<TaskCardWidget> {
               Text(
                 'Tarea',
                 style: FlutterFlowTheme.of(context).bodySmall.override(
-                      fontFamily: 'Readex Pro',
+                      fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                       color: FlutterFlowTheme.of(context).secondaryText,
                       fontSize: 24.0,
                       letterSpacing: 0.0,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).bodySmallFamily),
                     ),
               ),
               Padding(
@@ -69,19 +72,24 @@ class _TaskCardWidgetState extends State<TaskCardWidget> {
                 child: Text(
                   'T12345',
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
-                        fontFamily: 'Outfit',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).headlineMediumFamily,
                         fontSize: 22.0,
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).headlineMediumFamily),
                       ),
                 ),
               ),
               Text(
                 'Nombre',
                 style: FlutterFlowTheme.of(context).bodySmall.override(
-                      fontFamily: 'Readex Pro',
+                      fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                       color: FlutterFlowTheme.of(context).secondaryText,
                       fontSize: 18.0,
                       letterSpacing: 0.0,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).bodySmallFamily),
                     ),
               ),
               Padding(
@@ -89,18 +97,23 @@ class _TaskCardWidgetState extends State<TaskCardWidget> {
                 child: Text(
                   'Diseñar una tarjeta que represente una tarea',
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
-                        fontFamily: 'Outfit',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).headlineMediumFamily,
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).headlineMediumFamily),
                       ),
                 ),
               ),
               Text(
                 'Descripción',
                 style: FlutterFlowTheme.of(context).bodySmall.override(
-                      fontFamily: 'Readex Pro',
+                      fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                       color: FlutterFlowTheme.of(context).secondaryText,
                       fontSize: 18.0,
                       letterSpacing: 0.0,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).bodySmallFamily),
                     ),
               ),
               Padding(
@@ -108,8 +121,11 @@ class _TaskCardWidgetState extends State<TaskCardWidget> {
                 child: Text(
                   'Create a card component to represent a task with the task code, name, and description. Include other relevant data such as due date and status.',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Readex Pro',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).bodyMediumFamily,
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).bodyMediumFamily),
                       ),
                 ),
               ),

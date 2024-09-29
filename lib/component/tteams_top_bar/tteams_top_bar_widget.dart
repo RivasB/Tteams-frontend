@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'tteams_top_bar_model.dart';
 export 'tteams_top_bar_model.dart';
 
@@ -160,6 +161,8 @@ class _TteamsTopBarWidgetState extends State<TteamsTopBarWidget> {
                         fontSize: 16.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w600,
+                        useGoogleFonts: GoogleFonts.asMap()
+                            .containsKey('Plus Jakarta Sans'),
                       ),
                   elevation: 0.0,
                   borderSide: const BorderSide(
@@ -188,6 +191,8 @@ class _TteamsTopBarWidgetState extends State<TteamsTopBarWidget> {
                       fontSize: 16.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w500,
+                      useGoogleFonts:
+                          GoogleFonts.asMap().containsKey('Plus Jakarta Sans'),
                     ),
                 elevation: 3.0,
                 borderSide: const BorderSide(
