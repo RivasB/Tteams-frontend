@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'login_model.dart';
@@ -283,6 +284,10 @@ class _LoginWidgetState extends State<LoginWidget>
                                   validator: _model
                                       .emailAddressTextControllerValidator
                                       .asValidator(context),
+                                  inputFormatters: [
+                                    FilteringTextInputFormatter.allow(RegExp(
+                                        '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}\$'))
+                                  ],
                                 ),
                               ),
                             ),
