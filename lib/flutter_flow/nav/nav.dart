@@ -90,19 +90,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'register',
           path: '/register',
-          requireAuth: true,
           builder: (context, params) => const RegisterWidget(),
-        ),
-        FFRoute(
-          name: 'pageTemplate',
-          path: '/pageTemplate',
-          requireAuth: true,
-          builder: (context, params) => const PageTemplateWidget(),
         ),
         FFRoute(
           name: 'home',
           path: '/home',
-          requireAuth: true,
           builder: (context, params) => const HomeWidget(),
         ),
         FFRoute(
@@ -120,7 +112,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'verifyAccount',
           path: '/verifyAccount',
-          requireAuth: true,
           builder: (context, params) => VerifyAccountWidget(
             password: params.getParam(
               'password',
@@ -141,7 +132,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'taskCard',
           path: '/taskCard',
-          requireAuth: true,
           builder: (context, params) => const TaskCardWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
