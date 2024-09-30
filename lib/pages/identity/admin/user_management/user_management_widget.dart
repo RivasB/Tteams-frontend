@@ -187,6 +187,25 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                                 MainAxisAlignment
                                                                     .spaceBetween,
                                                             children: [
+                                                              if (responsiveVisibility(
+                                                                context:
+                                                                    context,
+                                                                phone: false,
+                                                                tablet: false,
+                                                              ))
+                                                                const Align(
+                                                                  alignment:
+                                                                      AlignmentDirectional(
+                                                                          0.0,
+                                                                          -1.0),
+                                                                  child: Icon(
+                                                                    Icons
+                                                                        .more_vert,
+                                                                    color: Color(
+                                                                        0xFF606A85),
+                                                                    size: 20.0,
+                                                                  ),
+                                                                ),
                                                               Text(
                                                                 'Usuarios registrados',
                                                                 style: FlutterFlowTheme.of(
@@ -210,25 +229,6 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                                               'Plus Jakarta Sans'),
                                                                     ),
                                                               ),
-                                                              if (responsiveVisibility(
-                                                                context:
-                                                                    context,
-                                                                phone: false,
-                                                                tablet: false,
-                                                              ))
-                                                                const Align(
-                                                                  alignment:
-                                                                      AlignmentDirectional(
-                                                                          0.0,
-                                                                          -1.0),
-                                                                  child: Icon(
-                                                                    Icons
-                                                                        .more_vert,
-                                                                    color: Color(
-                                                                        0xFF606A85),
-                                                                    size: 20.0,
-                                                                  ),
-                                                                ),
                                                             ],
                                                           ),
                                                           Row(
@@ -743,7 +743,7 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                             Expanded(
                                                               flex: 2,
                                                               child: Text(
-                                                                'Email',
+                                                                'Correo',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .labelSmall
@@ -1154,6 +1154,11 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                                           mainAxisAlignment:
                                                                               MainAxisAlignment.end,
                                                                           children: [
+                                                                            Icon(
+                                                                              Icons.person_add_disabled,
+                                                                              color: FlutterFlowTheme.of(context).secondaryText,
+                                                                              size: 25.0,
+                                                                            ),
                                                                             FlutterFlowIconButton(
                                                                               borderColor: Colors.transparent,
                                                                               borderRadius: 30.0,
