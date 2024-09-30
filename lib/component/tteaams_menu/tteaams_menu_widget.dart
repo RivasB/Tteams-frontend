@@ -274,7 +274,18 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                             width: 4.0,
                             height: 100.0,
                             decoration: BoxDecoration(
-                              color: const Color(0x4D9489F5),
+                              color: () {
+                                if (_model.mouseRegion1Hovered) {
+                                  return FlutterFlowTheme.of(context)
+                                      .primaryBackground;
+                                } else if (widget.navselected == 1) {
+                                  return FlutterFlowTheme.of(context)
+                                      .primaryBackground;
+                                } else {
+                                  return FlutterFlowTheme.of(context)
+                                      .menuSelected;
+                                }
+                              }(),
                               borderRadius: BorderRadius.circular(12.0),
                             ),
                           ),
@@ -348,7 +359,18 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                           width: 4.0,
                           height: 100.0,
                           decoration: BoxDecoration(
-                            color: const Color(0x4D9489F5),
+                            color: () {
+                              if (_model.mouseRegion2Hovered) {
+                                return FlutterFlowTheme.of(context)
+                                    .primaryBackground;
+                              } else if (widget.navselected == 2) {
+                                return FlutterFlowTheme.of(context)
+                                    .primaryBackground;
+                              } else {
+                                return FlutterFlowTheme.of(context)
+                                    .menuSelected;
+                              }
+                            }(),
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                         ),
@@ -420,7 +442,18 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                           width: 4.0,
                           height: 100.0,
                           decoration: BoxDecoration(
-                            color: const Color(0x4D9489F5),
+                            color: () {
+                              if (_model.mouseRegion3Hovered) {
+                                return FlutterFlowTheme.of(context)
+                                    .primaryBackground;
+                              } else if (widget.navselected == 3) {
+                                return FlutterFlowTheme.of(context)
+                                    .primaryBackground;
+                              } else {
+                                return FlutterFlowTheme.of(context)
+                                    .menuSelected;
+                              }
+                            }(),
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                         ),
@@ -492,7 +525,18 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                           width: 4.0,
                           height: 100.0,
                           decoration: BoxDecoration(
-                            color: const Color(0x4D9489F5),
+                            color: () {
+                              if (_model.mouseRegion4Hovered) {
+                                return FlutterFlowTheme.of(context)
+                                    .primaryBackground;
+                              } else if (widget.navselected == 4) {
+                                return FlutterFlowTheme.of(context)
+                                    .primaryBackground;
+                              } else {
+                                return FlutterFlowTheme.of(context)
+                                    .menuSelected;
+                              }
+                            }(),
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                         ),
@@ -577,7 +621,18 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                             width: 4.0,
                             height: 100.0,
                             decoration: BoxDecoration(
-                              color: const Color(0x4D9489F5),
+                              color: () {
+                                if (_model.mouseRegion5Hovered) {
+                                  return FlutterFlowTheme.of(context)
+                                      .primaryBackground;
+                                } else if (widget.navselected == 5) {
+                                  return FlutterFlowTheme.of(context)
+                                      .primaryBackground;
+                                } else {
+                                  return FlutterFlowTheme.of(context)
+                                      .menuSelected;
+                                }
+                              }(),
                               borderRadius: BorderRadius.circular(12.0),
                             ),
                           ),
@@ -651,7 +706,18 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                           width: 4.0,
                           height: 100.0,
                           decoration: BoxDecoration(
-                            color: const Color(0x4D9489F5),
+                            color: () {
+                              if (_model.mouseRegion6Hovered) {
+                                return FlutterFlowTheme.of(context)
+                                    .primaryBackground;
+                              } else if (widget.navselected == 6) {
+                                return FlutterFlowTheme.of(context)
+                                    .primaryBackground;
+                              } else {
+                                return FlutterFlowTheme.of(context)
+                                    .menuSelected;
+                              }
+                            }(),
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                         ),
@@ -736,7 +802,18 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                             width: 4.0,
                             height: 100.0,
                             decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context).menuSelected,
+                              color: () {
+                                if (_model.mouseRegion7Hovered) {
+                                  return FlutterFlowTheme.of(context)
+                                      .primaryBackground;
+                                } else if (widget.navselected == 7) {
+                                  return FlutterFlowTheme.of(context)
+                                      .primaryBackground;
+                                } else {
+                                  return FlutterFlowTheme.of(context)
+                                      .menuSelected;
+                                }
+                              }(),
                               borderRadius: BorderRadius.circular(12.0),
                             ),
                           ),
