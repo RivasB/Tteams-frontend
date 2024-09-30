@@ -55,6 +55,12 @@ class RegisterUserSendDataCall {
       alwaysAllowBody: false,
     );
   }
+
+  List? errors(dynamic response) => getJsonField(
+        response,
+        r'''$.errors''',
+        true,
+      ) as List?;
 }
 
 class RegisterUserCheckCodeCall {
