@@ -194,6 +194,7 @@ class _UserProfileMenuWidgetState extends State<UserProfileMenuWidget>
                           const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Container(
                             width: 90.0,
@@ -263,6 +264,25 @@ class _UserProfileMenuWidgetState extends State<UserProfileMenuWidget>
                                   ),
                                 ),
                               ],
+                            ),
+                          ),
+                          Expanded(
+                            child: Container(
+                              width: 100.0,
+                              height: 100.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                              ),
+                              child: Align(
+                                alignment: const AlignmentDirectional(1.0, 0.0),
+                                child: Icon(
+                                  Icons.logout,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  size: 54.0,
+                                ),
+                              ),
                             ),
                           ),
                         ],
