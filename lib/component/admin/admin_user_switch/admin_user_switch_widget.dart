@@ -1,4 +1,5 @@
 import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -95,24 +96,24 @@ class _AdminUserSwitchWidgetState extends State<AdminUserSwitchWidget>
             child: Stack(
               alignment: const AlignmentDirectional(0.0, 0.0),
               children: [
-                const Align(
-                  alignment: AlignmentDirectional(-0.9, 0.0),
+                Align(
+                  alignment: const AlignmentDirectional(-0.9, 0.0),
                   child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(6.0, 0.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(6.0, 0.0, 0.0, 0.0),
                     child: Icon(
                       Icons.admin_panel_settings,
-                      color: Colors.white,
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
                       size: 24.0,
                     ),
                   ),
                 ),
-                const Align(
-                  alignment: AlignmentDirectional(1.0, 0.0),
+                Align(
+                  alignment: const AlignmentDirectional(1.0, 0.0),
                   child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 6.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 6.0, 0.0),
                     child: Icon(
                       Icons.person,
-                      color: Colors.white,
+                      color: FlutterFlowTheme.of(context).primary,
                       size: 24.0,
                     ),
                   ),

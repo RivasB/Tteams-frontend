@@ -1,5 +1,6 @@
 import '/component/admin/admin_user_switch/admin_user_switch_widget.dart';
 import '/components/user_profile_menu_widget.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -210,10 +211,17 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                               ),
                             ),
                           ),
-                          const Icon(
-                            Icons.notifications_none,
-                            color: Colors.white,
-                            size: 28.0,
+                          FlutterFlowIconButton(
+                            borderRadius: 8.0,
+                            buttonSize: 40.0,
+                            icon: Icon(
+                              Icons.arrow_drop_down_sharp,
+                              color: FlutterFlowTheme.of(context).info,
+                              size: 24.0,
+                            ),
+                            onPressed: () {
+                              print('IconButton pressed ...');
+                            },
                           ),
                         ],
                       ),
@@ -240,7 +248,16 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () async {
-                  context.pushNamed('home');
+                  context.pushNamed(
+                    'home',
+                    extra: <String, dynamic>{
+                      kTransitionInfoKey: const TransitionInfo(
+                        hasTransition: true,
+                        transitionType: PageTransitionType.fade,
+                        duration: Duration(milliseconds: 0),
+                      ),
+                    },
+                  );
                 },
                 child: Container(
                   width: double.infinity,
@@ -274,7 +291,18 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                             width: 4.0,
                             height: 100.0,
                             decoration: BoxDecoration(
-                              color: const Color(0x4D9489F5),
+                              color: () {
+                                if (_model.mouseRegion1Hovered) {
+                                  return FlutterFlowTheme.of(context)
+                                      .primaryBackground;
+                                } else if (widget.navselected == 1) {
+                                  return FlutterFlowTheme.of(context)
+                                      .primaryBackground;
+                                } else {
+                                  return FlutterFlowTheme.of(context)
+                                      .menuSelected;
+                                }
+                              }(),
                               borderRadius: BorderRadius.circular(12.0),
                             ),
                           ),
@@ -348,13 +376,24 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                           width: 4.0,
                           height: 100.0,
                           decoration: BoxDecoration(
-                            color: const Color(0x4D9489F5),
+                            color: () {
+                              if (_model.mouseRegion2Hovered) {
+                                return FlutterFlowTheme.of(context)
+                                    .primaryBackground;
+                              } else if (widget.navselected == 2) {
+                                return FlutterFlowTheme.of(context)
+                                    .primaryBackground;
+                              } else {
+                                return FlutterFlowTheme.of(context)
+                                    .menuSelected;
+                              }
+                            }(),
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                         ),
                       ),
                       const Icon(
-                        Icons.forum_rounded,
+                        Icons.notifications_none,
                         color: Colors.white,
                         size: 28.0,
                       ),
@@ -420,7 +459,18 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                           width: 4.0,
                           height: 100.0,
                           decoration: BoxDecoration(
-                            color: const Color(0x4D9489F5),
+                            color: () {
+                              if (_model.mouseRegion3Hovered) {
+                                return FlutterFlowTheme.of(context)
+                                    .primaryBackground;
+                              } else if (widget.navselected == 3) {
+                                return FlutterFlowTheme.of(context)
+                                    .primaryBackground;
+                              } else {
+                                return FlutterFlowTheme.of(context)
+                                    .menuSelected;
+                              }
+                            }(),
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                         ),
@@ -492,7 +542,18 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                           width: 4.0,
                           height: 100.0,
                           decoration: BoxDecoration(
-                            color: const Color(0x4D9489F5),
+                            color: () {
+                              if (_model.mouseRegion4Hovered) {
+                                return FlutterFlowTheme.of(context)
+                                    .primaryBackground;
+                              } else if (widget.navselected == 4) {
+                                return FlutterFlowTheme.of(context)
+                                    .primaryBackground;
+                              } else {
+                                return FlutterFlowTheme.of(context)
+                                    .menuSelected;
+                              }
+                            }(),
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                         ),
@@ -542,7 +603,16 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () async {
-                  context.pushNamed('teamList');
+                  context.pushNamed(
+                    'teamList',
+                    extra: <String, dynamic>{
+                      kTransitionInfoKey: const TransitionInfo(
+                        hasTransition: true,
+                        transitionType: PageTransitionType.fade,
+                        duration: Duration(milliseconds: 0),
+                      ),
+                    },
+                  );
                 },
                 child: Container(
                   width: double.infinity,
@@ -577,7 +647,18 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                             width: 4.0,
                             height: 100.0,
                             decoration: BoxDecoration(
-                              color: const Color(0x4D9489F5),
+                              color: () {
+                                if (_model.mouseRegion5Hovered) {
+                                  return FlutterFlowTheme.of(context)
+                                      .primaryBackground;
+                                } else if (widget.navselected == 5) {
+                                  return FlutterFlowTheme.of(context)
+                                      .primaryBackground;
+                                } else {
+                                  return FlutterFlowTheme.of(context)
+                                      .menuSelected;
+                                }
+                              }(),
                               borderRadius: BorderRadius.circular(12.0),
                             ),
                           ),
@@ -651,7 +732,18 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                           width: 4.0,
                           height: 100.0,
                           decoration: BoxDecoration(
-                            color: const Color(0x4D9489F5),
+                            color: () {
+                              if (_model.mouseRegion6Hovered) {
+                                return FlutterFlowTheme.of(context)
+                                    .primaryBackground;
+                              } else if (widget.navselected == 6) {
+                                return FlutterFlowTheme.of(context)
+                                    .primaryBackground;
+                              } else {
+                                return FlutterFlowTheme.of(context)
+                                    .menuSelected;
+                              }
+                            }(),
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                         ),
@@ -701,7 +793,16 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () async {
-                  context.pushNamed('sprintBoard');
+                  context.pushNamed(
+                    'sprintBoard',
+                    extra: <String, dynamic>{
+                      kTransitionInfoKey: const TransitionInfo(
+                        hasTransition: true,
+                        transitionType: PageTransitionType.fade,
+                        duration: Duration(milliseconds: 0),
+                      ),
+                    },
+                  );
                 },
                 child: Container(
                   width: double.infinity,
@@ -736,7 +837,18 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                             width: 4.0,
                             height: 100.0,
                             decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context).menuSelected,
+                              color: () {
+                                if (_model.mouseRegion7Hovered) {
+                                  return FlutterFlowTheme.of(context)
+                                      .primaryBackground;
+                                } else if (widget.navselected == 7) {
+                                  return FlutterFlowTheme.of(context)
+                                      .primaryBackground;
+                                } else {
+                                  return FlutterFlowTheme.of(context)
+                                      .menuSelected;
+                                }
+                              }(),
                               borderRadius: BorderRadius.circular(12.0),
                             ),
                           ),
@@ -779,11 +891,12 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Divider(
-                    height: 12.0,
-                    thickness: 2.0,
-                    color: Color(0x4D9489F5),
-                  ),
+                  if (FFAppState().UserMe.data.type == 'ADMIN')
+                    const Divider(
+                      height: 12.0,
+                      thickness: 2.0,
+                      color: Color(0x4D9489F5),
+                    ),
                   if (FFAppState().UserMe.data.type == 'ADMIN')
                     wrapWithModel(
                       model: _model.adminUserSwitchModel,
