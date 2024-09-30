@@ -180,7 +180,8 @@ class TTeamsAPIIdentityGroup {
   static GetByIdCall getByIdCall = GetByIdCall();
   static DeleteCall deleteCall = DeleteCall();
   static RetrieveUserCall retrieveUserCall = RetrieveUserCall();
-  static DeleteRoleCall deleteRoleCall = DeleteRoleCall();
+  static DeleteUserBackofficeCall deleteUserBackofficeCall =
+      DeleteUserBackofficeCall();
   static GetById1Call getById1Call = GetById1Call();
   static Delete1Call delete1Call = Delete1Call();
 }
@@ -1027,7 +1028,7 @@ class RetrieveUserCall {
   }
 }
 
-class DeleteRoleCall {
+class DeleteUserBackofficeCall {
   Future<ApiCallResponse> call({
     String? id = '',
     String? bearerAuthentication = '',
@@ -1038,7 +1039,7 @@ class DeleteRoleCall {
     );
 
     return ApiManager.instance.makeApiCall(
-      callName: 'deleteRole',
+      callName: 'deleteUserBackoffice',
       apiUrl: '$baseUrl/api/backoffice/user/$id',
       callType: ApiCallType.DELETE,
       headers: {

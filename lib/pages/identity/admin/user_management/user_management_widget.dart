@@ -1164,8 +1164,66 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                                                 color: FlutterFlowTheme.of(context).error,
                                                                                 size: 25.0,
                                                                               ),
-                                                                              onPressed: () {
-                                                                                print('IconButton pressed ...');
+                                                                              onPressed: () async {
+                                                                                var shouldSetState = false;
+                                                                                var confirmDialogResponse = await showDialog<bool>(
+                                                                                      context: context,
+                                                                                      builder: (alertDialogContext) {
+                                                                                        return AlertDialog(
+                                                                                          title: const Text('Eliminar'),
+                                                                                          content: const Text('Estás a punto de eliminar un usuario de tu sistema. Esta acción es irreversible. ¿Estás seguro?'),
+                                                                                          actions: [
+                                                                                            TextButton(
+                                                                                              onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                              child: const Text('Cancelar'),
+                                                                                            ),
+                                                                                            TextButton(
+                                                                                              onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                              child: const Text('Aceptar'),
+                                                                                            ),
+                                                                                          ],
+                                                                                        );
+                                                                                      },
+                                                                                    ) ??
+                                                                                    false;
+                                                                                if (confirmDialogResponse) {
+                                                                                  _model.deleteResponse = await TTeamsAPIIdentityGroup.deleteUserBackofficeCall.call(
+                                                                                    id: userListItemItem.id,
+                                                                                    bearerAuthentication: currentAuthenticationToken,
+                                                                                    jwt: currentAuthenticationToken,
+                                                                                  );
+
+                                                                                  shouldSetState = true;
+                                                                                } else {
+                                                                                  if (shouldSetState) safeSetState(() {});
+                                                                                  return;
+                                                                                }
+
+                                                                                if ((_model.deleteResponse?.succeeded ?? true)) {
+                                                                                  safeSetState(() {});
+                                                                                } else {
+                                                                                  ScaffoldMessenger.of(context).clearSnackBars();
+                                                                                  ScaffoldMessenger.of(context).showSnackBar(
+                                                                                    SnackBar(
+                                                                                      content: Text(
+                                                                                        getJsonField(
+                                                                                          (_model.deleteResponse?.jsonBody ?? ''),
+                                                                                          r'''$.errors''',
+                                                                                        ).toString(),
+                                                                                        style: FlutterFlowTheme.of(context).titleMedium.override(
+                                                                                              fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                              color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                              letterSpacing: 0.0,
+                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
+                                                                                            ),
+                                                                                      ),
+                                                                                      duration: const Duration(milliseconds: 3000),
+                                                                                      backgroundColor: FlutterFlowTheme.of(context).error,
+                                                                                    ),
+                                                                                  );
+                                                                                }
+
+                                                                                if (shouldSetState) safeSetState(() {});
                                                                               },
                                                                             ),
                                                                           ],
