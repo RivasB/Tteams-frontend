@@ -45,6 +45,8 @@ class VerifyAccountModel extends FlutterFlowModel<VerifyAccountWidget> {
   ApiCallResponse? verificationResponse;
   // Stores action output result for [Backend Call - API (login)] action in verify widget.
   ApiCallResponse? loginResponse;
+  // Stores action output result for [Backend Call - API (retrieveLoggedUser)] action in verify widget.
+  ApiCallResponse? userMeResponse;
 
   @override
   void initState(BuildContext context) {

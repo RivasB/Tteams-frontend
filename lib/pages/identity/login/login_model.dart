@@ -38,6 +38,8 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
 
   // Stores action output result for [Backend Call - API (login)] action in Button widget.
   ApiCallResponse? logInResponse;
+  // Stores action output result for [Backend Call - API (retrieveLoggedUser)] action in Button widget.
+  ApiCallResponse? userMeResponse;
 
   @override
   void initState(BuildContext context) {

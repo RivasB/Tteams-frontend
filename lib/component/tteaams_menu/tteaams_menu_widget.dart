@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'tteaams_menu_model.dart';
 export 'tteaams_menu_model.dart';
 
@@ -41,6 +42,8 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Padding(
       padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
       child: Column(
@@ -159,7 +162,7 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'David Alejandro',
+                                    FFAppState().UserMe.data.firstName,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
@@ -176,7 +179,7 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 4.0, 0.0, 0.0),
                                     child: Text(
-                                      'dev@devminds.com',
+                                      FFAppState().UserMe.data.email,
                                       style: FlutterFlowTheme.of(context)
                                           .labelSmall
                                           .override(
