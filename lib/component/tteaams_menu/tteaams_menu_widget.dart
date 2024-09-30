@@ -234,7 +234,7 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                 decoration: BoxDecoration(
                   color:
                       'tteams://tteams.com${GoRouterState.of(context).uri.toString()}' ==
-                              '/home'
+                              'home'
                           ? const Color(0x4D9489F5)
                           : const Color(0xFF6F61EF),
                   borderRadius: BorderRadius.circular(12.0),
@@ -257,7 +257,7 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                           decoration: BoxDecoration(
                             color:
                                 'tteams://tteams.com${GoRouterState.of(context).uri.toString()}' ==
-                                        '/home'
+                                        'home'
                                     ? FlutterFlowTheme.of(context)
                                         .secondaryBackground
                                     : FlutterFlowTheme.of(context).menuSelected,
