@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/component/admin/tteaams_menu_admin/tteaams_menu_admin_widget.dart';
 import '/component/tteams_top_bar/tteams_top_bar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -11,6 +12,8 @@ class UserManagementModel extends FlutterFlowModel<UserManagementWidget> {
   late TteaamsMenuAdminModel tteaamsMenuAdminModel;
   // Model for tteamsTopBar component.
   late TteamsTopBarModel tteamsTopBarModel;
+  // Stores action output result for [Backend Call - API (deleteUserBackoffice)] action in IconButton widget.
+  ApiCallResponse? deleteResponse;
 
   @override
   void initState(BuildContext context) {
