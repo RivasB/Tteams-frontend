@@ -10,7 +10,12 @@ import 'tteaams_menu_model.dart';
 export 'tteaams_menu_model.dart';
 
 class TteaamsMenuWidget extends StatefulWidget {
-  const TteaamsMenuWidget({super.key});
+  const TteaamsMenuWidget({
+    super.key,
+    required this.navselected,
+  });
+
+  final int? navselected;
 
   @override
   State<TteaamsMenuWidget> createState() => _TteaamsMenuWidgetState();
@@ -222,10 +227,10 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
             opaque: false,
             cursor: MouseCursor.defer ?? MouseCursor.defer,
             onEnter: ((event) async {
-              safeSetState(() => _model.mouseRegionHovered1 = true);
+              safeSetState(() => _model.mouseRegion1Hovered = true);
             }),
             onExit: ((event) async {
-              safeSetState(() => _model.mouseRegionHovered1 = false);
+              safeSetState(() => _model.mouseRegion1Hovered = false);
             }),
             child: Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
@@ -241,7 +246,15 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                   width: double.infinity,
                   height: 50.0,
                   decoration: BoxDecoration(
-                    color: const Color(0xFF6F61EF),
+                    color: () {
+                      if (_model.mouseRegion1Hovered) {
+                        return FlutterFlowTheme.of(context).menuSelected;
+                      } else if (widget.navselected == 1) {
+                        return FlutterFlowTheme.of(context).menuSelected;
+                      } else {
+                        return FlutterFlowTheme.of(context).menuNotSelected;
+                      }
+                    }(),
                     borderRadius: BorderRadius.circular(12.0),
                     shape: BoxShape.rectangle,
                     border: Border.all(
@@ -300,10 +313,10 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
             opaque: false,
             cursor: MouseCursor.defer ?? MouseCursor.defer,
             onEnter: ((event) async {
-              safeSetState(() => _model.mouseRegionHovered2 = true);
+              safeSetState(() => _model.mouseRegion2Hovered = true);
             }),
             onExit: ((event) async {
-              safeSetState(() => _model.mouseRegionHovered2 = false);
+              safeSetState(() => _model.mouseRegion2Hovered = false);
             }),
             child: Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
@@ -311,7 +324,15 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                 width: double.infinity,
                 height: 50.0,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF6F61EF),
+                  color: () {
+                    if (_model.mouseRegion2Hovered) {
+                      return FlutterFlowTheme.of(context).menuSelected;
+                    } else if (widget.navselected == 2) {
+                      return FlutterFlowTheme.of(context).menuSelected;
+                    } else {
+                      return FlutterFlowTheme.of(context).menuNotSelected;
+                    }
+                  }(),
                   borderRadius: BorderRadius.circular(12.0),
                   shape: BoxShape.rectangle,
                 ),
@@ -364,10 +385,10 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
             opaque: false,
             cursor: MouseCursor.defer ?? MouseCursor.defer,
             onEnter: ((event) async {
-              safeSetState(() => _model.mouseRegionHovered3 = true);
+              safeSetState(() => _model.mouseRegion3Hovered = true);
             }),
             onExit: ((event) async {
-              safeSetState(() => _model.mouseRegionHovered3 = false);
+              safeSetState(() => _model.mouseRegion3Hovered = false);
             }),
             child: Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
@@ -375,7 +396,15 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                 width: double.infinity,
                 height: 50.0,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF6F61EF),
+                  color: () {
+                    if (_model.mouseRegion3Hovered) {
+                      return FlutterFlowTheme.of(context).menuSelected;
+                    } else if (widget.navselected == 3) {
+                      return FlutterFlowTheme.of(context).menuSelected;
+                    } else {
+                      return FlutterFlowTheme.of(context).menuNotSelected;
+                    }
+                  }(),
                   borderRadius: BorderRadius.circular(12.0),
                   shape: BoxShape.rectangle,
                 ),
@@ -428,10 +457,10 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
             opaque: false,
             cursor: MouseCursor.defer ?? MouseCursor.defer,
             onEnter: ((event) async {
-              safeSetState(() => _model.mouseRegionHovered4 = true);
+              safeSetState(() => _model.mouseRegion4Hovered = true);
             }),
             onExit: ((event) async {
-              safeSetState(() => _model.mouseRegionHovered4 = false);
+              safeSetState(() => _model.mouseRegion4Hovered = false);
             }),
             child: Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
@@ -439,7 +468,15 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                 width: double.infinity,
                 height: 50.0,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF6F61EF),
+                  color: () {
+                    if (_model.mouseRegion4Hovered) {
+                      return FlutterFlowTheme.of(context).menuSelected;
+                    } else if (widget.navselected == 4) {
+                      return FlutterFlowTheme.of(context).menuSelected;
+                    } else {
+                      return FlutterFlowTheme.of(context).menuNotSelected;
+                    }
+                  }(),
                   borderRadius: BorderRadius.circular(12.0),
                   shape: BoxShape.rectangle,
                 ),
@@ -492,10 +529,10 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
             opaque: false,
             cursor: MouseCursor.defer ?? MouseCursor.defer,
             onEnter: ((event) async {
-              safeSetState(() => _model.mouseRegionHovered5 = true);
+              safeSetState(() => _model.mouseRegion5Hovered = true);
             }),
             onExit: ((event) async {
-              safeSetState(() => _model.mouseRegionHovered5 = false);
+              safeSetState(() => _model.mouseRegion5Hovered = false);
             }),
             child: Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
@@ -511,7 +548,15 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                   width: double.infinity,
                   height: 50.0,
                   decoration: BoxDecoration(
-                    color: const Color(0xFF6F61EF),
+                    color: () {
+                      if (_model.mouseRegion5Hovered) {
+                        return FlutterFlowTheme.of(context).menuSelected;
+                      } else if (widget.navselected == 5) {
+                        return FlutterFlowTheme.of(context).menuSelected;
+                      } else {
+                        return FlutterFlowTheme.of(context).menuNotSelected;
+                      }
+                    }(),
                     borderRadius: BorderRadius.circular(12.0),
                     shape: BoxShape.rectangle,
                     border: Border.all(
@@ -571,10 +616,10 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
             opaque: false,
             cursor: MouseCursor.defer ?? MouseCursor.defer,
             onEnter: ((event) async {
-              safeSetState(() => _model.mouseRegionHovered6 = true);
+              safeSetState(() => _model.mouseRegion6Hovered = true);
             }),
             onExit: ((event) async {
-              safeSetState(() => _model.mouseRegionHovered6 = false);
+              safeSetState(() => _model.mouseRegion6Hovered = false);
             }),
             child: Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
@@ -582,7 +627,15 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                 width: double.infinity,
                 height: 50.0,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF6F61EF),
+                  color: () {
+                    if (_model.mouseRegion6Hovered) {
+                      return FlutterFlowTheme.of(context).menuSelected;
+                    } else if (widget.navselected == 6) {
+                      return FlutterFlowTheme.of(context).menuSelected;
+                    } else {
+                      return FlutterFlowTheme.of(context).menuNotSelected;
+                    }
+                  }(),
                   borderRadius: BorderRadius.circular(12.0),
                   shape: BoxShape.rectangle,
                 ),
@@ -635,65 +688,84 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
             opaque: false,
             cursor: MouseCursor.defer ?? MouseCursor.defer,
             onEnter: ((event) async {
-              safeSetState(() => _model.mouseRegionHovered7 = true);
+              safeSetState(() => _model.mouseRegion7Hovered = true);
             }),
             onExit: ((event) async {
-              safeSetState(() => _model.mouseRegionHovered7 = false);
+              safeSetState(() => _model.mouseRegion7Hovered = false);
             }),
             child: Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
-              child: Container(
-                width: double.infinity,
-                height: 50.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).menuNotSelected,
-                  borderRadius: BorderRadius.circular(12.0),
-                  shape: BoxShape.rectangle,
-                  border: Border.all(
-                    color: const Color(0xFF6F61EF),
-                    width: 1.0,
+              child: InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  context.pushNamed('sprintBoard');
+                },
+                child: Container(
+                  width: double.infinity,
+                  height: 50.0,
+                  decoration: BoxDecoration(
+                    color: () {
+                      if (_model.mouseRegion7Hovered) {
+                        return FlutterFlowTheme.of(context).menuSelected;
+                      } else if (widget.navselected == 7) {
+                        return FlutterFlowTheme.of(context).menuSelected;
+                      } else {
+                        return FlutterFlowTheme.of(context).menuNotSelected;
+                      }
+                    }(),
+                    borderRadius: BorderRadius.circular(12.0),
+                    shape: BoxShape.rectangle,
+                    border: Border.all(
+                      color: const Color(0xFF6F61EF),
+                      width: 1.0,
+                    ),
                   ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            0.0, 12.0, 12.0, 12.0),
-                        child: Container(
-                          width: 4.0,
-                          height: 100.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context).menuSelected,
-                            borderRadius: BorderRadius.circular(12.0),
+                  child: Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 12.0, 12.0, 12.0),
+                          child: Container(
+                            width: 4.0,
+                            height: 100.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context).menuSelected,
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
                           ),
                         ),
-                      ),
-                      const Icon(
-                        Icons.sort,
-                        color: Colors.white,
-                        size: 28.0,
-                      ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                        child: Text(
-                          'Sprint',
-                          style:
-                              FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Plus Jakarta Sans',
-                                    color: Colors.white,
-                                    fontSize: 16.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey('Plus Jakarta Sans'),
-                                  ),
+                        const Icon(
+                          Icons.sort,
+                          color: Colors.white,
+                          size: 28.0,
                         ),
-                      ),
-                    ],
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              12.0, 0.0, 0.0, 0.0),
+                          child: Text(
+                            'Sprint',
+                            style: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: 'Plus Jakarta Sans',
+                                  color: Colors.white,
+                                  fontSize: 16.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w500,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey('Plus Jakarta Sans'),
+                                ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -712,11 +784,12 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                     thickness: 2.0,
                     color: Color(0x4D9489F5),
                   ),
-                  wrapWithModel(
-                    model: _model.adminUserSwitchModel,
-                    updateCallback: () => safeSetState(() {}),
-                    child: const AdminUserSwitchWidget(),
-                  ),
+                  if (FFAppState().UserMe.data.type == 'ADMIN')
+                    wrapWithModel(
+                      model: _model.adminUserSwitchModel,
+                      updateCallback: () => safeSetState(() {}),
+                      child: const AdminUserSwitchWidget(),
+                    ),
                 ].divide(const SizedBox(height: 12.0)),
               ),
             ),

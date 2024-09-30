@@ -4,26 +4,22 @@ import 'tteaams_menu_widget.dart' show TteaamsMenuWidget;
 import 'package:flutter/material.dart';
 
 class TteaamsMenuModel extends FlutterFlowModel<TteaamsMenuWidget> {
-  ///  Local state fields for this component.
-
-  int? navSelected = 1;
-
   ///  State fields for stateful widgets in this component.
 
-  // State field(s) for MouseRegion widget.
-  bool mouseRegionHovered1 = false;
-  // State field(s) for MouseRegion widget.
-  bool mouseRegionHovered2 = false;
-  // State field(s) for MouseRegion widget.
-  bool mouseRegionHovered3 = false;
-  // State field(s) for MouseRegion widget.
-  bool mouseRegionHovered4 = false;
-  // State field(s) for MouseRegion widget.
-  bool mouseRegionHovered5 = false;
-  // State field(s) for MouseRegion widget.
-  bool mouseRegionHovered6 = false;
-  // State field(s) for MouseRegion widget.
-  bool mouseRegionHovered7 = false;
+  // State field(s) for MouseRegion1 widget.
+  bool mouseRegion1Hovered = false;
+  // State field(s) for MouseRegion2 widget.
+  bool mouseRegion2Hovered = false;
+  // State field(s) for MouseRegion3 widget.
+  bool mouseRegion3Hovered = false;
+  // State field(s) for MouseRegion4 widget.
+  bool mouseRegion4Hovered = false;
+  // State field(s) for MouseRegion5 widget.
+  bool mouseRegion5Hovered = false;
+  // State field(s) for MouseRegion6 widget.
+  bool mouseRegion6Hovered = false;
+  // State field(s) for MouseRegion7 widget.
+  bool mouseRegion7Hovered = false;
   // Model for adminUserSwitch component.
   late AdminUserSwitchModel adminUserSwitchModel;
 

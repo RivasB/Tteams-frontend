@@ -116,7 +116,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                   child: wrapWithModel(
                     model: _model.tteaamsMenuModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: const TteaamsMenuWidget(),
+                    child: const TteaamsMenuWidget(
+                      navselected: 1,
+                    ),
                   ),
                 ),
               Expanded(

@@ -73,7 +73,9 @@ class _SprintBoardWidgetState extends State<SprintBoardWidget> {
                   child: wrapWithModel(
                     model: _model.tteaamsMenuModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: const TteaamsMenuWidget(),
+                    child: const TteaamsMenuWidget(
+                      navselected: 7,
+                    ),
                   ),
                 ),
               Expanded(
