@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -239,8 +240,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                               .containsKey('Plus Jakarta Sans'),
                                         ),
                                     enabledBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
-                                        color: Color(0xFFF1F4F8),
+                                      borderSide: BorderSide(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(12.0),
@@ -295,6 +297,11 @@ class _LoginWidgetState extends State<LoginWidget>
                                 child: TextFormField(
                                   controller: _model.passwordTextController,
                                   focusNode: _model.passwordFocusNode,
+                                  onChanged: (_) => EasyDebounce.debounce(
+                                    '_model.passwordTextController',
+                                    const Duration(milliseconds: 100),
+                                    () => safeSetState(() {}),
+                                  ),
                                   autofocus: true,
                                   autofillHints: const [AutofillHints.password],
                                   obscureText: !_model.passwordVisibility,

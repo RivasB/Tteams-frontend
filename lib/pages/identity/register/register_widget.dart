@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'register_model.dart';
 export 'register_model.dart';
@@ -184,6 +185,8 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         focusNode: _model.nameFocusNode,
                                         autofocus: true,
                                         autofillHints: const [AutofillHints.email],
+                                        textCapitalization:
+                                            TextCapitalization.words,
                                         obscureText: false,
                                         decoration: InputDecoration(
                                           labelText: 'Nombres',
@@ -265,11 +268,13 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                                                   context)
                                                               .bodyLargeFamily),
                                             ),
-                                        keyboardType:
-                                            TextInputType.emailAddress,
                                         validator: _model
                                             .nameTextControllerValidator
                                             .asValidator(context),
+                                        inputFormatters: [
+                                          FilteringTextInputFormatter.allow(
+                                              RegExp('[a-zA-Z0-9]'))
+                                        ],
                                       ),
                                     ),
                                   ),
@@ -827,10 +832,17 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                               .passwordTextController.text,
                                         );
 
-                                        if ((_model
-                                                .registerResponse?.succeeded ??
-                                            true)) {
-                                          context.pushNamed(
+                                        if (((_model.registerResponse
+                                                            ?.statusCode ??
+                                                        200)
+                                                    .toString() ==
+                                                '201') ||
+                                            ((_model.registerResponse
+                                                            ?.statusCode ??
+                                                        200)
+                                                    .toString() ==
+                                                '200')) {
+                                          context.goNamed(
                                             'verifyAccount',
                                             queryParameters: {
                                               'password': serializeParam(
@@ -856,6 +868,62 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                                     Duration(milliseconds: 200),
                                               ),
                                             },
+                                          );
+                                        } else {
+                                          ScaffoldMessenger.of(context)
+                                              .clearSnackBars();
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                valueOrDefault<String>(
+                                                  TTeamsAPILoginAndRegisterGroup
+                                                      .registerUserSendDataCall
+                                                      .errors(
+                                                        (_model.registerResponse
+                                                                ?.jsonBody ??
+                                                            ''),
+                                                      )
+                                                      ?.first
+                                                      ?.toString(),
+                                                  '¡Ha ocurrido un error inesperado! Estamos tratando de encontrar la causa.',
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                          letterSpacing: 0.0,
+                                                          shadows: [
+                                                            Shadow(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondaryText,
+                                                              offset: const Offset(
+                                                                  2.0, 2.0),
+                                                              blurRadius: 2.0,
+                                                            )
+                                                          ],
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily),
+                                                        ),
+                                              ),
+                                              duration:
+                                                  const Duration(milliseconds: 3000),
+                                              backgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                            ),
                                           );
                                         }
 
