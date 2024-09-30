@@ -218,252 +218,95 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
-            child: InkWell(
-              splashColor: Colors.transparent,
-              focusColor: Colors.transparent,
-              hoverColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-              onTap: () async {
-                context.pushNamed('home');
-              },
-              child: Container(
-                width: double.infinity,
-                height: 50.0,
-                decoration: BoxDecoration(
-                  color:
-                      'tteams://tteams.com${GoRouterState.of(context).uri.toString()}' ==
-                              'home'
-                          ? const Color(0x4D9489F5)
-                          : const Color(0xFF6F61EF),
-                  borderRadius: BorderRadius.circular(12.0),
-                  shape: BoxShape.rectangle,
-                  border: Border.all(
+          MouseRegion(
+            opaque: false,
+            cursor: MouseCursor.defer ?? MouseCursor.defer,
+            onEnter: ((event) async {
+              safeSetState(() => _model.mouseRegionHovered1 = true);
+            }),
+            onExit: ((event) async {
+              safeSetState(() => _model.mouseRegionHovered1 = false);
+            }),
+            child: Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
+              child: InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  context.pushNamed('home');
+                },
+                child: Container(
+                  width: double.infinity,
+                  height: 50.0,
+                  decoration: BoxDecoration(
                     color: const Color(0xFF6F61EF),
+                    borderRadius: BorderRadius.circular(12.0),
+                    shape: BoxShape.rectangle,
+                    border: Border.all(
+                      color: const Color(0xFF6F61EF),
+                    ),
                   ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            0.0, 12.0, 12.0, 12.0),
-                        child: Container(
-                          width: 4.0,
-                          height: 100.0,
-                          decoration: BoxDecoration(
-                            color:
-                                'tteams://tteams.com${GoRouterState.of(context).uri.toString()}' ==
-                                        'home'
-                                    ? FlutterFlowTheme.of(context)
-                                        .secondaryBackground
-                                    : FlutterFlowTheme.of(context).menuSelected,
-                            borderRadius: BorderRadius.circular(12.0),
+                  child: Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 12.0, 12.0, 12.0),
+                          child: Container(
+                            width: 4.0,
+                            height: 100.0,
+                            decoration: BoxDecoration(
+                              color: const Color(0x4D9489F5),
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
                           ),
                         ),
-                      ),
-                      const Icon(
-                        Icons.stacked_bar_chart_rounded,
-                        color: Colors.white,
-                        size: 28.0,
-                      ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                        child: Text(
-                          'Tablero',
-                          style:
-                              FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Plus Jakarta Sans',
-                                    color: Colors.white,
-                                    fontSize: 16.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey('Plus Jakarta Sans'),
-                                  ),
+                        const Icon(
+                          Icons.stacked_bar_chart_rounded,
+                          color: Colors.white,
+                          size: 28.0,
                         ),
-                      ),
-                    ],
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              12.0, 0.0, 0.0, 0.0),
+                          child: Text(
+                            'Tablero',
+                            style: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: 'Plus Jakarta Sans',
+                                  color: Colors.white,
+                                  fontSize: 16.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w500,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey('Plus Jakarta Sans'),
+                                ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
-            child: Container(
-              width: double.infinity,
-              height: 50.0,
-              decoration: BoxDecoration(
-                color: const Color(0xFF6F61EF),
-                borderRadius: BorderRadius.circular(12.0),
-                shape: BoxShape.rectangle,
-              ),
-              child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 12.0, 12.0),
-                      child: Container(
-                        width: 4.0,
-                        height: 100.0,
-                        decoration: BoxDecoration(
-                          color: const Color(0x4D9489F5),
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                      ),
-                    ),
-                    const Icon(
-                      Icons.forum_rounded,
-                      color: Colors.white,
-                      size: 28.0,
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                      child: Text(
-                        'Notificaciones',
-                        style:
-                            FlutterFlowTheme.of(context).labelMedium.override(
-                                  fontFamily: 'Plus Jakarta Sans',
-                                  color: Colors.white,
-                                  fontSize: 14.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w500,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey('Plus Jakarta Sans'),
-                                ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
-            child: Container(
-              width: double.infinity,
-              height: 50.0,
-              decoration: BoxDecoration(
-                color: const Color(0xFF6F61EF),
-                borderRadius: BorderRadius.circular(12.0),
-                shape: BoxShape.rectangle,
-              ),
-              child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 12.0, 12.0),
-                      child: Container(
-                        width: 4.0,
-                        height: 100.0,
-                        decoration: BoxDecoration(
-                          color: const Color(0x4D9489F5),
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                      ),
-                    ),
-                    const Icon(
-                      Icons.grain,
-                      color: Colors.white,
-                      size: 28.0,
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                      child: Text(
-                        'Proyectos',
-                        style:
-                            FlutterFlowTheme.of(context).labelMedium.override(
-                                  fontFamily: 'Plus Jakarta Sans',
-                                  color: Colors.white,
-                                  fontSize: 14.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w500,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey('Plus Jakarta Sans'),
-                                ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
-            child: Container(
-              width: double.infinity,
-              height: 50.0,
-              decoration: BoxDecoration(
-                color: const Color(0xFF6F61EF),
-                borderRadius: BorderRadius.circular(12.0),
-                shape: BoxShape.rectangle,
-              ),
-              child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 12.0, 12.0),
-                      child: Container(
-                        width: 4.0,
-                        height: 100.0,
-                        decoration: BoxDecoration(
-                          color: const Color(0x4D9489F5),
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                      ),
-                    ),
-                    const Icon(
-                      Icons.task,
-                      color: Colors.white,
-                      size: 28.0,
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                      child: Text(
-                        'Tareas',
-                        style: FlutterFlowTheme.of(context).titleSmall.override(
-                              fontFamily: 'Plus Jakarta Sans',
-                              color: Colors.white,
-                              fontSize: 16.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.w500,
-                              useGoogleFonts: GoogleFonts.asMap()
-                                  .containsKey('Plus Jakarta Sans'),
-                            ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
-            child: InkWell(
-              splashColor: Colors.transparent,
-              focusColor: Colors.transparent,
-              hoverColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-              onTap: () async {
-                context.pushNamed('teamList');
-              },
+          MouseRegion(
+            opaque: false,
+            cursor: MouseCursor.defer ?? MouseCursor.defer,
+            onEnter: ((event) async {
+              safeSetState(() => _model.mouseRegionHovered2 = true);
+            }),
+            onExit: ((event) async {
+              safeSetState(() => _model.mouseRegionHovered2 = false);
+            }),
+            child: Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
               child: Container(
                 width: double.infinity,
                 height: 50.0,
@@ -471,10 +314,6 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                   color: const Color(0xFF6F61EF),
                   borderRadius: BorderRadius.circular(12.0),
                   shape: BoxShape.rectangle,
-                  border: Border.all(
-                    color: const Color(0xFF6F61EF),
-                    width: 1.0,
-                  ),
                 ),
                 child: Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
@@ -494,7 +333,7 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                         ),
                       ),
                       const Icon(
-                        Icons.text_fields_rounded,
+                        Icons.forum_rounded,
                         color: Colors.white,
                         size: 28.0,
                       ),
@@ -502,7 +341,135 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                         child: Text(
-                          'Equipos',
+                          'Notificaciones',
+                          style:
+                              FlutterFlowTheme.of(context).labelMedium.override(
+                                    fontFamily: 'Plus Jakarta Sans',
+                                    color: Colors.white,
+                                    fontSize: 14.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey('Plus Jakarta Sans'),
+                                  ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+          MouseRegion(
+            opaque: false,
+            cursor: MouseCursor.defer ?? MouseCursor.defer,
+            onEnter: ((event) async {
+              safeSetState(() => _model.mouseRegionHovered3 = true);
+            }),
+            onExit: ((event) async {
+              safeSetState(() => _model.mouseRegionHovered3 = false);
+            }),
+            child: Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
+              child: Container(
+                width: double.infinity,
+                height: 50.0,
+                decoration: BoxDecoration(
+                  color: const Color(0xFF6F61EF),
+                  borderRadius: BorderRadius.circular(12.0),
+                  shape: BoxShape.rectangle,
+                ),
+                child: Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 12.0, 12.0, 12.0),
+                        child: Container(
+                          width: 4.0,
+                          height: 100.0,
+                          decoration: BoxDecoration(
+                            color: const Color(0x4D9489F5),
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                        ),
+                      ),
+                      const Icon(
+                        Icons.grain,
+                        color: Colors.white,
+                        size: 28.0,
+                      ),
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                        child: Text(
+                          'Proyectos',
+                          style:
+                              FlutterFlowTheme.of(context).labelMedium.override(
+                                    fontFamily: 'Plus Jakarta Sans',
+                                    color: Colors.white,
+                                    fontSize: 14.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey('Plus Jakarta Sans'),
+                                  ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+          MouseRegion(
+            opaque: false,
+            cursor: MouseCursor.defer ?? MouseCursor.defer,
+            onEnter: ((event) async {
+              safeSetState(() => _model.mouseRegionHovered4 = true);
+            }),
+            onExit: ((event) async {
+              safeSetState(() => _model.mouseRegionHovered4 = false);
+            }),
+            child: Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
+              child: Container(
+                width: double.infinity,
+                height: 50.0,
+                decoration: BoxDecoration(
+                  color: const Color(0xFF6F61EF),
+                  borderRadius: BorderRadius.circular(12.0),
+                  shape: BoxShape.rectangle,
+                ),
+                child: Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 12.0, 12.0, 12.0),
+                        child: Container(
+                          width: 4.0,
+                          height: 100.0,
+                          decoration: BoxDecoration(
+                            color: const Color(0x4D9489F5),
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                        ),
+                      ),
+                      const Icon(
+                        Icons.task,
+                        color: Colors.white,
+                        size: 28.0,
+                      ),
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                        child: Text(
+                          'Tareas',
                           style:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Plus Jakarta Sans',
@@ -521,174 +488,213 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
-            child: Container(
-              width: double.infinity,
-              height: 50.0,
-              decoration: BoxDecoration(
-                color: const Color(0xFF6F61EF),
-                borderRadius: BorderRadius.circular(12.0),
-                shape: BoxShape.rectangle,
-              ),
-              child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 12.0, 12.0),
-                      child: Container(
-                        width: 4.0,
-                        height: 100.0,
-                        decoration: BoxDecoration(
-                          color: const Color(0x4D9489F5),
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                      ),
+          MouseRegion(
+            opaque: false,
+            cursor: MouseCursor.defer ?? MouseCursor.defer,
+            onEnter: ((event) async {
+              safeSetState(() => _model.mouseRegionHovered5 = true);
+            }),
+            onExit: ((event) async {
+              safeSetState(() => _model.mouseRegionHovered5 = false);
+            }),
+            child: Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
+              child: InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  context.pushNamed('teamList');
+                },
+                child: Container(
+                  width: double.infinity,
+                  height: 50.0,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF6F61EF),
+                    borderRadius: BorderRadius.circular(12.0),
+                    shape: BoxShape.rectangle,
+                    border: Border.all(
+                      color: const Color(0xFF6F61EF),
+                      width: 1.0,
                     ),
-                    const Icon(
-                      Icons.list_alt,
-                      color: Colors.white,
-                      size: 28.0,
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                      child: Text(
-                        'Backlog',
-                        style: FlutterFlowTheme.of(context).titleSmall.override(
-                              fontFamily: 'Plus Jakarta Sans',
-                              color: Colors.white,
-                              fontSize: 16.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.w500,
-                              useGoogleFonts: GoogleFonts.asMap()
-                                  .containsKey('Plus Jakarta Sans'),
+                  ),
+                  child: Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 12.0, 12.0, 12.0),
+                          child: Container(
+                            width: 4.0,
+                            height: 100.0,
+                            decoration: BoxDecoration(
+                              color: const Color(0x4D9489F5),
+                              borderRadius: BorderRadius.circular(12.0),
                             ),
-                      ),
+                          ),
+                        ),
+                        const Icon(
+                          Icons.text_fields_rounded,
+                          color: Colors.white,
+                          size: 28.0,
+                        ),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              12.0, 0.0, 0.0, 0.0),
+                          child: Text(
+                            'Equipos',
+                            style: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: 'Plus Jakarta Sans',
+                                  color: Colors.white,
+                                  fontSize: 16.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w500,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey('Plus Jakarta Sans'),
+                                ),
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
-            child: Container(
-              width: double.infinity,
-              height: 50.0,
-              decoration: BoxDecoration(
-                color:
-                    'tteams://tteams.com${GoRouterState.of(context).uri.toString()}' ==
-                            'sprint'
-                        ? FlutterFlowTheme.of(context).menuSelected
-                        : FlutterFlowTheme.of(context).menuNotSelected,
-                borderRadius: BorderRadius.circular(12.0),
-                shape: BoxShape.rectangle,
-                border: Border.all(
+          MouseRegion(
+            opaque: false,
+            cursor: MouseCursor.defer ?? MouseCursor.defer,
+            onEnter: ((event) async {
+              safeSetState(() => _model.mouseRegionHovered6 = true);
+            }),
+            onExit: ((event) async {
+              safeSetState(() => _model.mouseRegionHovered6 = false);
+            }),
+            child: Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
+              child: Container(
+                width: double.infinity,
+                height: 50.0,
+                decoration: BoxDecoration(
                   color: const Color(0xFF6F61EF),
-                  width: 1.0,
+                  borderRadius: BorderRadius.circular(12.0),
+                  shape: BoxShape.rectangle,
                 ),
-              ),
-              child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 12.0, 12.0),
-                      child: Container(
-                        width: 4.0,
-                        height: 100.0,
-                        decoration: BoxDecoration(
-                          color:
-                              'tteams://tteams.com${GoRouterState.of(context).uri.toString()}' ==
-                                      'sprint'
-                                  ? FlutterFlowTheme.of(context)
-                                      .secondaryBackground
-                                  : FlutterFlowTheme.of(context).menuSelected,
-                          borderRadius: BorderRadius.circular(12.0),
+                child: Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 12.0, 12.0, 12.0),
+                        child: Container(
+                          width: 4.0,
+                          height: 100.0,
+                          decoration: BoxDecoration(
+                            color: const Color(0x4D9489F5),
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
                         ),
                       ),
-                    ),
-                    const Icon(
-                      Icons.sort,
-                      color: Colors.white,
-                      size: 28.0,
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                      child: Text(
-                        'Sprint',
-                        style: FlutterFlowTheme.of(context).titleSmall.override(
-                              fontFamily: 'Plus Jakarta Sans',
-                              color: Colors.white,
-                              fontSize: 16.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.w500,
-                              useGoogleFonts: GoogleFonts.asMap()
-                                  .containsKey('Plus Jakarta Sans'),
-                            ),
+                      const Icon(
+                        Icons.list_alt,
+                        color: Colors.white,
+                        size: 28.0,
                       ),
-                    ),
-                  ],
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                        child: Text(
+                          'Backlog',
+                          style:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                                    fontFamily: 'Plus Jakarta Sans',
+                                    color: Colors.white,
+                                    fontSize: 16.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey('Plus Jakarta Sans'),
+                                  ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
-            child: Container(
-              width: double.infinity,
-              height: 50.0,
-              decoration: BoxDecoration(
-                color: const Color(0xFF6F61EF),
-                borderRadius: BorderRadius.circular(12.0),
-                shape: BoxShape.rectangle,
-              ),
-              child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 12.0, 12.0),
-                      child: Container(
-                        width: 4.0,
-                        height: 100.0,
-                        decoration: BoxDecoration(
-                          color: const Color(0x4D9489F5),
-                          borderRadius: BorderRadius.circular(12.0),
+          MouseRegion(
+            opaque: false,
+            cursor: MouseCursor.defer ?? MouseCursor.defer,
+            onEnter: ((event) async {
+              safeSetState(() => _model.mouseRegionHovered7 = true);
+            }),
+            onExit: ((event) async {
+              safeSetState(() => _model.mouseRegionHovered7 = false);
+            }),
+            child: Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
+              child: Container(
+                width: double.infinity,
+                height: 50.0,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).menuNotSelected,
+                  borderRadius: BorderRadius.circular(12.0),
+                  shape: BoxShape.rectangle,
+                  border: Border.all(
+                    color: const Color(0xFF6F61EF),
+                    width: 1.0,
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 12.0, 12.0, 12.0),
+                        child: Container(
+                          width: 4.0,
+                          height: 100.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context).menuSelected,
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
                         ),
                       ),
-                    ),
-                    const Icon(
-                      Icons.wifi_tethering_rounded,
-                      color: Colors.white,
-                      size: 28.0,
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                      child: Text(
-                        'Explorar',
-                        style: FlutterFlowTheme.of(context).titleSmall.override(
-                              fontFamily: 'Plus Jakarta Sans',
-                              color: Colors.white,
-                              fontSize: 16.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.w500,
-                              useGoogleFonts: GoogleFonts.asMap()
-                                  .containsKey('Plus Jakarta Sans'),
-                            ),
+                      const Icon(
+                        Icons.sort,
+                        color: Colors.white,
+                        size: 28.0,
                       ),
-                    ),
-                  ],
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                        child: Text(
+                          'Sprint',
+                          style:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                                    fontFamily: 'Plus Jakarta Sans',
+                                    color: Colors.white,
+                                    fontSize: 16.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey('Plus Jakarta Sans'),
+                                  ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
