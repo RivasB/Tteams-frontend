@@ -196,117 +196,174 @@ class _VerifyAccountWidgetState extends State<VerifyAccountWidget>
                       ),
                       child: Align(
                         alignment: const AlignmentDirectional(0.0, 0.0),
-                        child: Padding(
-                          padding: const EdgeInsets.all(34.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Verificar cuenta',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context)
-                                    .displaySmall
-                                    .override(
-                                      fontFamily: 'Plus Jakarta Sans',
-                                      color: const Color(0xFF101213),
-                                      fontSize: 36.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w600,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey('Plus Jakarta Sans'),
-                                    ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 12.0, 0.0, 24.0),
-                                child: Text(
-                                  'Ingresa el código de verificación que hemos enviado a tu correo electrónico para continuar. Este código es necesario para confirmar tu identidad y proteger tu cuenta.',
-                                  textAlign: TextAlign.start,
+                        child: Form(
+                          key: _model.formKey,
+                          autovalidateMode: AutovalidateMode.disabled,
+                          child: Padding(
+                            padding: const EdgeInsets.all(34.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Verificar cuenta',
+                                  textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
-                                      .labelMedium
+                                      .displaySmall
                                       .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .labelMediumFamily,
+                                        fontFamily: 'Plus Jakarta Sans',
+                                        color: const Color(0xFF101213),
+                                        fontSize: 36.0,
                                         letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w600,
                                         useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMediumFamily),
+                                            .containsKey('Plus Jakarta Sans'),
                                       ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 16.0),
-                                child: FlutterFlowTimer(
-                                  initialTime: _model.timerInitialTimeMs,
-                                  getDisplayTime: (value) =>
-                                      StopWatchTimer.getDisplayTime(
-                                    value,
-                                    hours: false,
-                                    milliSecond: false,
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 12.0, 0.0, 24.0),
+                                  child: Text(
+                                    'Ingresa el código de verificación que hemos enviado a tu correo electrónico para continuar. Este código es necesario para confirmar tu identidad y proteger tu cuenta.',
+                                    textAlign: TextAlign.start,
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMediumFamily,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily),
+                                        ),
                                   ),
-                                  controller: _model.timerController,
-                                  updateStateInterval:
-                                      const Duration(milliseconds: 1000),
-                                  onChanged:
-                                      (value, displayTime, shouldUpdate) {
-                                    _model.timerMilliseconds = value;
-                                    _model.timerValue = displayTime;
-                                    if (shouldUpdate) safeSetState(() {});
-                                  },
-                                  onEnded: () async {
-                                    await showDialog(
-                                      context: context,
-                                      builder: (alertDialogContext) {
-                                        return AlertDialog(
-                                          title: const Text('Código de verificación'),
-                                          content: const Text(
-                                              'El código de verificación ha expirado. Presione el botón reenviar código para obtener uno nuevo.'),
-                                          actions: [
-                                            TextButton(
-                                              onPressed: () => Navigator.pop(
-                                                  alertDialogContext),
-                                              child: const Text('Aceptar'),
-                                            ),
-                                          ],
-                                        );
-                                      },
-                                    );
-                                  },
-                                  textAlign: TextAlign.start,
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .headlineSmallFamily,
-                                        letterSpacing: 0.0,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmallFamily),
-                                      ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 16.0),
-                                child: SizedBox(
-                                  width: double.infinity,
-                                  child: TextFormField(
-                                    controller: _model.codeTextController,
-                                    focusNode: _model.codeFocusNode,
-                                    autofocus: true,
-                                    autofillHints: const [AutofillHints.postalCode],
-                                    obscureText: false,
-                                    decoration: InputDecoration(
-                                      labelText: 'Código de verificación',
-                                      labelStyle: FlutterFlowTheme.of(context)
-                                          .labelLarge
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 16.0),
+                                  child: FlutterFlowTimer(
+                                    initialTime: _model.timerInitialTimeMs,
+                                    getDisplayTime: (value) =>
+                                        StopWatchTimer.getDisplayTime(
+                                      value,
+                                      hours: false,
+                                      milliSecond: false,
+                                    ),
+                                    controller: _model.timerController,
+                                    updateStateInterval:
+                                        const Duration(milliseconds: 1000),
+                                    onChanged:
+                                        (value, displayTime, shouldUpdate) {
+                                      _model.timerMilliseconds = value;
+                                      _model.timerValue = displayTime;
+                                      if (shouldUpdate) safeSetState(() {});
+                                    },
+                                    onEnded: () async {
+                                      await showDialog(
+                                        context: context,
+                                        builder: (alertDialogContext) {
+                                          return AlertDialog(
+                                            title:
+                                                const Text('Código de verificación'),
+                                            content: const Text(
+                                                'El código de verificación ha expirado. Presione el botón reenviar código para obtener uno nuevo.'),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext),
+                                                child: const Text('Aceptar'),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      );
+                                    },
+                                    textAlign: TextAlign.start,
+                                    style: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmallFamily,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmallFamily),
+                                        ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 16.0),
+                                  child: SizedBox(
+                                    width: double.infinity,
+                                    child: TextFormField(
+                                      controller: _model.codeTextController,
+                                      focusNode: _model.codeFocusNode,
+                                      autofocus: true,
+                                      autofillHints: const [AutofillHints.postalCode],
+                                      obscureText: false,
+                                      decoration: InputDecoration(
+                                        labelText: 'Código de verificación',
+                                        labelStyle: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              fontFamily: 'Plus Jakarta Sans',
+                                              color: const Color(0xFF57636C),
+                                              fontSize: 22.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w500,
+                                              useGoogleFonts:
+                                                  GoogleFonts.asMap()
+                                                      .containsKey(
+                                                          'Plus Jakarta Sans'),
+                                            ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: const BorderSide(
+                                            color: Color(0xFFF1F4F8),
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: const BorderSide(
+                                            color: Color(0xFF4B39EF),
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide: const BorderSide(
+                                            color: Color(0xFFE0E3E7),
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                        ),
+                                        focusedErrorBorder: OutlineInputBorder(
+                                          borderSide: const BorderSide(
+                                            color: Color(0xFFE0E3E7),
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                        ),
+                                        filled: true,
+                                        fillColor: const Color(0xFFF1F4F8),
+                                        prefixIcon: const Icon(
+                                          Icons.numbers,
+                                        ),
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyLarge
                                           .override(
                                             fontFamily: 'Plus Jakarta Sans',
-                                            color: const Color(0xFF57636C),
+                                            color: const Color(0xFF101213),
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w500,
@@ -314,214 +371,164 @@ class _VerifyAccountWidgetState extends State<VerifyAccountWidget>
                                                 .containsKey(
                                                     'Plus Jakarta Sans'),
                                           ),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
-                                          color: Color(0xFFF1F4F8),
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(12.0),
-                                      ),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
-                                          color: Color(0xFF4B39EF),
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(12.0),
-                                      ),
-                                      errorBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
-                                          color: Color(0xFFE0E3E7),
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(12.0),
-                                      ),
-                                      focusedErrorBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
-                                          color: Color(0xFFE0E3E7),
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(12.0),
-                                      ),
-                                      filled: true,
-                                      fillColor: const Color(0xFFF1F4F8),
+                                      maxLength: 6,
+                                      maxLengthEnforcement:
+                                          MaxLengthEnforcement.enforced,
+                                      keyboardType: TextInputType.number,
+                                      validator: _model
+                                          .codeTextControllerValidator
+                                          .asValidator(context),
+                                      inputFormatters: [_model.codeMask],
                                     ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .override(
-                                          fontFamily: 'Plus Jakarta Sans',
-                                          color: const Color(0xFF101213),
-                                          fontSize: 16.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w500,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey('Plus Jakarta Sans'),
-                                        ),
-                                    maxLength: 6,
-                                    maxLengthEnforcement:
-                                        MaxLengthEnforcement.enforced,
-                                    keyboardType: TextInputType.number,
-                                    validator: _model
-                                        .codeTextControllerValidator
-                                        .asValidator(context),
-                                    inputFormatters: [_model.codeMask],
                                   ),
                                 ),
-                              ),
-                              Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 6.0),
-                                  child: FFButtonWidget(
-                                    onPressed: () async {
-                                      _model.verificationResponse =
-                                          await TTeamsAPILoginAndRegisterGroup
-                                              .registerUserCheckCodeCall
-                                              .call(
-                                        code: int.tryParse(
-                                            _model.codeTextController.text),
-                                        password: widget.password,
-                                      );
-
-                                      if ((_model.verificationResponse
-                                              ?.succeeded ??
-                                          true)) {
-                                        _model.loginResponse =
+                                Align(
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 6.0),
+                                    child: FFButtonWidget(
+                                      onPressed: () async {
+                                        if (_model.formKey.currentState ==
+                                                null ||
+                                            !_model.formKey.currentState!
+                                                .validate()) {
+                                          return;
+                                        }
+                                        _model.verificationResponse =
                                             await TTeamsAPILoginAndRegisterGroup
-                                                .loginCall
+                                                .registerUserCheckCodeCall
                                                 .call(
-                                          email: widget.email,
+                                          code: int.tryParse(
+                                              _model.codeTextController.text),
                                           password: widget.password,
                                         );
 
-                                        if ((_model.loginResponse?.succeeded ??
+                                        if ((_model.verificationResponse
+                                                ?.succeeded ??
                                             true)) {
-                                          GoRouter.of(context)
-                                              .prepareAuthEvent();
-                                          await authManager.signIn(
-                                            authenticationToken:
-                                                TTeamsAPILoginAndRegisterGroup
-                                                    .loginCall
-                                                    .token(
-                                                      (_model.loginResponse
-                                                              ?.jsonBody ??
-                                                          ''),
-                                                    )
-                                                    .toString(),
-                                            refreshToken:
-                                                TTeamsAPILoginAndRegisterGroup
-                                                    .loginCall
-                                                    .token(
-                                                      (_model.loginResponse
-                                                              ?.jsonBody ??
-                                                          ''),
-                                                    )
-                                                    .toString(),
+                                          _model.loginResponse =
+                                              await TTeamsAPILoginAndRegisterGroup
+                                                  .loginCall
+                                                  .call(
+                                            email: widget.email,
+                                            password: widget.password,
                                           );
 
-                                          context.goNamedAuth(
-                                              'home', context.mounted);
-                                        } else {
-                                          context.pushNamedAuth(
-                                              'login', context.mounted);
-                                        }
-                                      }
+                                          if ((_model
+                                                  .loginResponse?.succeeded ??
+                                              true)) {
+                                            GoRouter.of(context)
+                                                .prepareAuthEvent();
+                                            await authManager.signIn(
+                                              authenticationToken:
+                                                  TTeamsAPILoginAndRegisterGroup
+                                                      .loginCall
+                                                      .token(
+                                                        (_model.loginResponse
+                                                                ?.jsonBody ??
+                                                            ''),
+                                                      )
+                                                      .toString(),
+                                              refreshToken:
+                                                  TTeamsAPILoginAndRegisterGroup
+                                                      .loginCall
+                                                      .token(
+                                                        (_model.loginResponse
+                                                                ?.jsonBody ??
+                                                            ''),
+                                                      )
+                                                      .toString(),
+                                            );
 
-                                      safeSetState(() {});
-                                    },
-                                    text: 'Verificar',
-                                    options: FFButtonOptions(
-                                      width: double.infinity,
-                                      height: 52.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 0.0),
-                                      iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmallFamily,
-                                            color: Colors.white,
-                                            letterSpacing: 0.0,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
+                                            context.goNamedAuth(
+                                                'home', context.mounted);
+                                          } else {
+                                            context.pushNamedAuth(
+                                                'login', context.mounted);
+                                          }
+                                        } else {
+                                          ScaffoldMessenger.of(context)
+                                              .clearSnackBars();
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                TTeamsAPILoginAndRegisterGroup
+                                                    .registerUserCheckCodeCall
+                                                    .errors(
+                                                      (_model.verificationResponse
+                                                              ?.jsonBody ??
+                                                          ''),
+                                                    )!
+                                                    .first
+                                                    .toString(),
+                                                style:
                                                     FlutterFlowTheme.of(context)
-                                                        .titleSmallFamily),
-                                          ),
-                                      elevation: 3.0,
-                                      borderRadius: BorderRadius.circular(12.0),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 22.0, 0.0, 5.0),
-                                child: Text(
-                                  '¿No recibiste el código?: Si no recibiste el código, puedes solicitar uno nuevo haciendo clic en el botón Reenviar Código.',
-                                  textAlign: TextAlign.start,
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .labelMediumFamily,
-                                        letterSpacing: 0.0,
-                                        fontStyle: FontStyle.italic,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMediumFamily),
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily),
+                                                        ),
+                                              ),
+                                              duration:
+                                                  const Duration(milliseconds: 3000),
+                                              backgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                            ),
+                                          );
+                                        }
+
+                                        safeSetState(() {});
+                                      },
+                                      text: 'Verificar',
+                                      options: FFButtonOptions(
+                                        width: double.infinity,
+                                        height: 52.0,
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 0.0),
+                                        iconPadding:
+                                            const EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily,
+                                              color: Colors.white,
+                                              letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmallFamily),
+                                            ),
+                                        elevation: 3.0,
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
                                       ),
-                                ),
-                              ),
-                              Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 6.0),
-                                  child: FFButtonWidget(
-                                    onPressed: () async {
-                                      _model.timerController.onResetTimer();
-                                    },
-                                    text: 'Reenviar Código',
-                                    options: FFButtonOptions(
-                                      width: double.infinity,
-                                      height: 52.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 0.0),
-                                      iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color: FlutterFlowTheme.of(context).error,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmallFamily,
-                                            color: Colors.white,
-                                            letterSpacing: 0.0,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmallFamily),
-                                          ),
-                                      elevation: 3.0,
-                                      borderRadius: BorderRadius.circular(12.0),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),

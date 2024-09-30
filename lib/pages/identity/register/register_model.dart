@@ -2,7 +2,6 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'register_widget.dart' show RegisterWidget;
 import 'package:flutter/material.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class RegisterModel extends FlutterFlowModel<RegisterWidget> {
   ///  State fields for stateful widgets in this page.
@@ -41,7 +40,6 @@ class RegisterModel extends FlutterFlowModel<RegisterWidget> {
   // State field(s) for telefono widget.
   FocusNode? telefonoFocusNode;
   TextEditingController? telefonoTextController;
-  final telefonoMask = MaskTextInputFormatter(mask: '+# (###) ###-##-##');
   String? Function(BuildContext, String?)? telefonoTextControllerValidator;
   String? _telefonoTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {

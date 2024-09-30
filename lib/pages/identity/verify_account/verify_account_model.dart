@@ -9,11 +9,12 @@ import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 class VerifyAccountModel extends FlutterFlowModel<VerifyAccountWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final formKey = GlobalKey<FormState>();
   // State field(s) for Timer widget.
-  final timerInitialTimeMs = 300000;
-  int timerMilliseconds = 300000;
+  final timerInitialTimeMs = 900000;
+  int timerMilliseconds = 900000;
   String timerValue = StopWatchTimer.getDisplayTime(
-    300000,
+    900000,
     hours: false,
     milliSecond: false,
   );
@@ -25,13 +26,30 @@ class VerifyAccountModel extends FlutterFlowModel<VerifyAccountWidget> {
   TextEditingController? codeTextController;
   final codeMask = MaskTextInputFormatter(mask: '######');
   String? Function(BuildContext, String?)? codeTextControllerValidator;
+  String? _codeTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Introduce tu código de verificación.';
+    }
+
+    if (val.length < 6) {
+      return 'Requires at least 6 characters.';
+    }
+    if (val.length > 6) {
+      return 'Maximum 6 characters allowed, currently ${val.length}.';
+    }
+
+    return null;
+  }
+
   // Stores action output result for [Backend Call - API (registerUserCheckCode)] action in verify widget.
   ApiCallResponse? verificationResponse;
   // Stores action output result for [Backend Call - API (login)] action in verify widget.
   ApiCallResponse? loginResponse;
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    codeTextControllerValidator = _codeTextControllerValidator;
+  }
 
   @override
   void dispose() {
