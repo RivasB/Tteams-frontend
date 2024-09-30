@@ -234,9 +234,9 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                 decoration: BoxDecoration(
                   color:
                       'tteams://tteams.com${GoRouterState.of(context).uri.toString()}' ==
-                              'home'
+                              '/home'
                           ? const Color(0x4D9489F5)
-                          : FlutterFlowTheme.of(context).primary,
+                          : const Color(0xFF6F61EF),
                   borderRadius: BorderRadius.circular(12.0),
                   shape: BoxShape.rectangle,
                   border: Border.all(
@@ -257,10 +257,10 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                           decoration: BoxDecoration(
                             color:
                                 'tteams://tteams.com${GoRouterState.of(context).uri.toString()}' ==
-                                        'home'
+                                        '/home'
                                     ? FlutterFlowTheme.of(context)
                                         .secondaryBackground
-                                    : FlutterFlowTheme.of(context).primary,
+                                    : FlutterFlowTheme.of(context).menuSelected,
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                         ),
@@ -583,8 +583,8 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                 color:
                     'tteams://tteams.com${GoRouterState.of(context).uri.toString()}' ==
                             'sprint'
-                        ? const Color(0x4D9489F5)
-                        : FlutterFlowTheme.of(context).primary,
+                        ? FlutterFlowTheme.of(context).menuSelected
+                        : FlutterFlowTheme.of(context).menuNotSelected,
                 borderRadius: BorderRadius.circular(12.0),
                 shape: BoxShape.rectangle,
                 border: Border.all(
@@ -609,7 +609,7 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                                       'sprint'
                                   ? FlutterFlowTheme.of(context)
                                       .secondaryBackground
-                                  : const Color(0x4D9489F5),
+                                  : FlutterFlowTheme.of(context).menuSelected,
                           borderRadius: BorderRadius.circular(12.0),
                         ),
                       ),
