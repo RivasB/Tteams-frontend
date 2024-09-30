@@ -215,7 +215,7 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                             borderRadius: 8.0,
                             buttonSize: 40.0,
                             icon: Icon(
-                              Icons.arrow_drop_down_sharp,
+                              Icons.menu,
                               color: FlutterFlowTheme.of(context).info,
                               size: 24.0,
                             ),
