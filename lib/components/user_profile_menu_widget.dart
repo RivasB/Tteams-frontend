@@ -1,3 +1,4 @@
+import '/auth/custom_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -276,11 +277,26 @@ class _UserProfileMenuWidgetState extends State<UserProfileMenuWidget>
                               ),
                               child: Align(
                                 alignment: const AlignmentDirectional(1.0, 0.0),
-                                child: Icon(
-                                  Icons.logout,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 54.0,
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    GoRouter.of(context).prepareAuthEvent();
+                                    await authManager.signOut();
+                                    GoRouter.of(context)
+                                        .clearRedirectLocation();
+
+                                    context.goNamedAuth(
+                                        'login', context.mounted);
+                                  },
+                                  child: Icon(
+                                    Icons.logout,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    size: 54.0,
+                                  ),
                                 ),
                               ),
                             ),
