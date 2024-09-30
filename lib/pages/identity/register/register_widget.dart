@@ -832,10 +832,9 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                               .passwordTextController.text,
                                         );
 
-                                        if ((_model.registerResponse
-                                                    ?.statusCode ??
-                                                200) ==
-                                            200) {
+                                        if ((_model
+                                                .registerResponse?.succeeded ??
+                                            true)) {
                                           context.goNamed(
                                             'verifyAccount',
                                             queryParameters: {
