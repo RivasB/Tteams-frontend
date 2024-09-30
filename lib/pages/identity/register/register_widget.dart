@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'register_model.dart';
 export 'register_model.dart';
@@ -277,10 +276,6 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                           validator: _model
                                               .nameTextControllerValidator
                                               .asValidator(context),
-                                          inputFormatters: [
-                                            FilteringTextInputFormatter.allow(
-                                                RegExp('[a-zA-Z0-9]'))
-                                          ],
                                         ),
                                       ),
                                     ),
@@ -295,6 +290,8 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                           focusNode: _model.lastNameFocusNode,
                                           autofocus: true,
                                           autofillHints: const [AutofillHints.email],
+                                          textCapitalization:
+                                              TextCapitalization.words,
                                           obscureText: false,
                                           decoration: InputDecoration(
                                             labelText: 'Apellidos',
@@ -377,8 +374,6 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                                                 context)
                                                             .bodyLargeFamily),
                                               ),
-                                          keyboardType:
-                                              TextInputType.emailAddress,
                                           validator: _model
                                               .lastNameTextControllerValidator
                                               .asValidator(context),
@@ -484,9 +479,6 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                           validator: _model
                                               .telefonoTextControllerValidator
                                               .asValidator(context),
-                                          inputFormatters: [
-                                            _model.telefonoMask
-                                          ],
                                         ),
                                       ),
                                     ),
