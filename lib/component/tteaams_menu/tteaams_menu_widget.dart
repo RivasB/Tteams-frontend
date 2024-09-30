@@ -145,10 +145,17 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                                   fadeInDuration: const Duration(milliseconds: 500),
                                   fadeOutDuration: const Duration(milliseconds: 500),
                                   imageUrl:
-                                      'https://images.unsplash.com/photo-1624561172888-ac93c696e10c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjJ8fHVzZXJzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+                                      'https://images.unsplash.com/photo-1640960543409-dbe56ccc30e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw4fHx1c2VyfGVufDB8fHx8MTcyNzY5MTE1M3ww&ixlib=rb-4.0.3&q=80&w=1080',
                                   width: 44.0,
                                   height: 44.0,
                                   fit: BoxFit.cover,
+                                  errorWidget: (context, error, stackTrace) =>
+                                      Image.asset(
+                                    'assets/images/error_image.jpeg',
+                                    width: 44.0,
+                                    height: 44.0,
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               ),
                             ),
@@ -225,7 +232,11 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                 width: double.infinity,
                 height: 50.0,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF6F61EF),
+                  color:
+                      'tteams://tteams.com${GoRouterState.of(context).uri.toString()}' ==
+                              'home'
+                          ? const Color(0x4D9489F5)
+                          : FlutterFlowTheme.of(context).primary,
                   borderRadius: BorderRadius.circular(12.0),
                   shape: BoxShape.rectangle,
                   border: Border.all(
@@ -244,7 +255,12 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                           width: 4.0,
                           height: 100.0,
                           decoration: BoxDecoration(
-                            color: const Color(0x4D9489F5),
+                            color:
+                                'tteams://tteams.com${GoRouterState.of(context).uri.toString()}' ==
+                                        'home'
+                                    ? FlutterFlowTheme.of(context)
+                                        .secondaryBackground
+                                    : FlutterFlowTheme.of(context).primary,
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                         ),
@@ -564,7 +580,11 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
               width: double.infinity,
               height: 50.0,
               decoration: BoxDecoration(
-                color: const Color(0x4D9489F5),
+                color:
+                    'tteams://tteams.com${GoRouterState.of(context).uri.toString()}' ==
+                            'sprint'
+                        ? const Color(0x4D9489F5)
+                        : FlutterFlowTheme.of(context).primary,
                 borderRadius: BorderRadius.circular(12.0),
                 shape: BoxShape.rectangle,
                 border: Border.all(
@@ -585,7 +605,11 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                         height: 100.0,
                         decoration: BoxDecoration(
                           color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                              'tteams://tteams.com${GoRouterState.of(context).uri.toString()}' ==
+                                      'sprint'
+                                  ? FlutterFlowTheme.of(context)
+                                      .secondaryBackground
+                                  : const Color(0x4D9489F5),
                           borderRadius: BorderRadius.circular(12.0),
                         ),
                       ),
