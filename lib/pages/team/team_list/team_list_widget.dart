@@ -127,7 +127,9 @@ class _TeamListWidgetState extends State<TeamListWidget>
                   child: wrapWithModel(
                     model: _model.tteaamsMenuModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: const TteaamsMenuWidget(),
+                    child: const TteaamsMenuWidget(
+                      navselected: 5,
+                    ),
                   ),
                 ),
               Expanded(
