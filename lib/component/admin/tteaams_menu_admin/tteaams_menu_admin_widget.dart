@@ -1,9 +1,11 @@
 import '/component/admin/admin_user_switch_off/admin_user_switch_off_widget.dart';
+import '/components/user_profile_menu_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'tteaams_menu_admin_model.dart';
 export 'tteaams_menu_admin_model.dart';
 
@@ -40,6 +42,8 @@ class _TteaamsMenuAdminWidgetState extends State<TteaamsMenuAdminWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Padding(
       padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
       child: Column(
@@ -100,86 +104,115 @@ class _TteaamsMenuAdminWidgetState extends State<TteaamsMenuAdminWidget> {
                   Padding(
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(16.0, 20.0, 16.0, 16.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Container(
-                          width: 44.0,
-                          height: 44.0,
-                          decoration: BoxDecoration(
-                            color: const Color(0x4D9489F5),
-                            borderRadius: BorderRadius.circular(12.0),
-                            border: Border.all(
-                              color: const Color(0xFF6F61EF),
-                              width: 2.0,
+                    child: InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        await showModalBottomSheet(
+                          isScrollControlled: true,
+                          backgroundColor: Colors.transparent,
+                          enableDrag: false,
+                          context: context,
+                          builder: (context) {
+                            return Padding(
+                              padding: MediaQuery.viewInsetsOf(context),
+                              child: const UserProfileMenuWidget(),
+                            );
+                          },
+                        ).then((value) => safeSetState(() {}));
+                      },
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Container(
+                            width: 44.0,
+                            height: 44.0,
+                            decoration: BoxDecoration(
+                              color: const Color(0x4D9489F5),
+                              borderRadius: BorderRadius.circular(12.0),
+                              border: Border.all(
+                                color: const Color(0xFF6F61EF),
+                                width: 2.0,
+                              ),
                             ),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(2.0),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(8.0),
-                              child: CachedNetworkImage(
-                                fadeInDuration: const Duration(milliseconds: 500),
-                                fadeOutDuration: const Duration(milliseconds: 500),
-                                imageUrl:
-                                    'https://images.unsplash.com/photo-1624561172888-ac93c696e10c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjJ8fHVzZXJzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
-                                width: 44.0,
-                                height: 44.0,
-                                fit: BoxFit.cover,
+                            child: Padding(
+                              padding: const EdgeInsets.all(2.0),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: CachedNetworkImage(
+                                  fadeInDuration: const Duration(milliseconds: 500),
+                                  fadeOutDuration: const Duration(milliseconds: 500),
+                                  imageUrl:
+                                      'https://images.unsplash.com/photo-1640960543409-dbe56ccc30e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw4fHx1c2VyfGVufDB8fHx8MTcyNzY5MTE1M3ww&ixlib=rb-4.0.3&q=80&w=1080',
+                                  width: 44.0,
+                                  height: 44.0,
+                                  fit: BoxFit.cover,
+                                  errorWidget: (context, error, stackTrace) =>
+                                      Image.asset(
+                                    'assets/images/error_image.jpeg',
+                                    width: 44.0,
+                                    height: 44.0,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                        Expanded(
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                12.0, 0.0, 0.0, 0.0),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'David Alejandro',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyLarge
-                                      .override(
-                                        fontFamily: 'Plus Jakarta Sans',
-                                        color: Colors.white,
-                                        fontSize: 16.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w600,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey('Plus Jakarta Sans'),
-                                      ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 4.0, 0.0, 0.0),
-                                  child: Text(
-                                    'dev@devminds.com',
+                          Expanded(
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  12.0, 0.0, 0.0, 0.0),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    FFAppState().UserMe.data.firstName,
                                     style: FlutterFlowTheme.of(context)
-                                        .labelSmall
+                                        .bodyLarge
                                         .override(
                                           fontFamily: 'Plus Jakarta Sans',
-                                          color: const Color(0x9AFFFFFF),
-                                          fontSize: 12.0,
+                                          color: Colors.white,
+                                          fontSize: 16.0,
                                           letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w500,
+                                          fontWeight: FontWeight.w600,
                                           useGoogleFonts: GoogleFonts.asMap()
                                               .containsKey('Plus Jakarta Sans'),
                                         ),
                                   ),
-                                ),
-                              ],
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 4.0, 0.0, 0.0),
+                                    child: Text(
+                                      FFAppState().UserMe.data.email,
+                                      style: FlutterFlowTheme.of(context)
+                                          .labelSmall
+                                          .override(
+                                            fontFamily: 'Plus Jakarta Sans',
+                                            color: const Color(0x9AFFFFFF),
+                                            fontSize: 12.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w500,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    'Plus Jakarta Sans'),
+                                          ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                        const Icon(
-                          Icons.notifications_none,
-                          color: Colors.white,
-                          size: 28.0,
-                        ),
-                      ],
+                          Icon(
+                            Icons.location_history,
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            size: 24.0,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],

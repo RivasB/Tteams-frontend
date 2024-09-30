@@ -1,6 +1,5 @@
 import '/component/admin/admin_user_switch/admin_user_switch_widget.dart';
 import '/components/user_profile_menu_widget.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -211,17 +210,11 @@ class _TteaamsMenuWidgetState extends State<TteaamsMenuWidget> {
                               ),
                             ),
                           ),
-                          FlutterFlowIconButton(
-                            borderRadius: 8.0,
-                            buttonSize: 40.0,
-                            icon: Icon(
-                              Icons.menu,
-                              color: FlutterFlowTheme.of(context).info,
-                              size: 24.0,
-                            ),
-                            onPressed: () {
-                              print('IconButton pressed ...');
-                            },
+                          Icon(
+                            Icons.location_history,
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            size: 24.0,
                           ),
                         ],
                       ),
