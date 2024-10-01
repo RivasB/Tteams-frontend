@@ -34,9 +34,6 @@ class UserUpdateModel extends FlutterFlowModel<UserUpdateWidget> {
   // State field(s) for DropDown widget.
   String? dropDownValue2;
   FormFieldController<String>? dropDownValueController2;
-  // State field(s) for DropDown widget.
-  String? dropDownValue3;
-  FormFieldController<String>? dropDownValueController3;
 
   @override
   void initState(BuildContext context) {

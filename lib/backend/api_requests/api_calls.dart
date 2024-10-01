@@ -275,6 +275,12 @@ class GetAllProfilesCall {
       alwaysAllowBody: false,
     );
   }
+
+  List? profileNameList(dynamic response) => getJsonField(
+        response,
+        r'''$.data[:].name''',
+        true,
+      ) as List?;
 }
 
 class UpdateProfileCall {
@@ -395,7 +401,7 @@ class GetAllOrganizationsCall {
       },
       returnBody: true,
       encodeBodyUtf8: false,
-      decodeUtf8: false,
+      decodeUtf8: true,
       cache: false,
       isStreamingApi: false,
       alwaysAllowBody: false,
