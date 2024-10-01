@@ -10,6 +10,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/backend/schema/structs/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'user_update_model.dart';
 export 'user_update_model.dart';
@@ -1218,17 +1219,14 @@ class _UserUpdateWidgetState extends State<UserUpdateWidget>
                                                         if (!snapshot.hasData) {
                                                           return Center(
                                                             child: SizedBox(
-                                                              width: 50.0,
-                                                              height: 50.0,
+                                                              width: 40.0,
+                                                              height: 40.0,
                                                               child:
-                                                                  CircularProgressIndicator(
-                                                                valueColor:
-                                                                    AlwaysStoppedAnimation<
-                                                                        Color>(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primary,
-                                                                ),
+                                                                  SpinKitThreeBounce(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                                size: 40.0,
                                                               ),
                                                             ),
                                                           );
