@@ -1,4 +1,4 @@
-import '/component/admin/admin_user_switch_off/admin_user_switch_off_widget.dart';
+import '/component/admin/switch/admin_user_switch_off/admin_user_switch_off_widget.dart';
 import '/components/user_profile_menu_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -335,103 +335,93 @@ class _TteaamsMenuAdminWidgetState extends State<TteaamsMenuAdminWidget> {
             onExit: ((event) async {
               safeSetState(() => _model.mouseRegion2Hovered = false);
             }),
-            child: Visibility(
-              visible: responsiveVisibility(
-                context: context,
-                phone: false,
-                tablet: false,
-                tabletLandscape: false,
-                desktop: false,
-              ),
-              child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
-                child: InkWell(
-                  splashColor: Colors.transparent,
-                  focusColor: Colors.transparent,
-                  hoverColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  onTap: () async {
-                    context.pushNamed(
-                      'organizationManagement',
-                      extra: <String, dynamic>{
-                        kTransitionInfoKey: const TransitionInfo(
-                          hasTransition: true,
-                          transitionType: PageTransitionType.fade,
-                          duration: Duration(milliseconds: 0),
-                        ),
-                      },
-                    );
-                  },
-                  child: Container(
-                    width: double.infinity,
-                    height: 50.0,
-                    decoration: BoxDecoration(
-                      color: () {
-                        if (_model.mouseRegion2Hovered) {
-                          return FlutterFlowTheme.of(context).accent3;
-                        } else if (widget.menuIndex == 2) {
-                          return FlutterFlowTheme.of(context).accent3;
-                        } else {
-                          return FlutterFlowTheme.of(context).tertiary;
-                        }
-                      }(),
-                      borderRadius: BorderRadius.circular(12.0),
-                      shape: BoxShape.rectangle,
-                    ),
-                    child: Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 12.0, 12.0, 12.0),
-                            child: Container(
-                              width: 4.0,
-                              height: 100.0,
-                              decoration: BoxDecoration(
-                                color: () {
-                                  if (_model.mouseRegion2Hovered) {
-                                    return FlutterFlowTheme.of(context)
-                                        .secondaryBackground;
-                                  } else if (widget.menuIndex == 2) {
-                                    return FlutterFlowTheme.of(context)
-                                        .secondaryBackground;
-                                  } else {
-                                    return FlutterFlowTheme.of(context)
-                                        .tertiary;
-                                  }
-                                }(),
-                                borderRadius: BorderRadius.circular(12.0),
-                              ),
-                            ),
-                          ),
-                          const Icon(
-                            Icons.business,
-                            color: Colors.white,
-                            size: 28.0,
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                12.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              'Organizaciones',
-                              style: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    fontFamily: 'Plus Jakarta Sans',
-                                    color: Colors.white,
-                                    fontSize: 16.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey('Plus Jakarta Sans'),
-                                  ),
-                            ),
-                          ),
-                        ],
+            child: Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
+              child: InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  context.pushNamed(
+                    'organizationManagement',
+                    extra: <String, dynamic>{
+                      kTransitionInfoKey: const TransitionInfo(
+                        hasTransition: true,
+                        transitionType: PageTransitionType.fade,
+                        duration: Duration(milliseconds: 0),
                       ),
+                    },
+                  );
+                },
+                child: Container(
+                  width: double.infinity,
+                  height: 50.0,
+                  decoration: BoxDecoration(
+                    color: () {
+                      if (_model.mouseRegion2Hovered) {
+                        return FlutterFlowTheme.of(context).accent3;
+                      } else if (widget.menuIndex == 2) {
+                        return FlutterFlowTheme.of(context).accent3;
+                      } else {
+                        return FlutterFlowTheme.of(context).tertiary;
+                      }
+                    }(),
+                    borderRadius: BorderRadius.circular(12.0),
+                    shape: BoxShape.rectangle,
+                  ),
+                  child: Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 12.0, 12.0, 12.0),
+                          child: Container(
+                            width: 4.0,
+                            height: 100.0,
+                            decoration: BoxDecoration(
+                              color: () {
+                                if (_model.mouseRegion2Hovered) {
+                                  return FlutterFlowTheme.of(context)
+                                      .secondaryBackground;
+                                } else if (widget.menuIndex == 2) {
+                                  return FlutterFlowTheme.of(context)
+                                      .secondaryBackground;
+                                } else {
+                                  return FlutterFlowTheme.of(context).tertiary;
+                                }
+                              }(),
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                          ),
+                        ),
+                        const Icon(
+                          Icons.business,
+                          color: Colors.white,
+                          size: 28.0,
+                        ),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              12.0, 0.0, 0.0, 0.0),
+                          child: Text(
+                            'Organizaciones',
+                            style: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: 'Plus Jakarta Sans',
+                                  color: Colors.white,
+                                  fontSize: 16.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w500,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey('Plus Jakarta Sans'),
+                                ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),

@@ -1,5 +1,5 @@
 import '/backend/api_requests/api_calls.dart';
-import '/component/admin/tteaams_menu_admin/tteaams_menu_admin_widget.dart';
+import '/component/admin/menu/tteaams_menu_admin/tteaams_menu_admin_widget.dart';
 import '/component/tteams_top_bar/tteams_top_bar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';

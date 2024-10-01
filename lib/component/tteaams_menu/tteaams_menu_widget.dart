@@ -1,4 +1,4 @@
-import '/component/admin/admin_user_switch/admin_user_switch_widget.dart';
+import '/component/admin/switch/admin_user_switch/admin_user_switch_widget.dart';
 import '/components/user_profile_menu_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';

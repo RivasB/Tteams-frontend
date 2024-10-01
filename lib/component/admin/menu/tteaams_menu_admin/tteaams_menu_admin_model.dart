@@ -1,4 +1,4 @@
-import '/component/admin/admin_user_switch_off/admin_user_switch_off_widget.dart';
+import '/component/admin/switch/admin_user_switch_off/admin_user_switch_off_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'tteaams_menu_admin_widget.dart' show TteaamsMenuAdminWidget;
 import 'package:flutter/material.dart';

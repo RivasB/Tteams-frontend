@@ -1,7 +1,7 @@
 import '/auth/custom_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/structs/index.dart';
-import '/component/admin/tteaams_menu_admin/tteaams_menu_admin_widget.dart';
+import '/component/admin/menu/tteaams_menu_admin/tteaams_menu_admin_widget.dart';
 import '/component/tteams_top_bar/tteams_top_bar_widget.dart';
 import '/components/user_create_widget.dart';
 import '/components/user_update_widget.dart';
@@ -435,7 +435,12 @@ class _OrganizationManagementWidgetState
                                               FutureBuilder<ApiCallResponse>(
                                                 future: TTeamsAPIIdentityGroup
                                                     .getAllOrganizationsCall
-                                                    .call(),
+                                                    .call(
+                                                  bearerAuthentication:
+                                                      currentAuthenticationToken,
+                                                  jwt:
+                                                      currentAuthenticationToken,
+                                                ),
                                                 builder: (context, snapshot) {
                                                   // Customize what your widget looks like when it's loading.
                                                   if (!snapshot.hasData) {
