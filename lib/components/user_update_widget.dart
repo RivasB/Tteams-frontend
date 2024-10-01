@@ -218,12 +218,11 @@ class _UserUpdateWidgetState extends State<UserUpdateWidget>
                                   children: [
                                     Text(
                                       valueOrDefault<String>(
-                                        DataStruct.maybeFromMap(getJsonField(
-                                          containerRetrieveUserResponse
-                                              .jsonBody,
-                                          r'''$.data''',
-                                        )?.toString())
-                                            ?.firstName,
+                                        UserMeStruct.maybeFromMap(
+                                                containerRetrieveUserResponse
+                                                    .jsonBody)
+                                            ?.data
+                                            .firstName,
                                         'name',
                                       ),
                                       style: FlutterFlowTheme.of(context)
