@@ -5,10 +5,12 @@ import '/component/admin/tteaams_menu_admin/tteaams_menu_admin_widget.dart';
 import '/component/tteams_top_bar/tteams_top_bar_widget.dart';
 import '/components/user_create_widget.dart';
 import '/components/user_update_widget.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -181,57 +183,60 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                             CrossAxisAlignment
                                                                 .start,
                                                         children: [
-                                                          Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .spaceBetween,
-                                                            children: [
-                                                              if (responsiveVisibility(
-                                                                context:
-                                                                    context,
-                                                                phone: false,
-                                                                tablet: false,
-                                                              ))
-                                                                const Align(
-                                                                  alignment:
-                                                                      AlignmentDirectional(
-                                                                          0.0,
-                                                                          -1.0),
-                                                                  child: Icon(
-                                                                    Icons
-                                                                        .more_vert,
-                                                                    color: Color(
-                                                                        0xFF606A85),
-                                                                    size: 20.0,
-                                                                  ),
+                                                          Align(
+                                                            alignment:
+                                                                const AlignmentDirectional(
+                                                                    1.0, 0.0),
+                                                            child: Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .end,
+                                                              children: [
+                                                                Text(
+                                                                  'Usuarios registrados',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Plus Jakarta Sans',
+                                                                        color: const Color(
+                                                                            0xFF606A85),
+                                                                        fontSize:
+                                                                            14.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w500,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey('Plus Jakarta Sans'),
+                                                                      ),
                                                                 ),
-                                                              Text(
-                                                                'Usuarios registrados',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Plus Jakarta Sans',
-                                                                      color: const Color(
-                                                                          0xFF606A85),
-                                                                      fontSize:
-                                                                          14.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w500,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              'Plus Jakarta Sans'),
-                                                                    ),
-                                                              ),
-                                                            ],
+                                                                Text(
+                                                                  'Usuarios registrados',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Plus Jakarta Sans',
+                                                                        color: const Color(
+                                                                            0xFF606A85),
+                                                                        fontSize:
+                                                                            14.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w500,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey('Plus Jakarta Sans'),
+                                                                      ),
+                                                                ),
+                                                              ],
+                                                            ),
                                                           ),
                                                           Row(
                                                             mainAxisSize:
@@ -248,6 +253,9 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                                           0.0),
                                                                   child: Text(
                                                                     '4',
+                                                                    textAlign:
+                                                                        TextAlign
+                                                                            .start,
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .displaySmall
@@ -268,22 +276,6 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                                   ),
                                                                 ),
                                                               ),
-                                                              const Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            4.0,
-                                                                            0.0),
-                                                                child: Icon(
-                                                                  Icons
-                                                                      .arrow_upward_rounded,
-                                                                  color: Color(
-                                                                      0xFF39D2C0),
-                                                                  size: 20.0,
-                                                                ),
-                                                              ),
                                                               if (responsiveVisibility(
                                                                 context:
                                                                     context,
@@ -300,7 +292,7 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                                           0.0,
                                                                           0.0),
                                                                   child: Text(
-                                                                    '32.2%',
+                                                                    '100%',
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodySmall
@@ -369,8 +361,7 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                                     12.0,
                                                                     0.0),
                                                         child: Icon(
-                                                          Icons
-                                                              .access_time_rounded,
+                                                          Icons.tablet,
                                                           color:
                                                               Color(0xFF39D2C0),
                                                           size: 44.0,
@@ -393,7 +384,7 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                                     .max,
                                                             mainAxisAlignment:
                                                                 MainAxisAlignment
-                                                                    .spaceBetween,
+                                                                    .end,
                                                             children: [
                                                               Text(
                                                                 'Usuarios activos',
@@ -418,25 +409,6 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                                               'Plus Jakarta Sans'),
                                                                     ),
                                                               ),
-                                                              if (responsiveVisibility(
-                                                                context:
-                                                                    context,
-                                                                phone: false,
-                                                                tablet: false,
-                                                              ))
-                                                                const Align(
-                                                                  alignment:
-                                                                      AlignmentDirectional(
-                                                                          0.0,
-                                                                          -1.0),
-                                                                  child: Icon(
-                                                                    Icons
-                                                                        .more_vert,
-                                                                    color: Color(
-                                                                        0xFF606A85),
-                                                                    size: 20.0,
-                                                                  ),
-                                                                ),
                                                             ],
                                                           ),
                                                           Row(
@@ -454,6 +426,9 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                                           0.0),
                                                                   child: Text(
                                                                     '3',
+                                                                    textAlign:
+                                                                        TextAlign
+                                                                            .start,
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .displaySmall
@@ -472,22 +447,6 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                                               GoogleFonts.asMap().containsKey('Outfit'),
                                                                         ),
                                                                   ),
-                                                                ),
-                                                              ),
-                                                              const Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            4.0,
-                                                                            0.0),
-                                                                child: Icon(
-                                                                  Icons
-                                                                      .arrow_upward_rounded,
-                                                                  color: Color(
-                                                                      0xFF39D2C0),
-                                                                  size: 20.0,
                                                                 ),
                                                               ),
                                                               if (responsiveVisibility(
@@ -888,8 +847,9 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                   future: TTeamsAPIIdentityGroup
                                                       .getAllUsersCall
                                                       .call(
-                                                    pageNo: 0,
-                                                    pageSize: 50,
+                                                    pageNo: _model.pageNumbrer,
+                                                    pageSize:
+                                                        _model.pageElements,
                                                     bearerAuthentication:
                                                         currentAuthenticationToken,
                                                     jwt:
@@ -1297,6 +1257,234 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                       },
                                                     );
                                                   },
+                                                ),
+                                                Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.end,
+                                                  children: [
+                                                    Text(
+                                                      'Elementos',
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
+                                                              ),
+                                                    ),
+                                                    FlutterFlowDropDown<int>(
+                                                      controller: _model
+                                                              .dropDownValueController1 ??=
+                                                          FormFieldController<
+                                                              int>(
+                                                        _model.dropDownValue1 ??=
+                                                            20,
+                                                      ),
+                                                      options: List<int>.from(
+                                                          [20, 50, 100, 1]),
+                                                      optionLabels: const [
+                                                        '20',
+                                                        '50',
+                                                        '100',
+                                                        '1'
+                                                      ],
+                                                      onChanged: (val) async {
+                                                        safeSetState(() => _model
+                                                                .dropDownValue1 =
+                                                            val);
+                                                        _model.pageElements =
+                                                            _model
+                                                                .dropDownValue1!;
+                                                        safeSetState(() {});
+                                                      },
+                                                      width: 200.0,
+                                                      height: 40.0,
+                                                      textStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
+                                                              ),
+                                                      hintText: 'Select...',
+                                                      icon: Icon(
+                                                        Icons
+                                                            .keyboard_arrow_down_rounded,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        size: 24.0,
+                                                      ),
+                                                      fillColor: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
+                                                      elevation: 2.0,
+                                                      borderColor:
+                                                          Colors.transparent,
+                                                      borderWidth: 0.0,
+                                                      borderRadius: 8.0,
+                                                      margin:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  12.0,
+                                                                  0.0,
+                                                                  12.0,
+                                                                  0.0),
+                                                      hidesUnderline: true,
+                                                      isOverButton: false,
+                                                      isSearchable: false,
+                                                      isMultiSelect: false,
+                                                    ),
+                                                    Text(
+                                                      'Página',
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
+                                                              ),
+                                                    ),
+                                                    FlutterFlowDropDown<int>(
+                                                      controller: _model
+                                                              .dropDownValueController2 ??=
+                                                          FormFieldController<
+                                                              int>(
+                                                        _model.dropDownValue2 ??=
+                                                            0,
+                                                      ),
+                                                      options: List<int>.from([
+                                                        0,
+                                                        1,
+                                                        2,
+                                                        3,
+                                                        4,
+                                                        5,
+                                                        6,
+                                                        7,
+                                                        8,
+                                                        9,
+                                                        10,
+                                                        11,
+                                                        12,
+                                                        13,
+                                                        14,
+                                                        15,
+                                                        16,
+                                                        17,
+                                                        18,
+                                                        19
+                                                      ]),
+                                                      optionLabels: const [
+                                                        '1',
+                                                        '2',
+                                                        '3',
+                                                        '4',
+                                                        '5',
+                                                        '6',
+                                                        '7',
+                                                        '8',
+                                                        '9',
+                                                        '10',
+                                                        '11',
+                                                        '12',
+                                                        '13',
+                                                        '14',
+                                                        '15',
+                                                        '16',
+                                                        '17',
+                                                        '18',
+                                                        '19',
+                                                        '20'
+                                                      ],
+                                                      onChanged: (val) async {
+                                                        safeSetState(() => _model
+                                                                .dropDownValue2 =
+                                                            val);
+                                                        _model.pageNumbrer =
+                                                            _model
+                                                                .dropDownValue2!;
+                                                        safeSetState(() {});
+                                                      },
+                                                      width: 200.0,
+                                                      height: 40.0,
+                                                      textStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
+                                                              ),
+                                                      hintText: 'Select...',
+                                                      icon: Icon(
+                                                        Icons
+                                                            .keyboard_arrow_down_rounded,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        size: 24.0,
+                                                      ),
+                                                      fillColor: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
+                                                      elevation: 2.0,
+                                                      borderColor:
+                                                          Colors.transparent,
+                                                      borderWidth: 0.0,
+                                                      borderRadius: 8.0,
+                                                      margin:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  12.0,
+                                                                  0.0,
+                                                                  12.0,
+                                                                  0.0),
+                                                      hidesUnderline: true,
+                                                      isOverButton: false,
+                                                      isSearchable: false,
+                                                      isMultiSelect: false,
+                                                    ),
+                                                  ],
                                                 ),
                                               ],
                                             ),
