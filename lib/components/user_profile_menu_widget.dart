@@ -52,11 +52,11 @@ class _UserProfileMenuWidgetState extends State<UserProfileMenuWidget>
         TextEditingController(text: FFAppState().UserMe.data.email);
     _model.emailAddressFocusNode ??= FocusNode();
 
-    _model.passwordTextController1 ??= TextEditingController();
-    _model.passwordFocusNode1 ??= FocusNode();
+    _model.passwordActualTextController ??= TextEditingController();
+    _model.passwordActualFocusNode ??= FocusNode();
 
-    _model.passwordTextController2 ??= TextEditingController();
-    _model.passwordFocusNode2 ??= FocusNode();
+    _model.passwordNewTextController ??= TextEditingController();
+    _model.passwordNewFocusNode ??= FocusNode();
 
     animationsMap.addAll({
       'containerOnPageLoadAnimation': AnimationInfo(
@@ -1202,16 +1202,16 @@ class _UserProfileMenuWidgetState extends State<UserProfileMenuWidget>
                                         child: SizedBox(
                                           width: double.infinity,
                                           child: TextFormField(
-                                            controller:
-                                                _model.passwordTextController1,
+                                            controller: _model
+                                                .passwordActualTextController,
                                             focusNode:
-                                                _model.passwordFocusNode1,
+                                                _model.passwordActualFocusNode,
                                             autofocus: true,
                                             autofillHints: const [
                                               AutofillHints.password
                                             ],
-                                            obscureText:
-                                                !_model.passwordVisibility1,
+                                            obscureText: !_model
+                                                .passwordActualVisibility,
                                             decoration: InputDecoration(
                                               labelText: 'Contraseña actual',
                                               labelStyle:
@@ -1278,14 +1278,14 @@ class _UserProfileMenuWidgetState extends State<UserProfileMenuWidget>
                                               suffixIcon: InkWell(
                                                 onTap: () => safeSetState(
                                                   () => _model
-                                                          .passwordVisibility1 =
+                                                          .passwordActualVisibility =
                                                       !_model
-                                                          .passwordVisibility1,
+                                                          .passwordActualVisibility,
                                                 ),
                                                 focusNode: FocusNode(
                                                     skipTraversal: true),
                                                 child: Icon(
-                                                  _model.passwordVisibility1
+                                                  _model.passwordActualVisibility
                                                       ? Icons
                                                           .visibility_outlined
                                                       : Icons
@@ -1313,7 +1313,7 @@ class _UserProfileMenuWidgetState extends State<UserProfileMenuWidget>
                                                               .bodyLargeFamily),
                                                 ),
                                             validator: _model
-                                                .passwordTextController1Validator
+                                                .passwordActualTextControllerValidator
                                                 .asValidator(context),
                                           ),
                                         ),
@@ -1324,16 +1324,16 @@ class _UserProfileMenuWidgetState extends State<UserProfileMenuWidget>
                                         child: SizedBox(
                                           width: double.infinity,
                                           child: TextFormField(
-                                            controller:
-                                                _model.passwordTextController2,
+                                            controller: _model
+                                                .passwordNewTextController,
                                             focusNode:
-                                                _model.passwordFocusNode2,
+                                                _model.passwordNewFocusNode,
                                             autofocus: true,
                                             autofillHints: const [
                                               AutofillHints.password
                                             ],
                                             obscureText:
-                                                !_model.passwordVisibility2,
+                                                !_model.passwordNewVisibility,
                                             decoration: InputDecoration(
                                               labelText: 'Contraseña nueva',
                                               labelStyle:
@@ -1400,14 +1400,14 @@ class _UserProfileMenuWidgetState extends State<UserProfileMenuWidget>
                                               suffixIcon: InkWell(
                                                 onTap: () => safeSetState(
                                                   () => _model
-                                                          .passwordVisibility2 =
+                                                          .passwordNewVisibility =
                                                       !_model
-                                                          .passwordVisibility2,
+                                                          .passwordNewVisibility,
                                                 ),
                                                 focusNode: FocusNode(
                                                     skipTraversal: true),
                                                 child: Icon(
-                                                  _model.passwordVisibility2
+                                                  _model.passwordNewVisibility
                                                       ? Icons
                                                           .visibility_outlined
                                                       : Icons
@@ -1435,7 +1435,7 @@ class _UserProfileMenuWidgetState extends State<UserProfileMenuWidget>
                                                               .bodyLargeFamily),
                                                 ),
                                             validator: _model
-                                                .passwordTextController2Validator
+                                                .passwordNewTextControllerValidator
                                                 .asValidator(context),
                                           ),
                                         ),
@@ -1454,9 +1454,11 @@ class _UserProfileMenuWidgetState extends State<UserProfileMenuWidget>
                                                   .data
                                                   .email,
                                               oldp: _model
-                                                  .passwordTextController1.text,
+                                                  .passwordActualTextController
+                                                  .text,
                                               newp: _model
-                                                  .passwordTextController2.text,
+                                                  .passwordNewTextController
+                                                  .text,
                                               bearerAuthentication:
                                                   currentAuthenticationToken,
                                               jwt: currentAuthenticationToken,

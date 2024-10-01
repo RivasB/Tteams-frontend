@@ -25,23 +25,24 @@ class UserProfileMenuModel extends FlutterFlowModel<UserProfileMenuWidget> {
   String? Function(BuildContext, String?)? emailAddressTextControllerValidator;
   // Stores action output result for [Backend Call - API (updateUser)] action in Button widget.
   ApiCallResponse? apiResultql6;
-  // State field(s) for password widget.
-  FocusNode? passwordFocusNode1;
-  TextEditingController? passwordTextController1;
-  late bool passwordVisibility1;
-  String? Function(BuildContext, String?)? passwordTextController1Validator;
-  // State field(s) for password widget.
-  FocusNode? passwordFocusNode2;
-  TextEditingController? passwordTextController2;
-  late bool passwordVisibility2;
-  String? Function(BuildContext, String?)? passwordTextController2Validator;
+  // State field(s) for passwordActual widget.
+  FocusNode? passwordActualFocusNode;
+  TextEditingController? passwordActualTextController;
+  late bool passwordActualVisibility;
+  String? Function(BuildContext, String?)?
+      passwordActualTextControllerValidator;
+  // State field(s) for passwordNew widget.
+  FocusNode? passwordNewFocusNode;
+  TextEditingController? passwordNewTextController;
+  late bool passwordNewVisibility;
+  String? Function(BuildContext, String?)? passwordNewTextControllerValidator;
   // Stores action output result for [Backend Call - API (changePassword)] action in Button widget.
   ApiCallResponse? apiResult73d;
 
   @override
   void initState(BuildContext context) {
-    passwordVisibility1 = false;
-    passwordVisibility2 = false;
+    passwordActualVisibility = false;
+    passwordNewVisibility = false;
   }
 
   @override
@@ -58,10 +59,10 @@ class UserProfileMenuModel extends FlutterFlowModel<UserProfileMenuWidget> {
     emailAddressFocusNode?.dispose();
     emailAddressTextController?.dispose();
 
-    passwordFocusNode1?.dispose();
-    passwordTextController1?.dispose();
+    passwordActualFocusNode?.dispose();
+    passwordActualTextController?.dispose();
 
-    passwordFocusNode2?.dispose();
-    passwordTextController2?.dispose();
+    passwordNewFocusNode?.dispose();
+    passwordNewTextController?.dispose();
   }
 }

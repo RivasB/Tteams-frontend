@@ -22,7 +22,7 @@ class OrganizationManagementModel
   late TteaamsMenuAdminModel tteaamsMenuAdminModel;
   // Model for tteamsTopBar component.
   late TteamsTopBarModel tteamsTopBarModel;
-  // Stores action output result for [Backend Call - API (deleteUserBackoffice)] action in IconButton widget.
+  // Stores action output result for [Backend Call - API (deleteOrganization)] action in IconButton widget.
   ApiCallResponse? deleteResponse;
   // State field(s) for DropDown widget.
   int? dropDownValue1;

@@ -319,7 +319,7 @@ class _OrganizationManagementWidgetState
                                                         Expanded(
                                                           flex: 3,
                                                           child: Text(
-                                                            'Usuario',
+                                                            'Nombre',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .labelSmall
@@ -349,37 +349,7 @@ class _OrganizationManagementWidgetState
                                                           Expanded(
                                                             flex: 2,
                                                             child: Text(
-                                                              'Correo',
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .labelSmall
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Plus Jakarta Sans',
-                                                                    color: const Color(
-                                                                        0xFF606A85),
-                                                                    fontSize:
-                                                                        12.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            'Plus Jakarta Sans'),
-                                                                  ),
-                                                            ),
-                                                          ),
-                                                        if (responsiveVisibility(
-                                                          context: context,
-                                                          phone: false,
-                                                        ))
-                                                          Expanded(
-                                                            flex: 2,
-                                                            child: Text(
-                                                              'Teléfono',
+                                                              'Contacto',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .labelSmall
@@ -464,15 +434,8 @@ class _OrganizationManagementWidgetState
                                               ),
                                               FutureBuilder<ApiCallResponse>(
                                                 future: TTeamsAPIIdentityGroup
-                                                    .getAllUsersCall
-                                                    .call(
-                                                  pageNo: _model.pageNumbrer,
-                                                  pageSize: _model.pageElements,
-                                                  bearerAuthentication:
-                                                      currentAuthenticationToken,
-                                                  jwt:
-                                                      currentAuthenticationToken,
-                                                ),
+                                                    .getAllOrganizationsCall
+                                                    .call(),
                                                 builder: (context, snapshot) {
                                                   // Customize what your widget looks like when it's loading.
                                                   if (!snapshot.hasData) {
@@ -493,23 +456,23 @@ class _OrganizationManagementWidgetState
                                                       ),
                                                     );
                                                   }
-                                                  final listViewGetAllUsersResponse =
+                                                  final listViewGetAllOrganizationsResponse =
                                                       snapshot.data!;
 
                                                   return Builder(
                                                     builder: (context) {
-                                                      final userListItem =
+                                                      final organizationListItem =
                                                           (getJsonField(
-                                                                listViewGetAllUsersResponse
+                                                                listViewGetAllOrganizationsResponse
                                                                     .jsonBody,
                                                                 r'''$.data''',
                                                                 true,
                                                               )
                                                                       ?.toList()
-                                                                      .map<DataStruct?>(
-                                                                          DataStruct
+                                                                      .map<OrganizationStruct?>(
+                                                                          OrganizationStruct
                                                                               .maybeFromMap)
-                                                                      .toList() as Iterable<DataStruct?>)
+                                                                      .toList() as Iterable<OrganizationStruct?>)
                                                                   .withoutNulls
                                                                   .toList() ??
                                                               [];
@@ -521,12 +484,13 @@ class _OrganizationManagementWidgetState
                                                         scrollDirection:
                                                             Axis.vertical,
                                                         itemCount:
-                                                            userListItem.length,
+                                                            organizationListItem
+                                                                .length,
                                                         itemBuilder: (context,
-                                                            userListItemIndex) {
-                                                          final userListItemItem =
-                                                              userListItem[
-                                                                  userListItemIndex];
+                                                            organizationListItemIndex) {
+                                                          final organizationListItemItem =
+                                                              organizationListItem[
+                                                                  organizationListItemIndex];
                                                           return Padding(
                                                             padding:
                                                                 const EdgeInsetsDirectional
@@ -586,17 +550,10 @@ class _OrganizationManagementWidgetState
                                                                           mainAxisSize:
                                                                               MainAxisSize.max,
                                                                           children: [
-                                                                            Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
-                                                                              child: ClipRRect(
-                                                                                borderRadius: BorderRadius.circular(40.0),
-                                                                                child: Image.network(
-                                                                                  'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnN8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60',
-                                                                                  width: 32.0,
-                                                                                  height: 32.0,
-                                                                                  fit: BoxFit.cover,
-                                                                                ),
-                                                                              ),
+                                                                            Icon(
+                                                                              Icons.domain,
+                                                                              color: FlutterFlowTheme.of(context).secondaryText,
+                                                                              size: 34.0,
                                                                             ),
                                                                             Expanded(
                                                                               child: Padding(
@@ -611,8 +568,8 @@ class _OrganizationManagementWidgetState
                                                                                       children: [
                                                                                         Text(
                                                                                           valueOrDefault<String>(
-                                                                                            userListItemItem.firstName,
-                                                                                            'firstName',
+                                                                                            organizationListItemItem.name,
+                                                                                            'name',
                                                                                           ),
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                 fontFamily: 'Plus Jakarta Sans',
@@ -623,41 +580,18 @@ class _OrganizationManagementWidgetState
                                                                                                 useGoogleFonts: GoogleFonts.asMap().containsKey('Plus Jakarta Sans'),
                                                                                               ),
                                                                                         ),
-                                                                                        Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
-                                                                                          child: Text(
-                                                                                            valueOrDefault<String>(
-                                                                                              userListItemItem.lastName,
-                                                                                              'lastName',
-                                                                                            ),
-                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  fontFamily: 'Plus Jakarta Sans',
-                                                                                                  color: const Color(0xFF15161E),
-                                                                                                  fontSize: 14.0,
-                                                                                                  letterSpacing: 0.0,
-                                                                                                  fontWeight: FontWeight.bold,
-                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey('Plus Jakarta Sans'),
-                                                                                                ),
-                                                                                          ),
-                                                                                        ),
                                                                                       ],
                                                                                     ),
-                                                                                    Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
-                                                                                      child: Text(
-                                                                                        valueOrDefault<String>(
-                                                                                          userListItemItem.type == 'ADMIN' ? 'Administrador' : 'Desarrollador',
-                                                                                          'type',
-                                                                                        ),
-                                                                                        style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                              fontFamily: 'Plus Jakarta Sans',
-                                                                                              color: const Color(0xFF6F61EF),
-                                                                                              fontSize: 12.0,
-                                                                                              letterSpacing: 0.0,
-                                                                                              fontWeight: FontWeight.w500,
-                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey('Plus Jakarta Sans'),
-                                                                                            ),
+                                                                                    Text(
+                                                                                      valueOrDefault<String>(
+                                                                                        organizationListItemItem.description,
+                                                                                        'description',
                                                                                       ),
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                            letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                          ),
                                                                                     ),
                                                                                   ],
                                                                                 ),
@@ -679,35 +613,8 @@ class _OrganizationManagementWidgetState
                                                                             Text(
                                                                           valueOrDefault<
                                                                               String>(
-                                                                            userListItemItem.email,
-                                                                            'email',
-                                                                          ),
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: 'Plus Jakarta Sans',
-                                                                                color: const Color(0xFF15161E),
-                                                                                fontSize: 14.0,
-                                                                                letterSpacing: 0.0,
-                                                                                fontWeight: FontWeight.w500,
-                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey('Plus Jakarta Sans'),
-                                                                              ),
-                                                                        ),
-                                                                      ),
-                                                                    if (responsiveVisibility(
-                                                                      context:
-                                                                          context,
-                                                                      phone:
-                                                                          false,
-                                                                    ))
-                                                                      Expanded(
-                                                                        flex: 2,
-                                                                        child:
-                                                                            Text(
-                                                                          valueOrDefault<
-                                                                              String>(
-                                                                            userListItemItem.phone,
-                                                                            'phone',
+                                                                            organizationListItemItem.contact,
+                                                                            'contact',
                                                                           ),
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
@@ -733,7 +640,7 @@ class _OrganizationManagementWidgetState
                                                                                 32.0,
                                                                             decoration:
                                                                                 BoxDecoration(
-                                                                              color: userListItemItem.state == 'ACTIVE' ? FlutterFlowTheme.of(context).secondary : FlutterFlowTheme.of(context).error,
+                                                                              color: organizationListItemItem.state == 'ACTIVE' ? FlutterFlowTheme.of(context).secondary : FlutterFlowTheme.of(context).error,
                                                                               borderRadius: BorderRadius.circular(40.0),
                                                                               border: Border.all(
                                                                                 color: const Color(0xFFEE8B60),
@@ -746,7 +653,7 @@ class _OrganizationManagementWidgetState
                                                                                 Padding(
                                                                               padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                               child: Text(
-                                                                                userListItemItem.state == 'ACTIVE' ? 'Sí' : 'No',
+                                                                                organizationListItemItem.state == 'ACTIVE' ? 'Sí' : 'No',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                       fontFamily: 'Plus Jakarta Sans',
                                                                                       color: const Color(0xFF15161E),
@@ -792,7 +699,7 @@ class _OrganizationManagementWidgetState
                                                                                     child: Padding(
                                                                                       padding: MediaQuery.viewInsetsOf(context),
                                                                                       child: UserUpdateWidget(
-                                                                                        userID: userListItemItem.id,
+                                                                                        userID: organizationListItemItem.id,
                                                                                       ),
                                                                                     ),
                                                                                   );
@@ -829,7 +736,7 @@ class _OrganizationManagementWidgetState
                                                                                     builder: (alertDialogContext) {
                                                                                       return AlertDialog(
                                                                                         title: const Text('Eliminar'),
-                                                                                        content: const Text('Estás a punto de eliminar un usuario de tu sistema. Esta acción es irreversible. ¿Estás seguro?'),
+                                                                                        content: const Text('Estás a punto de eliminar una organizacion de tu sistema. Esta acción es irreversible. ¿Estás seguro?'),
                                                                                         actions: [
                                                                                           TextButton(
                                                                                             onPressed: () => Navigator.pop(alertDialogContext, false),
@@ -845,8 +752,8 @@ class _OrganizationManagementWidgetState
                                                                                   ) ??
                                                                                   false;
                                                                               if (confirmDialogResponse) {
-                                                                                _model.deleteResponse = await TTeamsAPIIdentityGroup.deleteUserBackofficeCall.call(
-                                                                                  id: userListItemItem.id,
+                                                                                _model.deleteResponse = await TTeamsAPIIdentityGroup.deleteOrganizationCall.call(
+                                                                                  id: organizationListItemItem.id,
                                                                                   bearerAuthentication: currentAuthenticationToken,
                                                                                   jwt: currentAuthenticationToken,
                                                                                 );
