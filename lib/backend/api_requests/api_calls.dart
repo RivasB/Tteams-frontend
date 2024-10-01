@@ -402,9 +402,14 @@ class GetAllOrganizationsCall {
     );
   }
 
-  List? organizations(dynamic response) => getJsonField(
+  List? organizationsId(dynamic response) => getJsonField(
         response,
-        r'''$.data''',
+        r'''$.data[:].id''',
+        true,
+      ) as List?;
+  List? organizationName(dynamic response) => getJsonField(
+        response,
+        r'''$.data[:].name''',
         true,
       ) as List?;
 }

@@ -9,7 +9,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/backend/schema/structs/index.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'user_update_model.dart';
@@ -43,38 +42,6 @@ class _UserUpdateWidgetState extends State<UserUpdateWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => UserUpdateModel());
-
-    // On component load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      _model.apiResult90x =
-          await TTeamsAPIIdentityGroup.getAllOrganizationsCall.call(
-        bearerAuthentication: currentAuthenticationToken,
-        jwt: currentAuthenticationToken,
-      );
-
-      if ((_model.apiResult90x?.succeeded ?? true)) {
-        _model.organizationsIds = TTeamsAPIIdentityGroup.getAllOrganizationsCall
-            .organizations(
-              (_model.apiResult90x?.jsonBody ?? ''),
-            )!
-            .map((e) => OrganizationStruct.maybeFromMap(e)?.id)
-            .withoutNulls
-            .toList()
-            .toList()
-            .cast<String>();
-        _model.organizationsNames =
-            TTeamsAPIIdentityGroup.getAllOrganizationsCall
-                .organizations(
-                  (_model.apiResult90x?.jsonBody ?? ''),
-                )!
-                .map((e) => OrganizationStruct.maybeFromMap(e)?.name)
-                .withoutNulls
-                .toList()
-                .toList()
-                .cast<String>();
-        safeSetState(() {});
-      }
-    });
 
     _model.nameFocusNode ??= FocusNode();
 
@@ -1226,77 +1193,126 @@ class _UserUpdateWidgetState extends State<UserUpdateWidget>
                                                                 ),
                                                       ),
                                                     ),
-                                                    FlutterFlowDropDown<String>(
-                                                      controller: _model
-                                                              .dropDownValueController2 ??=
-                                                          FormFieldController<
-                                                              String>(
-                                                        _model.dropDownValue2 ??=
-                                                            UserMeStruct.maybeFromMap(
-                                                                    containerRetrieveUserResponse
-                                                                        .jsonBody)
-                                                                ?.data
-                                                                .profile
-                                                                .organization
-                                                                .id,
+                                                    FutureBuilder<
+                                                        ApiCallResponse>(
+                                                      future: TTeamsAPIIdentityGroup
+                                                          .getAllOrganizationsCall
+                                                          .call(
+                                                        bearerAuthentication:
+                                                            currentAuthenticationToken,
+                                                        jwt:
+                                                            currentAuthenticationToken,
                                                       ),
-                                                      options: List<
-                                                              String>.from(
-                                                          _model
-                                                              .organizationsIds),
-                                                      optionLabels: _model
-                                                          .organizationsNames,
-                                                      onChanged: (val) =>
-                                                          safeSetState(() =>
-                                                              _model.dropDownValue2 =
-                                                                  val),
-                                                      width: 200.0,
-                                                      height: 40.0,
-                                                      textStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumFamily,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily),
+                                                      builder:
+                                                          (context, snapshot) {
+                                                        // Customize what your widget looks like when it's loading.
+                                                        if (!snapshot.hasData) {
+                                                          return Center(
+                                                            child: SizedBox(
+                                                              width: 50.0,
+                                                              height: 50.0,
+                                                              child:
+                                                                  CircularProgressIndicator(
+                                                                valueColor:
+                                                                    AlwaysStoppedAnimation<
+                                                                        Color>(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                ),
                                                               ),
-                                                      hintText: 'Select...',
-                                                      icon: Icon(
-                                                        Icons
-                                                            .keyboard_arrow_down_rounded,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
+                                                            ),
+                                                          );
+                                                        }
+                                                        final dropDownGetAllOrganizationsResponse =
+                                                            snapshot.data!;
+
+                                                        return FlutterFlowDropDown<
+                                                            String>(
+                                                          controller: _model
+                                                                  .dropDownValueController2 ??=
+                                                              FormFieldController<
+                                                                  String>(
+                                                            _model.dropDownValue2 ??=
+                                                                UserMeStruct.maybeFromMap(
+                                                                        containerRetrieveUserResponse
+                                                                            .jsonBody)
+                                                                    ?.data
+                                                                    .profile
+                                                                    .organization
+                                                                    .id,
+                                                          ),
+                                                          options: List<
+                                                                  String>.from(
+                                                              TTeamsAPIIdentityGroup
+                                                                  .getAllOrganizationsCall
+                                                                  .organizationsId(
+                                                                    dropDownGetAllOrganizationsResponse
+                                                                        .jsonBody,
+                                                                  )!
+                                                                  .map((e) => e
+                                                                      .toString())
+                                                                  .toList()),
+                                                          optionLabels: TTeamsAPIIdentityGroup
+                                                              .getAllOrganizationsCall
+                                                              .organizationName(
+                                                                dropDownGetAllOrganizationsResponse
+                                                                    .jsonBody,
+                                                              )!
+                                                              .map((e) =>
+                                                                  e.toString())
+                                                              .toList(),
+                                                          onChanged: (val) =>
+                                                              safeSetState(() =>
+                                                                  _model.dropDownValue2 =
+                                                                      val),
+                                                          width: 200.0,
+                                                          height: 40.0,
+                                                          textStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                  ),
+                                                          hintText: 'Select...',
+                                                          icon: Icon(
+                                                            Icons
+                                                                .keyboard_arrow_down_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
                                                                 .secondaryText,
-                                                        size: 24.0,
-                                                      ),
-                                                      fillColor: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
-                                                      elevation: 2.0,
-                                                      borderColor:
-                                                          Colors.transparent,
-                                                      borderWidth: 0.0,
-                                                      borderRadius: 8.0,
-                                                      margin:
-                                                          const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  12.0,
-                                                                  0.0,
-                                                                  12.0,
-                                                                  0.0),
-                                                      hidesUnderline: true,
-                                                      isOverButton: false,
-                                                      isSearchable: false,
-                                                      isMultiSelect: false,
+                                                            size: 24.0,
+                                                          ),
+                                                          fillColor: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          elevation: 2.0,
+                                                          borderColor: Colors
+                                                              .transparent,
+                                                          borderWidth: 0.0,
+                                                          borderRadius: 8.0,
+                                                          margin:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      12.0,
+                                                                      0.0,
+                                                                      12.0,
+                                                                      0.0),
+                                                          hidesUnderline: true,
+                                                          isOverButton: false,
+                                                          isSearchable: false,
+                                                          isMultiSelect: false,
+                                                        );
+                                                      },
                                                     ),
                                                   ],
                                                 ),
