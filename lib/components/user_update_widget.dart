@@ -1232,22 +1232,8 @@ class _UserUpdateWidgetState extends State<UserUpdateWidget>
                                                           controller: _model
                                                                   .dropDownValueController2 ??=
                                                               FormFieldController<
-                                                                  String>(
-                                                            _model.dropDownValue2 ??=
-                                                                '',
-                                                          ),
-                                                          options: List<
-                                                                  String>.from(
-                                                              TTeamsAPIIdentityGroup
-                                                                  .getAllOrganizationsCall
-                                                                  .organizationsId(
-                                                                    dropDownGetAllOrganizationsResponse
-                                                                        .jsonBody,
-                                                                  )!
-                                                                  .map((e) => e
-                                                                      .toString())
-                                                                  .toList()),
-                                                          optionLabels: TTeamsAPIIdentityGroup
+                                                                  String>(null),
+                                                          options: TTeamsAPIIdentityGroup
                                                               .getAllOrganizationsCall
                                                               .organizationName(
                                                                 dropDownGetAllOrganizationsResponse
