@@ -10,7 +10,6 @@ import '/flutter_flow/form_field_controller.dart';
 import '/backend/schema/structs/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'user_update_model.dart';
 export 'user_update_model.dart';
@@ -1070,10 +1069,10 @@ class _UserUpdateWidgetState extends State<UserUpdateWidget>
                                                   ),
                                                   FlutterFlowDropDown<String>(
                                                     controller: _model
-                                                            .dropDownValueController1 ??=
+                                                            .dropDownValueController ??=
                                                         FormFieldController<
                                                             String>(
-                                                      _model.dropDownValue1 ??=
+                                                      _model.dropDownValue ??=
                                                           valueOrDefault<
                                                               String>(
                                                         UserMeStruct.maybeFromMap(
@@ -1092,7 +1091,7 @@ class _UserUpdateWidgetState extends State<UserUpdateWidget>
                                                     ],
                                                     onChanged: (val) =>
                                                         safeSetState(() => _model
-                                                                .dropDownValue1 =
+                                                                .dropDownValue =
                                                             val),
                                                     width: 200.0,
                                                     height: 40.0,
@@ -1194,112 +1193,32 @@ class _UserUpdateWidgetState extends State<UserUpdateWidget>
                                                                 ),
                                                       ),
                                                     ),
-                                                    FutureBuilder<
-                                                        ApiCallResponse>(
-                                                      future:
-                                                          TTeamsAPIIdentityGroup
-                                                              .getAllProfilesCall
-                                                              .call(
-                                                        organization: UserMeStruct
-                                                                .maybeFromMap(
-                                                                    containerRetrieveUserResponse
-                                                                        .jsonBody)
+                                                    Text(
+                                                      valueOrDefault<String>(
+                                                        UserMeStruct.maybeFromMap(
+                                                                containerRetrieveUserResponse
+                                                                    .jsonBody)
                                                             ?.data
                                                             .profile
-                                                            .organization
-                                                            .id,
-                                                        bearerAuthentication:
-                                                            currentAuthenticationToken,
-                                                        jwt:
-                                                            currentAuthenticationToken,
+                                                            .name,
+                                                        '- No asignado -',
                                                       ),
-                                                      builder:
-                                                          (context, snapshot) {
-                                                        // Customize what your widget looks like when it's loading.
-                                                        if (!snapshot.hasData) {
-                                                          return Center(
-                                                            child: SizedBox(
-                                                              width: 40.0,
-                                                              height: 40.0,
-                                                              child:
-                                                                  SpinKitThreeBounce(
-                                                                color: FlutterFlowTheme.of(
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelLarge
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .primary,
-                                                                size: 40.0,
-                                                              ),
-                                                            ),
-                                                          );
-                                                        }
-                                                        final dropDownGetAllProfilesResponse =
-                                                            snapshot.data!;
-
-                                                        return FlutterFlowDropDown<
-                                                            String>(
-                                                          controller: _model
-                                                                  .dropDownValueController2 ??=
-                                                              FormFieldController<
-                                                                  String>(null),
-                                                          options: TTeamsAPIIdentityGroup
-                                                              .getAllProfilesCall
-                                                              .profileNameList(
-                                                                dropDownGetAllProfilesResponse
-                                                                    .jsonBody,
-                                                              )!
-                                                              .map((e) =>
-                                                                  e.toString())
-                                                              .toList(),
-                                                          onChanged: (val) =>
-                                                              safeSetState(() =>
-                                                                  _model.dropDownValue2 =
-                                                                      val),
-                                                          width: 200.0,
-                                                          height: 40.0,
-                                                          textStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
+                                                                    .labelLargeFamily,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
                                                                         FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                  ),
-                                                          hintText: 'Select...',
-                                                          icon: Icon(
-                                                            Icons
-                                                                .keyboard_arrow_down_rounded,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .secondaryText,
-                                                            size: 24.0,
-                                                          ),
-                                                          fillColor: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
-                                                          elevation: 2.0,
-                                                          borderColor: Colors
-                                                              .transparent,
-                                                          borderWidth: 0.0,
-                                                          borderRadius: 8.0,
-                                                          margin:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      12.0,
-                                                                      0.0,
-                                                                      12.0,
-                                                                      0.0),
-                                                          hidesUnderline: true,
-                                                          isOverButton: false,
-                                                          isSearchable: false,
-                                                          isMultiSelect: false,
-                                                        );
-                                                      },
+                                                                            .labelLargeFamily),
+                                                              ),
                                                     ),
                                                   ],
                                                 ),

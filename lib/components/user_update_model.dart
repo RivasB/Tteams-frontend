@@ -29,11 +29,8 @@ class UserUpdateModel extends FlutterFlowModel<UserUpdateWidget> {
   late bool passwordVisibility;
   String? Function(BuildContext, String?)? passwordTextControllerValidator;
   // State field(s) for DropDown widget.
-  String? dropDownValue1;
-  FormFieldController<String>? dropDownValueController1;
-  // State field(s) for DropDown widget.
-  String? dropDownValue2;
-  FormFieldController<String>? dropDownValueController2;
+  String? dropDownValue;
+  FormFieldController<String>? dropDownValueController;
 
   @override
   void initState(BuildContext context) {
