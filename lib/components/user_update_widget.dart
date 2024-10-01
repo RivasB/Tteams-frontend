@@ -1277,7 +1277,18 @@ class _UserUpdateWidgetState extends State<UserUpdateWidget>
                                                                         .containsKey(
                                                                             FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                   ),
-                                                          hintText: 'Select...',
+                                                          hintText:
+                                                              valueOrDefault<
+                                                                  String>(
+                                                            UserMeStruct.maybeFromMap(
+                                                                    containerRetrieveUserResponse
+                                                                        .jsonBody)
+                                                                ?.data
+                                                                .profile
+                                                                .organization
+                                                                .name,
+                                                            'organizationName',
+                                                          ),
                                                           icon: Icon(
                                                             Icons
                                                                 .keyboard_arrow_down_rounded,
