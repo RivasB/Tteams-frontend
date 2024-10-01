@@ -1248,36 +1248,24 @@ class _UserUpdateWidgetState extends State<UserUpdateWidget>
                                                                         .jsonBody,
                                                                   )!
                                                                   .map((e) =>
-                                                                      getJsonField(
-                                                                        e,
-                                                                        r'''$.id''',
-                                                                      ))
-                                                                  .toList()
-                                                                  .map((e) => e
-                                                                      .toString())
-                                                                  .toList()),
-                                                          optionLabels:
-                                                              ((getJsonField(
-                                                            rowGetAllOrganizationsResponse
-                                                                .jsonBody,
-                                                            r'''$.data''',
-                                                            true,
-                                                          ) as List)
-                                                                      .map<String>(
-                                                                          (s) => s
-                                                                              .toString())
-                                                                      .toList()
-                                                                      .toList()
-                                                                      .map<OrganizationStruct?>(
-                                                                          OrganizationStruct
-                                                                              .maybeFromMap)
-                                                                      .toList() as Iterable<OrganizationStruct?>)
+                                                                      OrganizationStruct.maybeFromMap(
+                                                                              e)
+                                                                          ?.id)
                                                                   .withoutNulls
-                                                                  .map((e) => valueOrDefault<String>(
-                                                                        e.name,
-                                                                        'organizationName',
-                                                                      ))
-                                                                  .toList(),
+                                                                  .toList()),
+                                                          optionLabels: TTeamsAPIIdentityGroup
+                                                              .getAllOrganizationsCall
+                                                              .organizations(
+                                                                rowGetAllOrganizationsResponse
+                                                                    .jsonBody,
+                                                              )!
+                                                              .map((e) =>
+                                                                  OrganizationStruct
+                                                                          .maybeFromMap(
+                                                                              e)
+                                                                      ?.name)
+                                                              .withoutNulls
+                                                              .toList(),
                                                           onChanged: (val) =>
                                                               safeSetState(() =>
                                                                   _model.dropDownValue2 =
