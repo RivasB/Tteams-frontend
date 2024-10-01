@@ -440,6 +440,8 @@ class _OrganizationManagementWidgetState
                                                       currentAuthenticationToken,
                                                   jwt:
                                                       currentAuthenticationToken,
+                                                  pageNo: 0,
+                                                  pageSize: 20,
                                                 ),
                                                 builder: (context, snapshot) {
                                                   // Customize what your widget looks like when it's loading.
