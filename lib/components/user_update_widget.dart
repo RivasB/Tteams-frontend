@@ -9,6 +9,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/backend/schema/structs/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'user_update_model.dart';
@@ -42,6 +43,35 @@ class _UserUpdateWidgetState extends State<UserUpdateWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => UserUpdateModel());
+
+    // On component load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.apiResult90x =
+          await TTeamsAPIIdentityGroup.getAllOrganizationsCall.call();
+
+      if ((_model.apiResult90x?.succeeded ?? true)) {
+        _model.organizationsIds = TTeamsAPIIdentityGroup.getAllOrganizationsCall
+            .organizations(
+              (_model.apiResult90x?.jsonBody ?? ''),
+            )!
+            .map((e) => OrganizationStruct.maybeFromMap(e)?.id)
+            .withoutNulls
+            .toList()
+            .toList()
+            .cast<String>();
+        _model.organizationsNames =
+            TTeamsAPIIdentityGroup.getAllOrganizationsCall
+                .organizations(
+                  (_model.apiResult90x?.jsonBody ?? ''),
+                )!
+                .map((e) => OrganizationStruct.maybeFromMap(e)?.name)
+                .withoutNulls
+                .toList()
+                .toList()
+                .cast<String>();
+        safeSetState(() {});
+      }
+    });
 
     _model.nameFocusNode ??= FocusNode();
 
@@ -1241,31 +1271,10 @@ class _UserUpdateWidgetState extends State<UserUpdateWidget>
                                                           ),
                                                           options: List<
                                                                   String>.from(
-                                                              TTeamsAPIIdentityGroup
-                                                                  .getAllOrganizationsCall
-                                                                  .organizations(
-                                                                    rowGetAllOrganizationsResponse
-                                                                        .jsonBody,
-                                                                  )!
-                                                                  .map((e) =>
-                                                                      OrganizationStruct.maybeFromMap(
-                                                                              e)
-                                                                          ?.id)
-                                                                  .withoutNulls
-                                                                  .toList()),
-                                                          optionLabels: TTeamsAPIIdentityGroup
-                                                              .getAllOrganizationsCall
-                                                              .organizations(
-                                                                rowGetAllOrganizationsResponse
-                                                                    .jsonBody,
-                                                              )!
-                                                              .map((e) =>
-                                                                  OrganizationStruct
-                                                                          .maybeFromMap(
-                                                                              e)
-                                                                      ?.name)
-                                                              .withoutNulls
-                                                              .toList(),
+                                                              _model
+                                                                  .organizationsIds),
+                                                          optionLabels: _model
+                                                              .organizationsNames,
                                                           onChanged: (val) =>
                                                               safeSetState(() =>
                                                                   _model.dropDownValue2 =
