@@ -1285,13 +1285,17 @@ class _UserUpdateWidgetState extends State<UserUpdateWidget>
                                                 email: _model
                                                     .emailAddressTextController
                                                     .text,
-                                                password: _model.passwordTextController
-                                                                .text !=
-                                                            ''
-                                                    ? _model
-                                                        .passwordTextController
-                                                        .text
-                                                    : null,
+                                                password:
+                                                    valueOrDefault<String>(
+                                                  _model.passwordTextController
+                                                                  .text !=
+                                                              ''
+                                                      ? _model
+                                                          .passwordTextController
+                                                          .text
+                                                      : 'EMPTY',
+                                                  ' EMPTY',
+                                                ),
                                                 type: _model.dropDownValue1,
                                                 active: _model.dropDownValue2,
                                                 phone: int.tryParse(_model
