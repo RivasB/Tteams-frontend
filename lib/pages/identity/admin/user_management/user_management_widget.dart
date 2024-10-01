@@ -3,6 +3,7 @@ import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/structs/index.dart';
 import '/component/admin/tteaams_menu_admin/tteaams_menu_admin_widget.dart';
 import '/component/tteams_top_bar/tteams_top_bar_widget.dart';
+import '/components/user_create_widget.dart';
 import '/components/user_update_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -612,9 +613,35 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                       ),
                                                     ),
                                                     FFButtonWidget(
-                                                      onPressed: () {
-                                                        print(
-                                                            'Button pressed ...');
+                                                      onPressed: () async {
+                                                        await showModalBottomSheet(
+                                                          isScrollControlled:
+                                                              true,
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          enableDrag: false,
+                                                          context: context,
+                                                          builder: (context) {
+                                                            return GestureDetector(
+                                                              onTap: () =>
+                                                                  FocusScope.of(
+                                                                          context)
+                                                                      .unfocus(),
+                                                              child: Padding(
+                                                                padding: MediaQuery
+                                                                    .viewInsetsOf(
+                                                                        context),
+                                                                child:
+                                                                    const UserCreateWidget(
+                                                                  userID: '',
+                                                                ),
+                                                              ),
+                                                            );
+                                                          },
+                                                        ).then((value) =>
+                                                            safeSetState(
+                                                                () {}));
                                                       },
                                                       text: 'Añadir',
                                                       icon: const Icon(

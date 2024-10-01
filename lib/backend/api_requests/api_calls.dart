@@ -598,24 +598,27 @@ class UpdateUseBackofficeCall {
 class CreateUserCall {
   Future<ApiCallResponse> call({
     String? bearerAuthentication = '',
+    String? firstName = '',
+    String? lastName = '',
+    String? email = '',
+    String? password = '',
+    int? phone,
     String? jwt = '',
   }) async {
     final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
       jwt: jwt,
     );
 
-    const ffApiRequestBody = '''
+    final ffApiRequestBody = '''
 {
-  "firstName": "",
-  "lastName": "",
-  "identification": "",
-  "email": "",
-  "password": "",
-  "type": "ADMIN",
+  "firstName": "$firstName",
+  "lastName": "$lastName",
+  "email": "$email",
+  "password": "$password",
+  "type": "USER",
   "state": "ACTIVE",
-  "profile": "",
   "registrationState": "VERIFICATION_ACCEPTED",
-  "phone": ""
+  "phone": "$phone"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'createUser',
