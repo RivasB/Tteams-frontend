@@ -51,85 +51,187 @@ class _TaskCardWidgetState extends State<TaskCardWidget> {
             width: 2.0,
           ),
         ),
-        child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Text(
-                'Tarea',
-                style: FlutterFlowTheme.of(context).bodySmall.override(
-                      fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                      color: FlutterFlowTheme.of(context).secondaryText,
-                      fontSize: 24.0,
-                      letterSpacing: 0.0,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).bodySmallFamily),
+        child: Draggable<String>(
+          data: '',
+          feedback: Material(
+            type: MaterialType.transparency,
+            child: Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Text(
+                    'Tarea',
+                    style: FlutterFlowTheme.of(context).bodySmall.override(
+                          fontFamily:
+                              FlutterFlowTheme.of(context).bodySmallFamily,
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                          fontSize: 24.0,
+                          letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).bodySmallFamily),
+                        ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                    child: Text(
+                      'T12345',
+                      style:
+                          FlutterFlowTheme.of(context).headlineMedium.override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .headlineMediumFamily,
+                                fontSize: 22.0,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .headlineMediumFamily),
+                              ),
                     ),
+                  ),
+                  Text(
+                    'Nombre',
+                    style: FlutterFlowTheme.of(context).bodySmall.override(
+                          fontFamily:
+                              FlutterFlowTheme.of(context).bodySmallFamily,
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                          fontSize: 18.0,
+                          letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).bodySmallFamily),
+                        ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                    child: Text(
+                      'Diseñar una tarjeta que represente una tarea',
+                      style:
+                          FlutterFlowTheme.of(context).headlineMedium.override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .headlineMediumFamily,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .headlineMediumFamily),
+                              ),
+                    ),
+                  ),
+                  Text(
+                    'Descripción',
+                    style: FlutterFlowTheme.of(context).bodySmall.override(
+                          fontFamily:
+                              FlutterFlowTheme.of(context).bodySmallFamily,
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                          fontSize: 18.0,
+                          letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).bodySmallFamily),
+                        ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                    child: Text(
+                      'Create a card component to represent a task with the task code, name, and description. Include other relevant data such as due date and status.',
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyMediumFamily),
+                          ),
+                    ),
+                  ),
+                ],
               ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
-                child: Text(
-                  'T12345',
-                  style: FlutterFlowTheme.of(context).headlineMedium.override(
+            ),
+          ),
+          child: Padding(
+            padding: const EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Text(
+                  'Tarea',
+                  style: FlutterFlowTheme.of(context).bodySmall.override(
                         fontFamily:
-                            FlutterFlowTheme.of(context).headlineMediumFamily,
-                        fontSize: 22.0,
+                            FlutterFlowTheme.of(context).bodySmallFamily,
+                        color: FlutterFlowTheme.of(context).secondaryText,
+                        fontSize: 24.0,
                         letterSpacing: 0.0,
                         useGoogleFonts: GoogleFonts.asMap().containsKey(
-                            FlutterFlowTheme.of(context).headlineMediumFamily),
+                            FlutterFlowTheme.of(context).bodySmallFamily),
                       ),
                 ),
-              ),
-              Text(
-                'Nombre',
-                style: FlutterFlowTheme.of(context).bodySmall.override(
-                      fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                      color: FlutterFlowTheme.of(context).secondaryText,
-                      fontSize: 18.0,
-                      letterSpacing: 0.0,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).bodySmallFamily),
-                    ),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
-                child: Text(
-                  'Diseñar una tarjeta que represente una tarea',
-                  style: FlutterFlowTheme.of(context).headlineMedium.override(
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                  child: Text(
+                    'T12345',
+                    style: FlutterFlowTheme.of(context).headlineMedium.override(
+                          fontFamily:
+                              FlutterFlowTheme.of(context).headlineMediumFamily,
+                          fontSize: 22.0,
+                          letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context)
+                                  .headlineMediumFamily),
+                        ),
+                  ),
+                ),
+                Text(
+                  'Nombre',
+                  style: FlutterFlowTheme.of(context).bodySmall.override(
                         fontFamily:
-                            FlutterFlowTheme.of(context).headlineMediumFamily,
+                            FlutterFlowTheme.of(context).bodySmallFamily,
+                        color: FlutterFlowTheme.of(context).secondaryText,
+                        fontSize: 18.0,
                         letterSpacing: 0.0,
                         useGoogleFonts: GoogleFonts.asMap().containsKey(
-                            FlutterFlowTheme.of(context).headlineMediumFamily),
+                            FlutterFlowTheme.of(context).bodySmallFamily),
                       ),
                 ),
-              ),
-              Text(
-                'Descripción',
-                style: FlutterFlowTheme.of(context).bodySmall.override(
-                      fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                      color: FlutterFlowTheme.of(context).secondaryText,
-                      fontSize: 18.0,
-                      letterSpacing: 0.0,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).bodySmallFamily),
-                    ),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
-                child: Text(
-                  'Create a card component to represent a task with the task code, name, and description. Include other relevant data such as due date and status.',
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                  child: Text(
+                    'Diseñar una tarjeta que represente una tarea',
+                    style: FlutterFlowTheme.of(context).headlineMedium.override(
+                          fontFamily:
+                              FlutterFlowTheme.of(context).headlineMediumFamily,
+                          letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context)
+                                  .headlineMediumFamily),
+                        ),
+                  ),
+                ),
+                Text(
+                  'Descripción',
+                  style: FlutterFlowTheme.of(context).bodySmall.override(
                         fontFamily:
-                            FlutterFlowTheme.of(context).bodyMediumFamily,
+                            FlutterFlowTheme.of(context).bodySmallFamily,
+                        color: FlutterFlowTheme.of(context).secondaryText,
+                        fontSize: 18.0,
                         letterSpacing: 0.0,
                         useGoogleFonts: GoogleFonts.asMap().containsKey(
-                            FlutterFlowTheme.of(context).bodyMediumFamily),
+                            FlutterFlowTheme.of(context).bodySmallFamily),
                       ),
                 ),
-              ),
-            ],
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                  child: Text(
+                    'Create a card component to represent a task with the task code, name, and description. Include other relevant data such as due date and status.',
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily:
+                              FlutterFlowTheme.of(context).bodyMediumFamily,
+                          letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).bodyMediumFamily),
+                        ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
