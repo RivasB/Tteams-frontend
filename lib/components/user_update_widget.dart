@@ -243,7 +243,11 @@ class _UserUpdateWidgetState extends State<UserUpdateWidget>
                                           0.0, 4.0, 0.0, 0.0),
                                       child: Text(
                                         valueOrDefault<String>(
-                                          _model.user?.email,
+                                          UserMeStruct.maybeFromMap(
+                                                  containerRetrieveUserResponse
+                                                      .jsonBody)
+                                              ?.data
+                                              .email,
                                           'email',
                                         ),
                                         style: FlutterFlowTheme.of(context)
@@ -351,13 +355,11 @@ class _UserUpdateWidgetState extends State<UserUpdateWidget>
                                                             TextEditingController(
                                                           text: valueOrDefault<
                                                               String>(
-                                                            DataStruct.maybeFromMap(
-                                                                    getJsonField(
-                                                              containerRetrieveUserResponse
-                                                                  .jsonBody,
-                                                              r'''$.data''',
-                                                            )?.toString())
-                                                                ?.firstName,
+                                                            UserMeStruct.maybeFromMap(
+                                                                    containerRetrieveUserResponse
+                                                                        .jsonBody)
+                                                                ?.data
+                                                                .firstName,
                                                             'name',
                                                           ),
                                                         ),
@@ -492,13 +494,11 @@ class _UserUpdateWidgetState extends State<UserUpdateWidget>
                                                             TextEditingController(
                                                           text: valueOrDefault<
                                                               String>(
-                                                            DataStruct.maybeFromMap(
-                                                                    getJsonField(
-                                                              containerRetrieveUserResponse
-                                                                  .jsonBody,
-                                                              r'''$.data''',
-                                                            )?.toString())
-                                                                ?.lastName,
+                                                            UserMeStruct.maybeFromMap(
+                                                                    containerRetrieveUserResponse
+                                                                        .jsonBody)
+                                                                ?.data
+                                                                .lastName,
                                                             'lastName',
                                                           ),
                                                         ),
@@ -634,13 +634,11 @@ class _UserUpdateWidgetState extends State<UserUpdateWidget>
                                                       TextEditingController(
                                                     text:
                                                         valueOrDefault<String>(
-                                                      DataStruct.maybeFromMap(
-                                                              getJsonField(
-                                                        containerRetrieveUserResponse
-                                                            .jsonBody,
-                                                        r'''$.data''',
-                                                      )?.toString())
-                                                          ?.phone,
+                                                      UserMeStruct.maybeFromMap(
+                                                              containerRetrieveUserResponse
+                                                                  .jsonBody)
+                                                          ?.data
+                                                          .phone,
                                                       'phone',
                                                     ),
                                                   ),
@@ -766,13 +764,11 @@ class _UserUpdateWidgetState extends State<UserUpdateWidget>
                                                       TextEditingController(
                                                     text:
                                                         valueOrDefault<String>(
-                                                      DataStruct.maybeFromMap(
-                                                              getJsonField(
-                                                        containerRetrieveUserResponse
-                                                            .jsonBody,
-                                                        r'''$.data''',
-                                                      )?.toString())
-                                                          ?.email,
+                                                      UserMeStruct.maybeFromMap(
+                                                              containerRetrieveUserResponse
+                                                                  .jsonBody)
+                                                          ?.data
+                                                          .email,
                                                       'email',
                                                     ),
                                                   ),
@@ -1067,13 +1063,11 @@ class _UserUpdateWidgetState extends State<UserUpdateWidget>
                                                           String>(
                                                     _model.dropDownValue1 ??=
                                                         valueOrDefault<String>(
-                                                      DataStruct.maybeFromMap(
-                                                              getJsonField(
-                                                        containerRetrieveUserResponse
-                                                            .jsonBody,
-                                                        r'''$.data''',
-                                                      )?.toString())
-                                                          ?.type,
+                                                      UserMeStruct.maybeFromMap(
+                                                              containerRetrieveUserResponse
+                                                                  .jsonBody)
+                                                          ?.data
+                                                          .type,
                                                       'type',
                                                     ),
                                                   ),
