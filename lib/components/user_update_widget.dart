@@ -1297,6 +1297,12 @@ class _UserUpdateWidgetState extends State<UserUpdateWidget>
                                                 phone: int.tryParse(_model
                                                     .telefonoTextController
                                                     .text),
+                                                profile: UserMeStruct.maybeFromMap(
+                                                        containerRetrieveUserResponse
+                                                            .jsonBody)
+                                                    ?.data
+                                                    .profile
+                                                    .id,
                                               );
 
                                               if ((_model.updateResponse

@@ -198,6 +198,7 @@ class UpdateUserCall {
     String? type = '',
     String? active = '',
     int? phone,
+    String? profile = '',
     String? jwt = '',
   }) async {
     final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
@@ -213,6 +214,7 @@ class UpdateUserCall {
   "password": "$password",
   "type": "$type",
   "state": "$active",
+  "profile": "",
   "phone": "$phone"
 }''';
     return ApiManager.instance.makeApiCall(
