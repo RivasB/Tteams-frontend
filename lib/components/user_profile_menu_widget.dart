@@ -1,4 +1,5 @@
 import '/auth/custom_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -56,9 +57,6 @@ class _UserProfileMenuWidgetState extends State<UserProfileMenuWidget>
 
     _model.passwordTextController2 ??= TextEditingController();
     _model.passwordFocusNode2 ??= FocusNode();
-
-    _model.passwordConfirmTextController ??= TextEditingController();
-    _model.passwordConfirmFocusNode ??= FocusNode();
 
     animationsMap.addAll({
       'containerOnPageLoadAnimation': AnimationInfo(
@@ -295,7 +293,7 @@ class _UserProfileMenuWidgetState extends State<UserProfileMenuWidget>
                                     Icons.logout,
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
-                                    size: 54.0,
+                                    size: 44.0,
                                   ),
                                 ),
                               ),
@@ -852,8 +850,35 @@ class _UserProfileMenuWidgetState extends State<UserProfileMenuWidget>
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 26.0),
                                           child: FFButtonWidget(
-                                            onPressed: () {
-                                              print('Button pressed ...');
+                                            onPressed: () async {
+                                              _model.apiResultql6 =
+                                                  await TTeamsAPIIdentityGroup
+                                                      .updateUserCall
+                                                      .call(
+                                                id: FFAppState().UserMe.data.id,
+                                                bearerAuthentication:
+                                                    currentAuthenticationToken,
+                                                jwt: currentAuthenticationToken,
+                                                firstName: _model
+                                                    .nameTextController.text,
+                                                lastName: _model
+                                                    .lastNameTextController
+                                                    .text,
+                                                email: _model
+                                                    .emailAddressTextController
+                                                    .text,
+                                                phone: int.tryParse(_model
+                                                    .telefonoTextController
+                                                    .text),
+                                              );
+
+                                              if ((_model.apiResultql6
+                                                      ?.succeeded ??
+                                                  true)) {
+                                                safeSetState(() {});
+                                              }
+
+                                              safeSetState(() {});
                                             },
                                             text: 'Guardar',
                                             options: FFButtonOptions(
@@ -1418,133 +1443,29 @@ class _UserProfileMenuWidgetState extends State<UserProfileMenuWidget>
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 16.0),
-                                        child: SizedBox(
-                                          width: double.infinity,
-                                          child: TextFormField(
-                                            controller: _model
-                                                .passwordConfirmTextController,
-                                            focusNode:
-                                                _model.passwordConfirmFocusNode,
-                                            autofocus: true,
-                                            autofillHints: const [
-                                              AutofillHints.password
-                                            ],
-                                            obscureText: !_model
-                                                .passwordConfirmVisibility,
-                                            decoration: InputDecoration(
-                                              labelText:
-                                                  'Confirmar contraseña nueva',
-                                              labelStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelLargeFamily,
-                                                        letterSpacing: 0.0,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelLargeFamily),
-                                                      ),
-                                              enabledBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryBackground,
-                                                  width: 2.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(12.0),
-                                              ),
-                                              focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  width: 2.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(12.0),
-                                              ),
-                                              errorBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .error,
-                                                  width: 2.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(12.0),
-                                              ),
-                                              focusedErrorBorder:
-                                                  OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .error,
-                                                  width: 2.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(12.0),
-                                              ),
-                                              filled: true,
-                                              fillColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
-                                              suffixIcon: InkWell(
-                                                onTap: () => safeSetState(
-                                                  () => _model
-                                                          .passwordConfirmVisibility =
-                                                      !_model
-                                                          .passwordConfirmVisibility,
-                                                ),
-                                                focusNode: FocusNode(
-                                                    skipTraversal: true),
-                                                child: Icon(
-                                                  _model.passwordConfirmVisibility
-                                                      ? Icons
-                                                          .visibility_outlined
-                                                      : Icons
-                                                          .visibility_off_outlined,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryText,
-                                                  size: 24.0,
-                                                ),
-                                              ),
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyLarge
-                                                .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyLargeFamily,
-                                                  letterSpacing: 0.0,
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyLargeFamily),
-                                                ),
-                                            minLines: 1,
-                                            validator: _model
-                                                .passwordConfirmTextControllerValidator
-                                                .asValidator(context),
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 16.0),
                                         child: FFButtonWidget(
-                                          onPressed: () {
-                                            print('Button pressed ...');
+                                          onPressed: () async {
+                                            _model.apiResult73d =
+                                                await TTeamsAPIIdentityGroup
+                                                    .changePasswordCall
+                                                    .call(
+                                              email: FFAppState()
+                                                  .UserMe
+                                                  .data
+                                                  .email,
+                                              oldp: _model
+                                                  .passwordTextController1.text,
+                                              newp: _model
+                                                  .passwordTextController2.text,
+                                            );
+
+                                            if ((_model
+                                                    .apiResult73d?.succeeded ??
+                                                true)) {
+                                              safeSetState(() {});
+                                            }
+
+                                            safeSetState(() {});
                                           },
                                           text: 'Cambiar',
                                           options: FFButtonOptions(

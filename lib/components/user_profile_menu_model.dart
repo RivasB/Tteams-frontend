@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'user_profile_menu_widget.dart' show UserProfileMenuWidget;
 import 'package:flutter/material.dart';
@@ -22,6 +23,8 @@ class UserProfileMenuModel extends FlutterFlowModel<UserProfileMenuWidget> {
   FocusNode? emailAddressFocusNode;
   TextEditingController? emailAddressTextController;
   String? Function(BuildContext, String?)? emailAddressTextControllerValidator;
+  // Stores action output result for [Backend Call - API (updateUser)] action in Button widget.
+  ApiCallResponse? apiResultql6;
   // State field(s) for password widget.
   FocusNode? passwordFocusNode1;
   TextEditingController? passwordTextController1;
@@ -32,18 +35,13 @@ class UserProfileMenuModel extends FlutterFlowModel<UserProfileMenuWidget> {
   TextEditingController? passwordTextController2;
   late bool passwordVisibility2;
   String? Function(BuildContext, String?)? passwordTextController2Validator;
-  // State field(s) for passwordConfirm widget.
-  FocusNode? passwordConfirmFocusNode;
-  TextEditingController? passwordConfirmTextController;
-  late bool passwordConfirmVisibility;
-  String? Function(BuildContext, String?)?
-      passwordConfirmTextControllerValidator;
+  // Stores action output result for [Backend Call - API (changePassword)] action in Button widget.
+  ApiCallResponse? apiResult73d;
 
   @override
   void initState(BuildContext context) {
     passwordVisibility1 = false;
     passwordVisibility2 = false;
-    passwordConfirmVisibility = false;
   }
 
   @override
@@ -65,8 +63,5 @@ class UserProfileMenuModel extends FlutterFlowModel<UserProfileMenuWidget> {
 
     passwordFocusNode2?.dispose();
     passwordTextController2?.dispose();
-
-    passwordConfirmFocusNode?.dispose();
-    passwordConfirmTextController?.dispose();
   }
 }

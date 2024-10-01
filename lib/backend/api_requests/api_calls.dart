@@ -763,17 +763,20 @@ class Create1Call {
 class ChangePasswordCall {
   Future<ApiCallResponse> call({
     String? bearerAuthentication = '',
+    String? email = '',
+    String? oldp = '',
+    String? newp = '',
     String? jwt = '',
   }) async {
     final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
       jwt: jwt,
     );
 
-    const ffApiRequestBody = '''
+    final ffApiRequestBody = '''
 {
-  "email": "",
-  "oldPassword": "",
-  "newPassword": ""
+  "email": "$email",
+  "oldPassword": "$oldp",
+  "newPassword": "$newp"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'changePassword',
