@@ -1231,40 +1231,30 @@ class _UserUpdateWidgetState extends State<UserUpdateWidget>
                                                               FormFieldController<
                                                                   String>(
                                                             _model.dropDownValue2 ??=
-                                                                valueOrDefault<
-                                                                    String>(
-                                                              UserMeStruct.maybeFromMap(
-                                                                      containerRetrieveUserResponse
-                                                                          .jsonBody)
-                                                                  ?.data
-                                                                  .profile
-                                                                  .organization
-                                                                  .id,
-                                                              'organizationId',
-                                                            ),
+                                                                UserMeStruct.maybeFromMap(
+                                                                        containerRetrieveUserResponse
+                                                                            .jsonBody)
+                                                                    ?.data
+                                                                    .profile
+                                                                    .organization
+                                                                    .id,
                                                           ),
                                                           options: List<
                                                                   String>.from(
-                                                              ((getJsonField(
-                                                            rowGetAllOrganizationsResponse
-                                                                .jsonBody,
-                                                            r'''$.data''',
-                                                            true,
-                                                          ) as List)
-                                                                      .map<String>(
-                                                                          (s) => s
-                                                                              .toString())
-                                                                      .toList()
-                                                                      .toList()
-                                                                      .map<OrganizationStruct?>(
-                                                                          OrganizationStruct
-                                                                              .maybeFromMap)
-                                                                      .toList() as Iterable<OrganizationStruct?>)
-                                                                  .withoutNulls
-                                                                  .map((e) => valueOrDefault<String>(
-                                                                        e.id,
-                                                                        'organizationId',
+                                                              TTeamsAPIIdentityGroup
+                                                                  .getAllOrganizationsCall
+                                                                  .organizations(
+                                                                    rowGetAllOrganizationsResponse
+                                                                        .jsonBody,
+                                                                  )!
+                                                                  .map((e) =>
+                                                                      getJsonField(
+                                                                        e,
+                                                                        r'''$.id''',
                                                                       ))
+                                                                  .toList()
+                                                                  .map((e) => e
+                                                                      .toString())
                                                                   .toList()),
                                                           optionLabels:
                                                               ((getJsonField(
