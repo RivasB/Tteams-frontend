@@ -11,7 +11,7 @@ class UserManagementModel extends FlutterFlowModel<UserManagementWidget> {
 
   int pageElements = 20;
 
-  int pageNumbrer = 1;
+  int pageNumbrer = 0;
 
   int totalElements = 0;
 
