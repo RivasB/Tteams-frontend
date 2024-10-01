@@ -875,7 +875,7 @@ class _UserProfileMenuWidgetState extends State<UserProfileMenuWidget>
                                               if ((_model.apiResultql6
                                                       ?.succeeded ??
                                                   true)) {
-                                                safeSetState(() {});
+                                                FFAppState().update(() {});
                                               }
 
                                               safeSetState(() {});
@@ -1457,12 +1457,15 @@ class _UserProfileMenuWidgetState extends State<UserProfileMenuWidget>
                                                   .passwordTextController1.text,
                                               newp: _model
                                                   .passwordTextController2.text,
+                                              bearerAuthentication:
+                                                  currentAuthenticationToken,
+                                              jwt: currentAuthenticationToken,
                                             );
 
                                             if ((_model
                                                     .apiResult73d?.succeeded ??
                                                 true)) {
-                                              safeSetState(() {});
+                                              FFAppState().update(() {});
                                             }
 
                                             safeSetState(() {});
