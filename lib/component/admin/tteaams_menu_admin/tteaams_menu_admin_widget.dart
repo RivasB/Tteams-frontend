@@ -267,9 +267,6 @@ class _TteaamsMenuAdminWidgetState extends State<TteaamsMenuAdminWidget> {
                     }(),
                     borderRadius: BorderRadius.circular(12.0),
                     shape: BoxShape.rectangle,
-                    border: Border.all(
-                      width: 1.0,
-                    ),
                   ),
                   child: Padding(
                     padding:
