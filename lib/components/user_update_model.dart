@@ -1,17 +1,9 @@
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'user_update_widget.dart' show UserUpdateWidget;
 import 'package:flutter/material.dart';
 
 class UserUpdateModel extends FlutterFlowModel<UserUpdateWidget> {
-  ///  Local state fields for this component.
-
-  DataStruct? user;
-  void updateUserStruct(Function(DataStruct) updateFn) {
-    updateFn(user ??= DataStruct());
-  }
-
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();

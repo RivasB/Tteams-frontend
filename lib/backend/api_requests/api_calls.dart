@@ -159,7 +159,8 @@ class TTeamsAPIIdentityGroup {
   static GetAllProfilesCall getAllProfilesCall = GetAllProfilesCall();
   static UpdateProfileCall updateProfileCall = UpdateProfileCall();
   static CreateProfileCall createProfileCall = CreateProfileCall();
-  static GetAllCall getAllCall = GetAllCall();
+  static GetAllOrganizationsCall getAllOrganizationsCall =
+      GetAllOrganizationsCall();
   static UpdateCall updateCall = UpdateCall();
   static CreateCall createCall = CreateCall();
   static GetAllUsersCall getAllUsersCall = GetAllUsersCall();
@@ -357,7 +358,7 @@ class CreateProfileCall {
   }
 }
 
-class GetAllCall {
+class GetAllOrganizationsCall {
   Future<ApiCallResponse> call({
     int? pageNo,
     int? pageSize,
@@ -375,7 +376,7 @@ class GetAllCall {
     );
 
     return ApiManager.instance.makeApiCall(
-      callName: 'getAll',
+      callName: 'getAllOrganizations',
       apiUrl: '$baseUrl/api/organization',
       callType: ApiCallType.GET,
       headers: {
@@ -400,6 +401,12 @@ class GetAllCall {
       alwaysAllowBody: false,
     );
   }
+
+  List? organizations(dynamic response) => getJsonField(
+        response,
+        r'''$.data''',
+        true,
+      ) as List?;
 }
 
 class UpdateCall {
