@@ -268,7 +268,6 @@ class _TteaamsMenuAdminWidgetState extends State<TteaamsMenuAdminWidget> {
                     borderRadius: BorderRadius.circular(12.0),
                     shape: BoxShape.rectangle,
                     border: Border.all(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
                       width: 1.0,
                     ),
                   ),
