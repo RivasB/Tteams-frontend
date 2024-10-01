@@ -1234,13 +1234,7 @@ class _UserUpdateWidgetState extends State<UserUpdateWidget>
                                                               FormFieldController<
                                                                   String>(
                                                             _model.dropDownValue2 ??=
-                                                                UserMeStruct.maybeFromMap(
-                                                                        containerRetrieveUserResponse
-                                                                            .jsonBody)
-                                                                    ?.data
-                                                                    .profile
-                                                                    .organization
-                                                                    .id,
+                                                                '',
                                                           ),
                                                           options: List<
                                                                   String>.from(

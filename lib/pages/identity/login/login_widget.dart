@@ -439,6 +439,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                                 )
                                                 .toString(),
                                       );
+                                      FFAppState().loginEmailState = false;
+                                      safeSetState(() {});
                                       _model.userMeResponse =
                                           await TTeamsAPIIdentityGroup
                                               .retrieveLoggedUserCall
