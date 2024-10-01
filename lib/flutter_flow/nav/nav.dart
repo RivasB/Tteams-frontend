@@ -134,6 +134,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'taskCard',
           path: '/taskCard',
           builder: (context, params) => const TaskCardWidget(),
+        ),
+        FFRoute(
+          name: 'organizationManagement',
+          path: '/organizationManagement',
+          requireAuth: true,
+          builder: (context, params) => const OrganizationManagementWidget(),
+        ),
+        FFRoute(
+          name: 'profileManagement',
+          path: '/profileManagement',
+          requireAuth: true,
+          builder: (context, params) => const ProfileManagementWidget(),
+        ),
+        FFRoute(
+          name: 'authManagement',
+          path: '/authManagement',
+          requireAuth: true,
+          builder: (context, params) => const AuthManagementWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

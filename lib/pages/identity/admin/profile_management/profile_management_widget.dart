@@ -14,25 +14,26 @@ import '/flutter_flow/form_field_controller.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'user_management_model.dart';
-export 'user_management_model.dart';
+import 'profile_management_model.dart';
+export 'profile_management_model.dart';
 
-class UserManagementWidget extends StatefulWidget {
-  const UserManagementWidget({super.key});
+class ProfileManagementWidget extends StatefulWidget {
+  const ProfileManagementWidget({super.key});
 
   @override
-  State<UserManagementWidget> createState() => _UserManagementWidgetState();
+  State<ProfileManagementWidget> createState() =>
+      _ProfileManagementWidgetState();
 }
 
-class _UserManagementWidgetState extends State<UserManagementWidget> {
-  late UserManagementModel _model;
+class _ProfileManagementWidgetState extends State<ProfileManagementWidget> {
+  late ProfileManagementModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => UserManagementModel());
+    _model = createModel(context, () => ProfileManagementModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -83,7 +84,7 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                     model: _model.tteaamsMenuAdminModel,
                     updateCallback: () => safeSetState(() {}),
                     child: const TteaamsMenuAdminWidget(
-                      menuIndex: 1,
+                      menuIndex: 3,
                     ),
                   ),
                 ),

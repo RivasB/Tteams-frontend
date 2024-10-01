@@ -10,3 +10,9 @@ export '/pages/identity/verify_account/verify_account_widget.dart'
 export '/pages/identity/admin/user_management/user_management_widget.dart'
     show UserManagementWidget;
 export '/component/task_card/task_card_widget.dart' show TaskCardWidget;
+export '/pages/identity/admin/organization_management/organization_management_widget.dart'
+    show OrganizationManagementWidget;
+export '/pages/identity/admin/profile_management/profile_management_widget.dart'
+    show ProfileManagementWidget;
+export '/pages/identity/admin/auth_management/auth_management_widget.dart'
+    show AuthManagementWidget;
