@@ -1272,7 +1272,11 @@ class _UserUpdateWidgetState extends State<UserUpdateWidget>
                                                 bearerAuthentication:
                                                     currentAuthenticationToken,
                                                 jwt: currentAuthenticationToken,
-                                                id: widget.userID,
+                                                id: UserMeStruct.maybeFromMap(
+                                                        containerRetrieveUserResponse
+                                                            .jsonBody)
+                                                    ?.data
+                                                    .id,
                                                 firstName: _model
                                                     .nameTextController.text,
                                                 lastName: _model
