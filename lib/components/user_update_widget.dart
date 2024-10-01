@@ -47,7 +47,10 @@ class _UserUpdateWidgetState extends State<UserUpdateWidget>
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       _model.apiResult90x =
-          await TTeamsAPIIdentityGroup.getAllOrganizationsCall.call();
+          await TTeamsAPIIdentityGroup.getAllOrganizationsCall.call(
+        bearerAuthentication: currentAuthenticationToken,
+        jwt: currentAuthenticationToken,
+      );
 
       if ((_model.apiResult90x?.succeeded ?? true)) {
         _model.organizationsIds = TTeamsAPIIdentityGroup.getAllOrganizationsCall
