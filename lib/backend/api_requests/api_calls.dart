@@ -190,25 +190,30 @@ class TTeamsAPIIdentityGroup {
 class UpdateUserCall {
   Future<ApiCallResponse> call({
     String? bearerAuthentication = '',
+    String? id = '',
+    String? firstName = '',
+    String? lastName = '',
+    String? email = '',
+    String? password = '',
+    String? type = '',
+    String? active = '',
+    int? phone,
     String? jwt = '',
   }) async {
     final baseUrl = TTeamsAPIIdentityGroup.getBaseUrl(
       jwt: jwt,
     );
 
-    const ffApiRequestBody = '''
+    final ffApiRequestBody = '''
 {
-  "id": "",
-  "firstName": "",
-  "lastName": "",
-  "identification": "",
-  "email": "",
-  "password": "",
-  "type": "ADMIN",
-  "state": "ACTIVE",
-  "profile": "",
-  "registrationState": "VERIFICATION_ACCEPTED",
-  "phone": ""
+  "id": "$id",
+  "firstName": "$firstName",
+  "lastName": "$lastName",
+  "email": "$email",
+  "password": "$password",
+  "type": "$type",
+  "state": "$active",
+  "phone": "$phone"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'updateUser',

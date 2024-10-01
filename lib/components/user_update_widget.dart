@@ -1069,10 +1069,10 @@ class _UserUpdateWidgetState extends State<UserUpdateWidget>
                                                   ),
                                                   FlutterFlowDropDown<String>(
                                                     controller: _model
-                                                            .dropDownValueController ??=
+                                                            .dropDownValueController1 ??=
                                                         FormFieldController<
                                                             String>(
-                                                      _model.dropDownValue ??=
+                                                      _model.dropDownValue1 ??=
                                                           valueOrDefault<
                                                               String>(
                                                         UserMeStruct.maybeFromMap(
@@ -1091,7 +1091,7 @@ class _UserUpdateWidgetState extends State<UserUpdateWidget>
                                                     ],
                                                     onChanged: (val) =>
                                                         safeSetState(() => _model
-                                                                .dropDownValue =
+                                                                .dropDownValue1 =
                                                             val),
                                                     width: 200.0,
                                                     height: 40.0,
@@ -1140,69 +1140,31 @@ class _UserUpdateWidgetState extends State<UserUpdateWidget>
                                                   ),
                                                 ],
                                               ),
-                                              Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 16.0, 0.0, 0.0),
-                                                child: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  8.0,
-                                                                  0.0),
-                                                      child: Icon(
-                                                        Icons.location_history,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryText,
-                                                        size: 30.0,
-                                                      ),
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                8.0, 0.0),
+                                                    child: Icon(
+                                                      Icons
+                                                          .desktop_access_disabled,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryText,
+                                                      size: 30.0,
                                                     ),
-                                                    Padding(
-                                                      padding:
-                                                          const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  16.0,
-                                                                  0.0),
-                                                      child: Text(
-                                                        'Perfil:',
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelLarge
-                                                                .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLargeFamily,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .labelLargeFamily),
-                                                                ),
-                                                      ),
-                                                    ),
-                                                    Text(
-                                                      valueOrDefault<String>(
-                                                        UserMeStruct.maybeFromMap(
-                                                                containerRetrieveUserResponse
-                                                                    .jsonBody)
-                                                            ?.data
-                                                            .profile
-                                                            .name,
-                                                        '- No asignado -',
-                                                      ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                16.0, 0.0),
+                                                    child: Text(
+                                                      'Estado de usuario:',
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1220,94 +1182,77 @@ class _UserUpdateWidgetState extends State<UserUpdateWidget>
                                                                             .labelLargeFamily),
                                                               ),
                                                     ),
-                                                  ],
-                                                ),
-                                              ),
-                                              Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 16.0,
-                                                                0.0, 0.0),
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      8.0,
-                                                                      0.0),
-                                                          child: Icon(
-                                                            Icons.domain,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .secondaryText,
-                                                            size: 30.0,
-                                                          ),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      16.0,
-                                                                      0.0),
-                                                          child: Text(
-                                                            'Organización:',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelLarge
-                                                                .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLargeFamily,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .labelLargeFamily),
-                                                                ),
-                                                          ),
-                                                        ),
-                                                        Text(
+                                                  ),
+                                                  FlutterFlowDropDown<String>(
+                                                    controller: _model
+                                                            .dropDownValueController2 ??=
+                                                        FormFieldController<
+                                                            String>(
+                                                      _model.dropDownValue2 ??=
                                                           valueOrDefault<
                                                               String>(
-                                                            UserMeStruct.maybeFromMap(
-                                                                    containerRetrieveUserResponse
-                                                                        .jsonBody)
-                                                                ?.data
-                                                                .profile
-                                                                .organization
-                                                                .name,
-                                                            '- No asignado -',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelLarge
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelLargeFamily,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .labelLargeFamily),
-                                                              ),
-                                                        ),
-                                                      ],
+                                                        UserMeStruct.maybeFromMap(
+                                                                containerRetrieveUserResponse
+                                                                    .jsonBody)
+                                                            ?.data
+                                                            .state,
+                                                        'state',
+                                                      ),
                                                     ),
+                                                    options: List<String>.from(
+                                                        ['ACTIVE', 'INACTIVE']),
+                                                    optionLabels: const [
+                                                      'Habilitado',
+                                                      'Deshabilitado'
+                                                    ],
+                                                    onChanged: (val) =>
+                                                        safeSetState(() => _model
+                                                                .dropDownValue2 =
+                                                            val),
+                                                    width: 200.0,
+                                                    height: 40.0,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .labelLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLargeFamily,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily),
+                                                        ),
+                                                    hintText: 'Select...',
+                                                    icon: Icon(
+                                                      Icons
+                                                          .keyboard_arrow_down_rounded,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryText,
+                                                      size: 24.0,
+                                                    ),
+                                                    fillColor: FlutterFlowTheme
+                                                            .of(context)
+                                                        .secondaryBackground,
+                                                    elevation: 2.0,
+                                                    borderColor:
+                                                        Colors.transparent,
+                                                    borderWidth: 0.0,
+                                                    borderRadius: 8.0,
+                                                    margin:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(12.0, 0.0,
+                                                                12.0, 0.0),
+                                                    hidesUnderline: true,
+                                                    isOverButton: false,
+                                                    isSearchable: false,
+                                                    isMultiSelect: false,
                                                   ),
                                                 ],
                                               ),
@@ -1319,8 +1264,85 @@ class _UserUpdateWidgetState extends State<UserUpdateWidget>
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 8.0, 26.0),
                                           child: FFButtonWidget(
-                                            onPressed: () {
-                                              print('Button pressed ...');
+                                            onPressed: () async {
+                                              _model.updateResponse =
+                                                  await TTeamsAPIIdentityGroup
+                                                      .updateUserCall
+                                                      .call(
+                                                bearerAuthentication:
+                                                    currentAuthenticationToken,
+                                                jwt: currentAuthenticationToken,
+                                                id: widget.userID,
+                                                firstName: _model
+                                                    .nameTextController.text,
+                                                lastName: _model
+                                                    .lastNameTextController
+                                                    .text,
+                                                email: _model
+                                                    .emailAddressTextController
+                                                    .text,
+                                                password: _model.passwordTextController
+                                                                .text !=
+                                                            ''
+                                                    ? _model
+                                                        .passwordTextController
+                                                        .text
+                                                    : null,
+                                                type: _model.dropDownValue1,
+                                                active: _model.dropDownValue2,
+                                                phone: int.tryParse(_model
+                                                    .telefonoTextController
+                                                    .text),
+                                              );
+
+                                              if ((_model.updateResponse
+                                                      ?.succeeded ??
+                                                  true)) {
+                                                Navigator.pop(context);
+
+                                                safeSetState(() {});
+                                              } else {
+                                                ScaffoldMessenger.of(context)
+                                                    .showSnackBar(
+                                                  SnackBar(
+                                                    content: Text(
+                                                      getJsonField(
+                                                        (_model.updateResponse
+                                                                ?.jsonBody ??
+                                                            ''),
+                                                        r'''$.errors''',
+                                                      ).toString(),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelLarge
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLargeFamily,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelLargeFamily),
+                                                              ),
+                                                    ),
+                                                    duration: const Duration(
+                                                        milliseconds: 3000),
+                                                    backgroundColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .error,
+                                                  ),
+                                                );
+                                              }
+
+                                              safeSetState(() {});
                                             },
                                             text: 'Guardar',
                                             options: FFButtonOptions(
