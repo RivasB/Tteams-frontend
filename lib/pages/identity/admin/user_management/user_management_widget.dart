@@ -3,6 +3,7 @@ import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/structs/index.dart';
 import '/component/admin/tteaams_menu_admin/tteaams_menu_admin_widget.dart';
 import '/component/tteams_top_bar/tteams_top_bar_widget.dart';
+import '/components/user_update_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -1154,10 +1155,35 @@ class _UserManagementWidgetState extends State<UserManagementWidget> {
                                                                           mainAxisAlignment:
                                                                               MainAxisAlignment.end,
                                                                           children: [
-                                                                            Icon(
-                                                                              Icons.person_add_disabled,
-                                                                              color: FlutterFlowTheme.of(context).secondaryText,
-                                                                              size: 25.0,
+                                                                            InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                await showModalBottomSheet(
+                                                                                  isScrollControlled: true,
+                                                                                  backgroundColor: Colors.transparent,
+                                                                                  enableDrag: false,
+                                                                                  context: context,
+                                                                                  builder: (context) {
+                                                                                    return GestureDetector(
+                                                                                      onTap: () => FocusScope.of(context).unfocus(),
+                                                                                      child: Padding(
+                                                                                        padding: MediaQuery.viewInsetsOf(context),
+                                                                                        child: UserUpdateWidget(
+                                                                                          userID: userListItemItem.id,
+                                                                                        ),
+                                                                                      ),
+                                                                                    );
+                                                                                  },
+                                                                                ).then((value) => safeSetState(() {}));
+                                                                              },
+                                                                              child: Icon(
+                                                                                Icons.edit_note,
+                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                size: 25.0,
+                                                                              ),
                                                                             ),
                                                                             FlutterFlowIconButton(
                                                                               borderColor: Colors.transparent,
