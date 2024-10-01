@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'user_update_widget.dart' show UserUpdateWidget;
@@ -34,6 +35,8 @@ class UserUpdateModel extends FlutterFlowModel<UserUpdateWidget> {
   // State field(s) for DropDown widget.
   String? dropDownValue2;
   FormFieldController<String>? dropDownValueController2;
+  // Stores action output result for [Backend Call - API (updateUser)] action in Button widget.
+  ApiCallResponse? updateResponse;
 
   @override
   void initState(BuildContext context) {
